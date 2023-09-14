@@ -54,6 +54,28 @@
         }
         .btn_item_L { left: 0;}
         .btn_item_R { right: 0;}
+
+
+        /* 인디케이터 */
+        .bang_indi {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 10px;
+
+            background-color: red;
+        }
+        .bang_circle {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            background: #fff;
+        }
+        .bang_circle_active {
+            background: #000;
+        }
     </style>
 </head>
 <body>
@@ -66,53 +88,145 @@
 
         <input type="button" class="btn_item btn_item_L" value="《">
         <input type="button" class="btn_item btn_item_R" value="》">
+
+        <div class="bang_indi">
+            <!-- <div class="bang_circle bang_circle_active"></div>
+            <div class="bang_circle"></div>
+            <div class="bang_circle"></div> -->
+        </div>
     </div>
 
 <script>
     $(document).ready(function() {
+/*********************************************/
+/****************  초기화 시작 ****************/
+/*********************************************/
+// 나간 item을 삭제 하고 맨 뒤에 새로 삽입을 해주는 방법도 있다.
+// remove() 로 해도 되고 detach() 로 해도 된다.
+// 차이는 remove() 메모리상에서도 삭제
+// detach()는 삭제하면서 나중에 살리기 가능
         // item 들 배치 
         let item_size = $('.item').eq(0).outerWidth();
         let item_length = $('.item').length;
 
         for(let i=0; i<item_length; i++) {
             $('.item').eq(i).css({ left: item_size * i })
-/*
-        .item0 { left: calc(100% / 3 * 0)}
-        .item1 { left: calc(100% / 3 * 1)}
-        .item2 { left: calc(100% / 3 * 2)}
-        .item3 { left: calc(100% / 3 * 3)}
-        .item4 { left: calc(100% / 3 * 4)}
-*/
+            /*
+            .item0 { left: calc(100% / 3 * 0)}
+            .item1 { left: calc(100% / 3 * 1)}
+            .item2 { left: calc(100% / 3 * 2)}
+            .item3 { left: calc(100% / 3 * 3)}
+            .item4 { left: calc(100% / 3 * 4)}
+            */
         }
-        let bang_timer = 500;
+
+        // 배너 개수에 맞춰서 인디케이터 생성하기
+        let bang_bn_count = $('.item').length;
+        for(let i=0; i<bang_bn_count; i++) { 
+            $('.bang_indi').append(`<div class="bang_circle"></div>`)
+        }
+        $('.bang_circle').eq(0).addClass('bang_circle_active')
+/********************************************/
+/****************  초기화 끝  ****************/
+/********************************************/
+
+        let bang_timer = 300;
         let bang_no = 0
         $(document).on('click','.btn_item_R',function(){
+            prevent_btn_slide()
+
             // 전체 item 들 200씩 왼쪽으로 이동
             $('.item').animate({
                 left: `-=${item_size}px`
-            }, bang_timer)
+            }, bang_timer, 'linear')
 
             // 특정 번째꺼만 반대쪽 끝으로 이동
             $('.item').eq(bang_no % item_length).animate({
                 left: item_size * (item_length - 1)
             },0)
-            bang_no+=1;
 
+            // $('.bang_circle').removeClass('bang_circle_active')
+            // $('.bang_circle').eq((bang_no+1)%item_length).addClass('bang_circle_active')
+
+            bang_no+=1;
+            
+            // $('.bang_circle').removeClass('bang_circle_active')
+            // $('.bang_circle').eq((bang_no)%item_length).addClass('bang_circle_active')
+            indi_color_chk((bang_no)%item_length);
         })
         $(document).on('click','.btn_item_L',function(){
+            prevent_btn_slide()
+
             bang_no-=1;
-            $('.item').eq((bang_no)% item_length).animate({
+
+            // 특정 번째꺼만 반대쪽 끝으로 이동
+            $('.item').eq((bang_no) % item_length).animate({
                 left: item_size * -1
             },0)
-            
-            
+
+            // 전체 item 들 200씩 오른쪽으로 이동
             $('.item').animate({
                 left: `+=${item_size}px`
-            }, bang_timer)
+            }, bang_timer, 'linear')
+            
+
+            // $('.bang_circle').removeClass('bang_circle_active')
+            // $('.bang_circle').eq((bang_no)%item_length).addClass('bang_circle_active')
+            indi_color_chk((bang_no)%item_length);
         })
 
-        
+        // 인디케이터 색 변경 함수
+        function indi_color_chk(bang_indi_idx) {
+            $('.bang_circle').removeClass('bang_circle_active')
+            $('.bang_circle').eq(bang_indi_idx).addClass('bang_circle_active')
+        }
 
+        // 인디케이터 클릭시 방 이동
+        $(document).on('click', '.bang_circle', function(){
+            let colored = $('.bang_circle_active').index();
+            let clicked = $(this).index();
+
+            let cal = colored - clicked;
+
+            // 색칠된거보다 오른쪽꺼(큰거) 누르면 음수
+            if(cal < 0) { 
+                // for(let i=0; i<(cal)*-1; i++) {
+                for(let i=0; i<Math.abs(cal); i++) {
+                    $('.btn_item_R').trigger('click')
+                }
+            }
+            // 색칠된거보다 왼쪽꺼(작은거) 누르면 양수
+            else if(cal > 0) {
+                for(let i=0; i<(cal); i++) {
+                    $('.btn_item_L').trigger('click')
+                }
+            }
+        });
+
+
+
+        let bang_interval;
+        function bang_slide() {
+            bang_interval = setInterval(function(){
+                $('.btn_item_R').trigger('click')
+            }, bang_timer + 1000);
+        }
+        bang_slide()
+
+        $('.banner_box').hover(function(){
+            clearInterval(bang_interval);
+        }, function(){
+            bang_slide()
+        });
+
+        // 버튼막기 
+        function prevent_btn_slide() {
+            // 버튼 막기
+            $('.btn_item').css({pointerEvents:'none'})
+            setTimeout(function(){
+                $('.btn_item').css({pointerEvents:'auto'})
+            }, bang_timer)
+        }
     });
 </script>
 </body>
