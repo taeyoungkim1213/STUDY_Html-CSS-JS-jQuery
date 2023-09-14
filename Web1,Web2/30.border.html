@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+    /*
+        border: 테두리에 관련된 속성
+
+        *1) border-width: 테두리 두께
+                    border-top-width 처럼 사방을 각각 다르게 스타일 줄 수 있다.
+
+        *2) border-style: 선 종류 
+                        solid: 실선
+                        dashed: 절취선
+                        dotted: 점선
+                        double: 이중선
+                        none: 없앰
+        3) border-color: red
+
+        *한방: border: width style color
+
+        4) border-radius: 테두리 깎기
+                          단위 - px, %
+                          50% 이상 줘도 소용 없다.
+                          한방에 포함 안됨
+    */
+        .box {
+            /* border-width: 10px;
+            border-top-width: 30px;
+            border-right-width: 20px;
+            
+            border-style: solid;
+            border-top-style: dotted;
+            border-right-style: dashed;
+
+            border-color: red;
+            border-top-color: blue; */
+
+            /* border: 10px solid red; */
+
+            border-radius: 100px 20px;
+
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

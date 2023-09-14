@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+      /* 
+        position: 요소의 위치 잡아주는 속성
+                  구조 설계시 가장 중요
+                  특이점-상속안됨
+                  (float보다 위에 뜸)
+                1. statix : 기본값
+                *2. relative : 별도의 하위 속성 없이 사용시에는 static과 동일
+                               주로 특정 요소(자기 포함)의 기준점을 잡아주는 역할
+
+                *3.absolute : 상위(부모)요소중에 가준점을 잡아줄 수 있는 요소를 기준으로 이동 / 0.0 시작
+                              주로 겹치거나 움직임이 필요할 때 사용  
+                              **쓸거면 기준점 잡을 부모한테 ralative걸어라  
+                *4)fixed : 브라우저(body)기준으로 위치 고정
+                          상위요서가 relative를 가지고 있어도 무시
+
+        -하위 속성-
+            1. 사방값 : top. left. bottom. right
+                        해당 방향에서 얼마 떨어져라
+                        단위 - px, %
+
+            2. z-index : 레이어의 순서 결정
+                         단위 : 무한대~무한대(정수) (팁 : 수치넓게)
+                         (기본값 : 0.몇 이라고 생각)
+                         숫자가 클수록 위에 뜸
+       */
+
+        .box {
+            width: 100px;
+            height: 100px; 
+            
+        }
+        .red { background: red;}
+        .green { background: green; 
+                position: relative;
+            }
+        .blue { background: blue;}
+    </style>
+</head>
+<body>
+    <div class="box red">red</div>
+    <div class="box green">green</div>
+    <div class="box blue">blue</div>
+</body>
+</html>

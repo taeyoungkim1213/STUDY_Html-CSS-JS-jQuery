@@ -1,0 +1,112 @@
+body {margin:0;}
+
+#wrap {
+    width: 560px;
+    margin: 150px auto;
+}
+.logo {
+    width: 300px;
+    height: 100px;
+    margin: 0 auto;
+    background: url(../img/google_logo.jpg) no-repeat center / cover;
+
+    /* border: 1px solid; */
+}
+.logo img {
+    width: 100%;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-indent: -9999px;
+}
+
+
+.search_box {
+    width: 100%;
+    height: 45px;
+    position: relative;
+    margin: 30px 0 20px;
+
+    /* background: aqua; */
+}
+
+.search_txt {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 25px;
+    border: 1px solid #a9a9a9;
+    padding: 0 50px 0 20px;
+    
+    box-shadow: 0 0 10px 0 rgba(0,0,0,0.3);
+
+    outline: none;
+}
+.search_icon {
+    position: absolute;
+    right: 20px;
+    top: 12px;
+    height: calc(100% - 25px);
+}
+
+/* 썸네일 */
+.thumbnail {
+    width: 100%;
+    overflow: hidden;
+}
+.thumb_item {
+    width: calc(100% / 5);
+    height: 120px;
+    float: left;
+
+    border: 1px solid;
+    box-sizing: border-box;
+
+    position: relative;
+}
+.thumb_item:hover {
+    background: gray;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.thumb_ham_btn {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: none;
+
+    background-color: red;
+}
+.circle {
+    width: 5px;
+    height: 5px;
+    margin: 2.5px auto;
+    background: blue;
+    border-radius: 50%;
+}
+/* .thumb_item 에 hover 하면 그 안에 있는 .thumb_ham_btn 를 display: block */
+.thumb_item:hover .thumb_ham_btn {
+    display: block;
+}
+
+.thumb_img {
+    width: 50px;
+    height: 50px;
+    background: red;
+    border-radius: 50%;
+    margin: 20px auto;
+}
+
+.thumb_title {
+    padding: 0 10px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 10px;
+}

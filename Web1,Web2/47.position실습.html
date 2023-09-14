@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer{
+            width: 30%;
+            height: 30vw;
+            border: 10px solid;
+            /* overflow: hidden; */
+           
+
+            position: relative;
+        }
+
+        .red{
+           width: 150px;
+            height: 150px; 
+            background-color: red;
+
+            position: absolute;
+            top: calc(50% - (150px / 2));
+            left:calc(50% - (150px / 2));
+           
+        }
+
+        .blue{
+            background-color: blue;
+
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            left: 50px;
+            right: 50px;
+
+        }
+        .outer:hover > .red {
+           
+            background-color: aqua;
+
+            left: 0;
+
+            transition: all 0.5s;
+
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="red"></div>
+       
+    </div>
+
+    <div class="outer">
+        <div class="blue"></div>
+       
+    </div>
+</body>
+</html>

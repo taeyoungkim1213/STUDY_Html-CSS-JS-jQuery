@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+        } 
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+
+<script>
+/*
+
+    2) 이벤트 리스너 등록
+        addEventListener
+
+        포멧: 요소.addEventListener('이벤트명', 함수명만)
+             요소.addEventListener('이벤트명', 익명함수)
+*/
+    let box = document.getElementsByClassName('box')[0];
+    // box.addEventListener('click', function(){
+    //     let el = document.getElementsByClassName('box')[0]
+    //     el.style.background="red"
+    // });
+
+    box.addEventListener('click', klick);
+
+
+    function klick() {
+        let el = document.getElementsByClassName('box')[0]
+        el.style.background="red"
+    }
+    function dblklick() {
+        let el = document.getElementsByClassName('box')[0]
+        el.style.background="green"
+    }
+    function m_move() {
+        console.log(event.clientX, event.clientY)
+    }
+    
+    function m_over() {
+        let el = document.getElementsByClassName('box')[1]
+        console.log(el.style.background)
+        el.style.background="green"
+    }
+    function m_out() {
+        let el = document.getElementsByClassName('box')[1]
+        el.style.background="purple"
+    } 
+</script>
+</body>
+</html>

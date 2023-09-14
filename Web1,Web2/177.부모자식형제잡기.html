@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .child{
+            width: 100px;
+            height: 100px;
+            background-color: pink;
+            margin: 50px;
+        }
+    </style>
+</head>
+<body>
+    <div id="parent">
+        <div class="child" id="child00">자식0</div>
+        <div class="child" id="child01">자식1</div>
+        <div class="child" id="child02">자식2</div>
+    </div>
+    
+<script>
+    /*
+        자식요소 개수 : parent.childElementCount
+
+        - 요소 -
+            우리 눈에 보이는 DOM 구조 그대로 인식하면 됨
+            이전요소 : 요소잡기.previousElementSibling
+            다음요소 : 요소잡기.nextElementSibling
+
+            부모찾기: 자식요소.parentElement
+            첫번째자식 : 부모.firstElementChild
+            마지막자식 : 부모.lastElementChild
+            
+        - 노드 -
+            빈칸들도 노드로 치기 때문에 사용할때 애매함.
+            자식 노드들 다 찾기 : parent.child.childNodes;
+            이전노드 : 요소잡기.previousSibling
+            다음노드 : 요소잡기.nextSibling
+        
+        
+    */
+    console.log(child[1].previousSibling.previousSibling);
+    console.log(child[1].previousElementSibling);
+    child[1].previousSibling
+</script>
+</body>
+</html>

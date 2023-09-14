@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+    /* 
+        1) color: 글자색
+        **2) text-align: inline 요소 가운데 정렬
+                       **부모에 적용한다
+                    left(기본값)
+                    center
+                    right
+
+        *3) text-decoration: 글자에 줄 긋기
+                        underline: 밑줄
+                        overline: 윗줄
+                        line-through: 중앙선
+                        *none: 선 없앰
+        4) text-transform: 대소문자 변경
+                        capitalize: 각 단어의 첫글자만 대문자로 변경
+                        uppercase: 다 대문자
+                        lowercase: 다 소문자
+        5) text-shadow: 글자 그림자
+                        x축 y축 변짐도 색
+                        양수 = 우측,하단
+                        음수 = 좌측,상단
+                        *그림자 여러개 적용시 , 로 구분해서 추가할 수 있다
+                    ex)text-shadow : 1px 1px 1px red , 2px 2px 2px blue
+                    
+            box-shdow : text-shdow의 사촌격
+            x축y축 번짐도 테두리두께 색
+            *그림자 여러개 적용시 , 로 구분해서 추가할 수 있다
+
+            
+            // *말 줌임표 붙이는 방법
+             display: -webkit-box;  // box설정
+            -webkit-box-orient: vertical; =세로방향 //어느 방향으로 할건지
+            -webkit-line-clamp: 1; //몇 번째 줄 까지 할건지
+
+    */
+        .txt_box {
+            background-color: pink;
+            text-align: center;
+        }
+        .txt_1 {
+            color: #222;
+            text-decoration: none;
+            text-transform: lowercase;
+            background-color: skyblue;
+
+            text-shadow: 0px 0px 0px red;
+        }
+
+        .p1 { text-align: right;}
+    </style>
+</head>
+<body>
+    <div class="txt_box">
+        <a href="#" class="txt_1">kh acaDemy</a>
+    </div>
+
+
+    <p class="txt_1 p1">kh acaDemy</p>
+</body>
+</html>

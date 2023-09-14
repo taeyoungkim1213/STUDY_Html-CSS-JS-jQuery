@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+/*
+    자료형 - 컴퓨터가 받아들일수 있는 자료의 형태
+            문자 - String
+                    쌍따옴표나 따옴표로 감싸져 있는 자료
+            숫자 - Number
+                    쌍따옴표나 따옴표로 감싸져 있지 않은 숫자형태의 자료
+            boolean - 참(true), 거짓(false)
+                     필요할때마다 알아서 true - 1, false - 0 으로 변경
+    ----------------------------------------
+            null - 존재하지 않음 (없음)
+            undefined - 정의되지 않음 (없음)
+            Nan - Not a number (숫자 아님)
+*/
+
+    console.log("=== 문자형 ===");
+    console.log("abcd");
+    console.log("100+100");
+    console.log("100" + "100");
+
+    console.log("=== 숫자형 ===");
+    console.log(100 + 100);
+
+
+    console.log("=== bool ===");
+    console.log(true);
+    console.log(false);
+    console.log("");
+
+    /*
+        - boolean (비교)
+        사칙연산: +, -, *, /, %(나머지)
+        비교연산: >, <, <=, >=
+        논리연산: &&(and) =>  A  &&  B (앞 뒤 다 true일때만 최종 결과 true)
+                 ||(or) =>  A  ||  B (앞 뒤 중에 하나만 true여도 최종 결과 true)
+    */
+    console.log(100 == 101);
+    console.log(100 > 101);
+    console.log(10 < 20);
+    console.log(20 < 30);
+    console.log(10 < 20 < 30);
+    console.log(10 > 20 > 30);
+
+    console.log("");
+    console.log(30 > 20  &&  20 > 10);
+
+
+</script>
+</body>
+</html>

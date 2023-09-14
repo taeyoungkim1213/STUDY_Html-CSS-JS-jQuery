@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            width: 400px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 0 0 1px rgba(155,155,155,0.3);
+        }
+        input[name="rd"] { display: none;}
+        label {
+            display: block;
+            /* width: 100%; */
+            height: 100%;
+            background: linear-gradient(to bottom, #fff, #eaeaea);
+            color: #777;
+            padding: 5px 20px;
+            font-size: 20px;
+
+            box-shadow:  0 0 0 1px rgba(155,155,155,0.3);
+        }
+        label:hover {
+            cursor: pointer;
+            background: #fff;
+        }
+
+
+        .txt_box {
+            height: 0;
+            overflow: hidden;
+
+            transition: all 0.5s;
+        }
+        .txt_box p {
+            padding: 20px;
+            margin: 0;
+
+            font-style: italic;
+            font-size: 14px;
+            color: #777;
+        }
+
+        
+        input[name="rd"]:checked ~ label {
+            background: #c6e1ec;;
+        }
+        input[name="rd"]:checked ~ .txt_box {
+            height: 150px;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <div>
+        <input type="radio" name="rd" id="rd1">
+        <label for="rd1">About us</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+    
+    <div>
+        <input type="radio" name="rd" id="rd2">
+        <label for="rd2">How we work</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolor harum nisi, et consequuntur exercitationem, </p>
+        </div>
+    </div>
+
+    <div>
+        <input type="radio" name="rd" id="rd3">
+        <label for="rd3">Reference</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolor harum nisi, et consequuntur exercitationem, quibusdam in iure nulla eligendi possimus, minus sed perferendis </p>
+        </div>
+    </div>
+
+    <div>
+        <input type="radio" name="rd" id="rd4">
+        <label for="rd4">Contact us</label>
+        <div class="txt_box">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Non dolor harum nisi, et consequuntur exercitationem, quibusdam in iure nulla eligendi possimus, minus sed perferendis tenetur iste. Veniam ut exercitationem ducimus!</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

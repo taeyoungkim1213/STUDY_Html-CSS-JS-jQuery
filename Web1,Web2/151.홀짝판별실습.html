@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            1. 숫자하나 받고 홀수 인지 짝수 인지 판별
+
+            2. 숫자 두개 입력받고 그합이 홀수 인지 짝수 인지 판별
+        */
+       
+         //1.
+
+        let num = +prompt("숫자 입력");
+
+        if(num % 2 == 1){
+            console.log("입력 받은" + num +"은 홀수 입니다.")
+        }
+        else if(num % 2 == 0){
+            console.log("입력 받은" + num +"은 짝수 입니다.")
+        }
+        else{
+            console.log("숫자만 입력하시오.")
+        }
+
+        //2.
+
+        let num1 = +prompt("첫번째 숫자");
+        let num2 = +prompt("두번째 숫자");
+        let hap = num1 + num2;
+
+        if(hap % 2 == 1){
+            console.log("입력 받은수는" +num1+"이랑" + num2+"이고 둘의 합은" + hap +" 홀수 입니다.")
+        }
+        else if(hap % 2 == 0){
+            console.log("입력 받은수는"+num1+"와(과\""+num2+"\"이고 둘의 합은" + hap +" 짝수 입니다.")
+        }
+        else{
+            console.log("숫자만 입력하시오.")
+        }
+        
+
+    </script>
+</body>
+</html>

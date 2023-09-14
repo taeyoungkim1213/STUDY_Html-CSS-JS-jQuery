@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 
+        *폰트 저작권 조심한것
+        *폰트가 지원하는 언어도 확인
+
+        - 내폰트: 서비스가 올라가 있는 서버에 업로드 해놓은 폰트
+                사용자의 기기에 폰트 존재여부와 상관 없이 서버에서 폰트 파일을 (임시로)다운로드해서 화면에 나타나도록 하는 방식
+
+        - 필수
+            @font-face : 내가 사용할 웹 폰트명을 지정하고,
+                         해당 웹폰트의 파일을 연결한다.
+
+    */  
+        @font-face {
+            font-family: 'trana';
+            src: local('fonts/trana'),
+                url('fonts/trana.eot?#iefix') format('embedded-opentype'),
+                url('fonts/trana.ttf') format('truetype'),
+                url('fonts/trana.woff') format('woff');
+
+            /*
+                - 파일 확장자
+                    - eot: 익스플로러 옛날버전 (6~8)
+                    - ttf: 크롬, 파폭, 사파리, 엣지
+                    - woff: 익스(9~)
+                            ttf를 압축한거라서 파일 크기가 작다. 
+                            그래서 다른 서체보다 빠르게 다운로드 되고 적용된다.
+                            다만 안드로이드 에서 지원하지 않는 버전도 있다.
+
+                    format: 브라우저에 맞는 폰트만 골라서 다운
+
+                        
+            */
+
+        }
+        .p1 {
+            font-family: 'trana';
+ 
+        }
+
+        @font-face {
+            font-family: 'BMEuljirooraeorae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/BMEuljirooraeorae.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url('fonts/Noto_Sans_KR/NotoSansKR-Regular.otf') ;
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url('fonts/Noto_Sans_KR/NotoSansKR-Bold.otf');
+            font-weight: 900;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'NotoSansKR';
+            src: url('fonts/Noto_Sans_KR/NotoSansKR-Bold.otf');
+            font-weight: 900;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'MoiraiOne';
+            src: url('fonts/MoiraiOne-Regular.ttf') format('truetype');
+            font-weight: 900;
+            font-style: normal;
+        }
+
+        .p1 {
+            font-family: 'NotoSansKR';
+        }
+        .p2 {
+            font-family: 'NotoSansKR';
+            font-weight: 900;
+        }
+        .p3 {
+            font-family: 'MoiraiOne';
+        }
+    </style>
+</head>
+<body>
+    <p class="p1">비트스터디bitstudy</p>
+    <p class="p2">비트스터디bitstudy</p>
+    <p class="p3">비트스터디bitstudy</p>
+</body>
+</html>

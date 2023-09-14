@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    매개변수
+*/
+    
+    let returnn = tmp(10, 20, "안녕하쇼");
+                // [10, 20, '안녕하쇼']
+
+    console.log( returnn[0], returnn[1], returnn[2] )
+
+    for(let i=0; i<returnn.length; i++) {
+        console.log(returnn[i])
+    }
+
+
+    function tmp(num1, num2, txt) { 
+
+        console.log(num1, num2, txt)
+
+        let arr = [num1, num2, txt];
+
+        return arr;
+
+    }
+
+
+
+</script>
+</body>
+</html>

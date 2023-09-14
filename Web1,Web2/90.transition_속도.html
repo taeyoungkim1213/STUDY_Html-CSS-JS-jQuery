@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrap {
+            height: 500px;
+            border: 10px solid red;
+        }
+        .box {
+            width: 100px;
+            height: 50px;
+            background-color: blue;
+            float: left;
+            margin: 0 5px;
+
+            text-align: center;
+            color: #fff;
+            font-size: 18px;
+        }
+        .wrap:hover .box {
+            height: 500px;
+        }
+        .ease { transition: all 0.5s ease;}
+        .ease-in { transition: all 0.5s ease-in;}
+        .ease-out { transition: all 0.5s ease-out;}
+        .ease-in-out { transition: all 0.5s ease-in-out;}
+        .linear { transition: all 0.5s linear;}
+    /* 
+        
+        ease: 기본값,
+              천천히, 빠르게, 천천히
+        ease-in: 느리게, 빠르게
+        ease-out: 빠르게, 느리게
+        ease-in-out: 느리게, 빠르게, 느리게
+        **linear: 처음부터 끝까지 일정한 속도로 움직임
+    */
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="box ease">ease</div>
+        <div class="box ease-in">ease-in</div>
+        <div class="box ease-out">ease-out</div>
+        <div class="box ease-in-out">ease-in-out</div>
+        <div class="box linear">linear</div>
+    </div>
+</body>
+</html>

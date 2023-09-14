@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #wrap {
+            display: flex;
+            gap: 10px;
+        }
+        label {
+            display: flex;
+        }
+        .outer {
+            width: 20px;
+            height: 20px;
+            border-radius: 20%;
+            border: 1px solid ;
+        }
+        .inner {
+            width: 10px;
+            height: 10px;
+            border-radius: 20%;
+            margin: 5px;
+            /* background: red; */
+        }
+        input[name="rd"] { display: none;}
+        
+        /* 글씨영역(라벨) 누르면 radio 버튼 체크되고,
+            radio 버튼 체크되면 그 바로 밑에 있는 outer에 빨간테두리 적용
+            radio 버튼 체크되면 그 바로 밑에 있는 outer의 자식인 inner 한테 배경색 빨강 주기
+        */
+        
+        input[name="rd"]:checked + .outer { 
+            border-color: red; 
+        }
+
+        input[name="rd"]:checked + .outer > .inner { 
+            background-color: red;
+        }
+
+        .circle {
+            width: 20px;
+            height: 20px;
+            border: 1px solid;
+            border-radius: 50%;
+
+            margin: 20px;
+            position: relative;
+        }
+        .v_box {
+            width: 7px;
+            height: 11px;
+            /* background: red; */
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+            transform: rotate(45deg);
+
+            /* margin: 2.5px 5px; */
+
+            position: absolute;
+            top: 3px;
+            left: calc((50% - (7px / 2)));
+        }
+
+        /* 아이디가 cb인거 체크되면, 그 아래있는 .circle 배경색을 녹색으로,
+           아이디가 cb인거 체크되면, 그 아래있는 .circle 자식 v_box 테두리를 흰색으로 변경
+        */
+        #cb:checked + .circle { background: green; border-color: green;}
+        #cb:checked + .circle > .v_box { border-color: #fff;}
+
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="cb">
+    <label for="cb" class="circle">
+        <div class="v_box"></div>
+    </label>
+    
+
+    <div id="wrap">
+        <label for="rd1">
+            <input type="radio" id="rd1" name="rd" checked>
+            <div class="outer">
+                <div class="inner"></div>
+            </div>
+            <span>최근만화</span>
+        </label>
+        
+        <label for="rd2">
+            <input type="radio" id="rd2" name="rd">
+            <div class="outer">
+                <div class="inner"></div>
+            </div>
+            <span>인기만화</span>
+        </label>
+    </div>
+</body>
+</html>

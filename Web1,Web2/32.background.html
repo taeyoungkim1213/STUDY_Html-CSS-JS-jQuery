@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+
+    /* 
+        배경: background
+
+        *1) background-color: 배경색
+        *2) background-image: 배경 이미지
+                            url(경로)
+                            *img 태그와의 차이점: 해당요소 영역 만큼만 이미지가 그려진다.
+                                                요소보다 원본 이미지 크기가 작으면 반복해서 그린다
+                            *배경이미지는 물리적인 px이 없기때문에 해당 요소 자체가 사이즈를 가지고 있어야 한다.
+        *3) background-repeat: 배경이미지의 반복여부
+                            repeat: 기본값, 반복
+                            repeat-x: 가로축만 반복
+                            repeat-y: 세로축만 반복
+                            **no-repeat: 반복 안함
+        4) background-attachment: 배경 이미지를 특정 위치에 고정
+                                 fixed - 브라우저 왼쪽 상단 기준으로 위치를 고정
+        5) background-position: 배경 이미지 위치
+                                top, left, right, bottom, center
+                                px, % (x축,y축 다 값을 준다.)
+        *6) background-size: 배경 이미지의 크기 결정
+                            cover: 해당 요소에 빈틈이 없도록 이미지를 키운다
+                            contain: 해당 요소에 빈틈이 생기더라도 원본 이미지를 다 보여준다.
+
+        *한방
+            background: color image repeat attachment position size
+            *한방에 size를 적용하고 싶으면 무조건 앞에 'position /' (귀찮으면 background-size 별도로 쓰자)
+    */
+        .box {
+            width: 400px;
+            height: 600px;
+            border: 10px solid red;
+            margin: 0 auto;
+
+            background-color: #ddd;
+            background-image: url(./img/1.jpg);
+            background-repeat: no-repeat;
+            background-position: right top;
+            background-size: cover;
+        }
+        .box2 {
+            width: 100%;
+            height: 100vh;
+
+            /* background-image: url(./img/패럴렉스/img_parallax.jpg);
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center; */
+
+            background: url(./img/패럴렉스/img_parallax.jpg) no-repeat center / cover; 
+            background-size: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- background-attachment 설명용 -->
+    <div class="box2"></div>
+
+
+    <div class="box">
+
+        <h1>글씨</h1>
+
+    </div>
+    <img src="./img/1.jpg" alt="">
+</body>
+</html>

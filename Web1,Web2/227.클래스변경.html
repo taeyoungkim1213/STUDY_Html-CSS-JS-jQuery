@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+        }
+        .red { background: red;}
+        .green { background: green;}
+        .blue { background: blue;}
+    </style>
+</head>
+<body>
+    <input type="button" value="빨" id="btn_red">
+    <input type="button" value="초" id="btn_green">
+    <input type="button" value="파" id="btn_blue">
+
+    <div id="box"></div>
+<script>
+$(document).ready(function() {
+/*
+    클래스 추가,삭제
+        1) 추가 - $('선택자').addClass('클래스명')
+        2) 삭제
+*/
+    $('#btn_red').click(function(){ 
+        $('#box').removeClass();
+        $('#box').addClass('red');
+    })
+    $('#btn_green').click(function(){ 
+        $('#box').removeClass();
+        $('#box').addClass('green');
+    })
+    $('#btn_blue').click(function(){ 
+        $('#box').removeClass();
+        $('#box').addClass('blue');
+    })
+})
+</script>
+</body>
+</html>

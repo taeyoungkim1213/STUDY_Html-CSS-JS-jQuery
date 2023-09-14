@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+
+
+            animation-name: move;
+            animation-duration: 3s;
+            /* animation-delay: 5s; */
+            animation-iteration-count: infinite ; 
+        } 
+        @keyframes move {
+            /* animation-delay는 최초에 한번만 적용되는 딜레이이기 때문에, 매 턴마다 딜레이를 적용하려면
+                그냥 키프레임 안에서 %로 조정해야함 
+                아래꺼 보면 0% 부터 50% 까지는 움직이지 않게하고 50~100% 사이에만 움직이게 했다.
+                그러면 duration 시간대중에 매 턴마다 절반의 시간동안은 움직이지 않는다.(딜레이)
+                */
+
+            0% { transform: translateX(0)} 
+            50% { transform: translateX(0)} 
+            100% { transform: translateX(100px);} 
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+/*
+    - 변수
+        -가상의 공간에 박스를 만들고 이름표 붙인다.
+        -(변수명)쌍따옴표로 감싸져 있지 않으면서 문자형태인것
+        -사용할때는 이름으로 해당 박스를 불러서 그 안에 있는 값을 가져온다(복사해온다).
+        -기본으로는 값을 가지고 있지 않다.(안에 있는 자료형을 따라간다.)
+        
+    - 변수 종류
+        1) 지역변수: 스코프({}괄호) 안에서만 사용 가능한 변수
+        2) 전역변수: 전체 지역에서 사용 가능한 변수
+
+    - 변수 생성 규칙
+        키워드 변수명;
+        키워드 변수명 = 초기값;
+            
+        
+        1) 키워드: 가상의 공간에 박스를 만듬
+            var: 스코프[] 안에서 생성되도 밖에서 사용 가능
+                 전역변수
+                 재사용 가능
+            let: 스코프[] 안에서 생성되면 밖에서 사용 못함
+                 지역변수
+                 재사용 가능
+            const: 재사용(덮어쓰기)금지
+                    상수(한번 정의되면 값을 바꿀수 없다.)
+
+        2) 변수명: 변수명 중복 금지
+                  첫번째 글자는 영문, $, _ 로만 시작 가능함
+                  예약어 사용금지(this)
+                  공백 불가
+                    ex) let bitstudy (O)
+                        let bit study(X) => let bit_study
+                                            let bitStudy
+                  대소문자 구분
+                    ex) let tmp;
+                        let Tmp;
+                        let tMp;
+                        let tmP;
+                        let TMp;
+*/
+    if(1==1) { // 스코프 시작
+        var num = 10;
+        // let num = 10;
+    } // 스코프 끝
+    console.log(num);
+
+    let tmp; // 자료형 undefined
+    let tmp2="abc";
+
+    console.log(tmp2); 
+
+    tmp2=123; // tmp2 변수 재사용
+    console.log(num);
+    console.log(tmp2); 
+
+    
+    if(1==1) {
+        console.log(tmp2);
+    }
+
+    const NUMNUM = 10;
+    console.log("NUMNUM: " + NUMNUM); 
+
+    // const 는 재사용 안됨. 아래 코드 살리면 에러난다.
+    // NUMNUM = 20; 
+    // console.log("NUMNUM2: " + NUMNUM); 
+</script>
+</body>
+</html>

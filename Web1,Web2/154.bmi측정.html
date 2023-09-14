@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            bmi 계산법 : 몸무게 / 키*키 
+            고도비만 40이상
+            중증도비만 35~40 미만
+            경도비만 30~ 35
+            과제충 25 ~ 30
+            정상 18.5 ~ 25
+            저체중 0 ~ 18.5
+        */
+       let name = prompt("이름");
+       let weight = +prompt("몸무게");
+       let tall = +prompt("키 소숫점으로 입력"); i
+       let bmi =  (weight / (tall * tall)).toFixed(2);
+
+       if(bmi >= 40){
+          result = "고도비만";
+       }
+       else if(bmi >= 40){
+            result = "중증도비만";
+       }
+       else if(30<= bmi && bmi < 35){
+            result = "경도비만";
+       }
+       else if(25<= bmi && bmi < 30){
+            result = "과제충";
+       }
+       else if(18.5<= bmi && bmi < 25){
+            result = "정상";
+       }
+       else if(0<= bmi && bmi < 18.5){
+            result = "저체중";
+       }
+       console.log(name + "님의 bmi지수는"+ bmi + result +"입니다.");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            box-sizing: border-box;
+            /* background: aqua !important; */
+        }
+    </style>
+</head>
+<body>
+
+    <div class="box" id="box1" style="background-color: red;"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <script>
+         /*
+            -요소잡기 : (자바스크립트에서 제일 중요)
+                        스크립트 구문 하나당 요소 하나씩만 건드릴 수 있음.
+                        클래스, 태그는 배열의 형태로 잡는다.(하나만 있어도 배열 형태로 받아온다)
+                        *css 적용시 인라인 방식으로 적용된다.
+                        id로 잡던, class로 잡던 , 태그명으로 잡던 우선순위 이제 없음 코드상 나중에 써진게 이김.
+                        스크립트에서 두번째 단어부터 첫글자는 대문자로
+                                ex)backgroundColor
+                                    marginTop
+                1. document.getElementById - '아이디값'
+                2. document.getElementsByClassName - '클래그값'[방번호]
+                3. document.getElementsByTagName - ('태그명')[방번호]
+                --------------------------------------------------------------------
+                4. document.querySelector - 특정 요소들 중에서 맨 첫번째꺼만 잡는다.
+                                            방번호 x
+                                            getElementById 같은거
+                                            선택자 부분에 #이나  . 으로 아이디인지 클래스인지 명시
+                                            
+                5. document.querySelectorAll -  배열 형태로 요소들을 잡는다.
+                                                *방번호 필수
+                                                getElementsByClassName 같은거
+                                                선택자 부분에 #이나  . 으로 아이디인지 클래스인지 명시
+        */      
+
+
+
+        //현재 문서 안에. 요소들 중에 id가 box인 요소를 잡기
+        //그 안의 style 속성 잡아서 그안에 background 에 blue 라는 값 넣기
+        document.getElementById("box1").style.background = "blue";
+
+        //문서안에 > 클래스가 box 인 요소들 중에 X번째꺼 하나 잡기
+        // document.getElementsByClassName("box")[0].style.background = "red";
+        // document.getElementsByTagName("div")[0].style.background = "green";
+        
+
+        document.querySelector('.box').style.background = "red";
+        document.querySelectorAll('.#box1')[0].style.background = "blue";
+
+
+       
+    </script>
+</body>
+</html>

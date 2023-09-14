@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            콜백 함수 - 익명함수로 만들기
+                        콜,백
+                        함수에서 함수 콜
+
+            *함수를 부르는 곳에서는 선언적 함수를 보낼수 없어서 무조건 익명함수를 사용해야한다.
+        */
+       let aa = function(){
+            console.log("aa")
+       }
+       let bb = function(){
+            console.log("bb")
+       }
+
+       tmp("여기",aa,bb )
+
+       function tmp(txt, func_a, func_b){
+            if(txt == "여기"){
+                func_a();
+            }
+            else{
+                func_b();
+            }
+       }
+
+       
+    </script>
+</body>
+</html>

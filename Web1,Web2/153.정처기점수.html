@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = "홍길동"
+        let kor = +prompt("국어점수");
+        let math = +prompt("수학점수");
+        let eng = +prompt("영어점수");
+        let total = kor + math + eng;
+        let avg = (total/3).toFixed(1);
+
+        //평균 60점 미만일 경우 ,//     60점 이상일때 과목 중 하나라도 40미만 
+       if(avg >=60){
+
+            if(kor < 40){
+                document.write("총점은" + total + "평균은" +avg+"결과는<br>과락");
+            }
+            else if(math < 40){
+               document.write("총점은" + total + "평균은" +avg+"결과는<br>과락");
+            }
+            else if(eng < 40){
+                document.write("총점은" + total + "평균은" +avg+"결과는<br>과락");
+            }
+            else{
+               document.write("총점은" + total + "평균은" +avg+"결과는<br>합격");
+            }
+        }
+
+        else{
+           document.write("총점은" + total + "평균은" +avg+"결과는<br>과락");
+            
+        }
+        
+        
+    </script>
+</body>
+</html>

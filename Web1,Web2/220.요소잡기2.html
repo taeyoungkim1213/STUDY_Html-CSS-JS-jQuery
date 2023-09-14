@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+
+    <div class="box" id="box0">box0</div>
+    <div class="box" id="box1">box1</div>
+
+    <ul class="ul">
+        <li class="ttt">menu1</li>
+        <li>menu2
+            <ul class="inner_ul">
+                <li class="tmp_child">menu1</li>
+                <li class="tmp_child ">menu2</li>
+            </ul>
+        </li>
+    </ul>
+    
+    <div class="box" id="box2">box2</div>
+
+<script>
+/*
+    - 위 아래 요소 관련
+        prev() : 바로 위 요소
+        prevAll(): 위에 있는 모든 요소들
+        prevAll('선택자'): 위에 있는 모든 요소들중에 선택자인거
+        prevAll('선택자','선택자',...): 여러개 잡을때
+
+        next() : 바로 위 요소
+        nextAll(): 위에 있는 모든 요소들
+        nextAll('선택자'): 위에 있는 모든 요소들중에 선택자인거
+        nextAll('선택자','선택자',...): 여러개 잡을때
+
+
+    - 요소 자체의 인덱스번호 또는 순서
+        * 선택자.index(): 몇번쨰 요소인지(순서)
+        * 선택자.eq(): 배열
+                    자바스크립트에서는 document.getElementsByClassName('선택자')[방번호] 였고
+                    제이쿼리에서는 $('선택자').eq(방번호)
+
+    - 부모 자식 자손
+        parent(): 부모
+        parents(): 조상들 전부
+        parents('선택자'): 조상들 중에 선택자와 매칭되는것
+
+        children(): 자식들
+        children('선택자'): 자식들 중에서 선택자인거
+
+        find('선택자'): 자손들중에 선택자와 매칭되는거
+
+    - 자기 자신
+        **this: 선택자로 선택되면 자기 자신을 의미
+                $(this)
+
+*/
+    $(document).ready(function() {
+        $('.box').prevAll('#box1, #box0').css({
+            // background: 'red'
+        })
+        $('#box0').nextAll('#box1, #box2').css({
+            background: 'blue'
+        })
+
+        console.log($('.box').index())
+
+        $('.box').eq(1).css({
+            color: 'red'
+        })
+
+        // $('.tmp_child').eq(0).parent().parent().css({
+        //     background: 'yellow'
+        // })
+        $('.tmp_child').eq(0).parents().css({
+            background: 'yellow'
+        })
+
+        $('.ul').find('.tmp_child').css({
+            background: 'hotpink'
+        })
+    })
+</script>
+<style>
+    #box0 + #box1 {
+
+    }
+</style>
+</body>
+</html>

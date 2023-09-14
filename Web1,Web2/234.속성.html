@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jq-1.12.4.js"></script>
+
+</head>
+<body>
+    <img src="./img/1.jpg" alt="">
+    <div class="box" id="box1"></div>
+
+    <script>
+        $(document).ready(function() {
+        /*
+            1. attr: HTML의 속성을 취급
+                    $('선택자').attr('속성명') => 속성값 가져오기
+                    $('선택자').attr('속성명', '값') => 값 넣기
+
+            2. prop: 자바스크립트의 속성을 취급  //prop 사용 추천
+        */
+            console.log( $('img').attr('src') )
+            console.log( $('img').prop('src') )
+
+            // $('img').attr('src', './img/girl.jpg')
+            $('img').prop('src', './img/girl.jpg')
+        })
+    </script>
+</body>
+</html>

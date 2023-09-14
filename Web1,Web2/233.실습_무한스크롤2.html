@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .header {
+            width: 100%;
+            /* height: 100px; */
+            
+        }
+        .h_top { 
+            height: 100px;
+            background-color: orangered;
+        }
+        .h_bot { 
+            width: 100%;
+            height: 70px;
+            background-color:yellowgreen;
+
+            opacity: 0.5;
+        }
+        
+        /* h_bot fixed 를 제이쿼리에서 addClass removeClass로 번갈아 가면서 사용할 용도 */
+        .nav_active { 
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 99999;
+        }
+        .main_active { margin-top: 70px;}
+        /* 여기까지 */
+
+        .main_banner {
+            height: 500px;
+            background: bisque;
+        }
+        .sec {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            min-height: calc(100vh - 70px);
+            background: skyblue;
+
+            position: relative;
+        }
+        .txt_h1 {
+            width: 100%;
+            margin: 0;
+            background: red;
+            font-size: 100px;
+            text-align: center;
+            opacity: 0;
+
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+
+            transition: all 0.5s;
+
+        }
+        .sec2 {
+            background: #9fb9ff;
+        }
+        .box {
+            width: 300px;
+            height: 300px;
+            background: blue;
+
+            position: absolute;
+            top: 50%;
+            right: -100%;
+            transform: translate(0%, -50%);
+
+            transition: all 0.5s;
+            /* transition: all 0.5s, background 0.5s 0.5s; */
+        }
+
+        .sec3 {
+            display: flex;
+            flex-wrap: wrap;
+            align-content: flex-start;
+        }
+        .item {
+            width: calc(100% / 3);
+            height: 300px;
+            border: 1px solid #000;
+            box-sizing: border-box;
+
+            font-size: 150px;
+            font-weight: 900;
+            text-align: center;
+            color: #fff;
+        }
+
+        .footer {
+            height: 400px;
+            background-color: #000;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+<div id="wrap">
+    <header class="header">
+        <div class="h_top"></div>
+        <div class="h_bot"></div>
+    </header>
+    <main class="container">
+        <div class="main_banner"></div>
+
+        <section class="sec sec1">
+            <h1 class="txt_h1">안녕하세유</h1>
+        </section>
+
+        <section class="sec sec2">
+            <div class="box"></div>
+        </section>
+
+        <section class="sec sec3">
+            <!-- <div class="item">0</div>
+            <div class="item">0</div>
+            <div class="item">0</div> -->
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</div>
+<script>
+$(document).ready(function() {
+/*
+    1) 스크롤이 h_bot의 상단부분 보다 내려가면 화면 맨 위에 끌고 다니기
+        1. h_bot의 위치값 => $('.h_bot').offset().top
+        2. scroll 이벤트 안에서 s_top 구하기
+        3. 1번꺼 2번꺼 값 비교 - s_top >= h_bot 면 끌고다니기
+                              - 아니면 원래자리에 놓고 가기
+*/
+    let h_bot_o_top = $('.h_bot').offset().top;
+    let h_bot_h = $('.h_bot').height(); // h_bot 이 fixed로 뜰때 main이 튕기듯이 올라가니까 main한테 위 여백으로 줄 값
+        
+    $(window).scroll(function(){
+        let s_top = $(window).scrollTop();
+
+        // 스크롤이 h_bot 원래위치보다 클래(아래 있을때) - 끌고 다니기
+        if(s_top >= h_bot_o_top) {
+            // 방법1 - h_bot 에 직접 css로 fixed 주기
+            // $('.h_bot').css({
+            //     position: 'fixed',
+            //     left: 0,
+            //     top: 0,
+            //     zIndex: 999999
+            // })
+            // $('.container').css({
+            //     'margin-top': h_bot_h
+            // })
+
+            // 방법2 - nav_active 클래스 삽입 삭제
+            $('.h_bot').addClass('nav_active');
+            $('.container').addClass('main_active');
+        }
+        else {
+            // $('.h_bot').css({
+            //     position: 'static', 
+            // })
+            // $('.container').css({
+            //     'margin-top': 0
+            // })
+            $('.h_bot').removeClass('nav_active');
+            $('.container').removeClass('main_active');
+        }
+
+    });
+
+/*
+    2) 스크롤이 sec1 에 들어가면 '안녕하세요' 위로 올리기
+        1. sec1_o_top 구하기
+        2. 스크롤 이벤트 안에서 s_top 구하기
+        3. s_top >= sec1_o_top 면 화면이 sec1에 들어갔다는 뜻
+            - 안녕하세요 위로 위치 이동
+*/
+
+    let sec1_o_top = $('.sec1').offset().top;
+    $(window).scroll(function(){
+        let s_top = $(window).scrollTop();
+
+        if(sec1_o_top <= s_top + h_bot_h) {
+            $('.txt_h1').css({
+                top: "40%",
+                opacity: 1
+            })
+        }
+        else {
+            $('.txt_h1').css({
+                top: "50%",
+                opacity: 0
+            })
+        }
+    });
+
+/*
+    3) 스크롤이 sec2 에 들어가면 밖에 있는 파란박스 가운데로 가져오고, 색 변경
+        1. sec2_o_top 구하기
+        2. 스크롤 이벤트 안에서 s_top 구하기
+        3. s_top >= sec2_o_top 면 화면이 sec2에 들어갔다는 뜻
+            - 바깥에 있는 box 가운데로 가져오기
+            - 색 변경
+*/
+    let sec2_o_top = $('.sec2').offset().top;
+    $(window).scroll(function(){
+        let s_top = $(window).scrollTop();
+
+        if(sec2_o_top <= s_top + h_bot_h) {
+            $('.box').css({
+                right: '50%',
+                transform: 'translate(50%, -50%)',
+                // background: 'red'
+            })
+
+            setTimeout(function(){
+                $('.box').css({
+                    background: 'red'
+                })
+            }, 500);
+        }
+        else {
+            $('.box').css({
+                right: '-100%',
+                transform: 'translate(0%, -50%)',
+                // background: 'blue'
+            })
+
+            setTimeout(function(){
+                $('.box').css({
+                    background: 'blue'
+                })
+            }, 500);
+        }
+    });
+/*
+    4) 스크롤이 푸터 보기 직전상황까지 가면 무한스크롤 (5번까지만)
+        1. d_height(문서), f_height(푸터)
+        2. s_bot 구하기 => 스크롤 이벤트 안에서 s_top , window 창 높이
+        3. d_height <= s_bot 면 화면이 푸터 바로 위에 닿았다는 뜻
+
+*/
+
+    let d_height = $(document).height();
+    let f_height = $('.footer').height();
+    let count = 0;
+    $(window).scroll(function(){
+        let s_top = $(window).scrollTop();
+        let w_height = $(window).innerHeight();
+        let s_bot = s_top + w_height
+
+        if(count < 5 && d_height - f_height <= s_bot) {
+            init(6);
+            d_height = $(document).height(); // init 으로 넣고 바뀐 문서 높이 새로 구하기
+            count+=1;
+        } 
+    });
+
+
+    /********************************************/
+    let idx = 0;
+    function init(qty) { // 인자 qty 받아서 몇개 찍어줄지 결정
+        let item = `<div class="item">${idx++}</div>`;
+        for(let i=0; i<qty; i++) {
+            $('.sec3').append(item)
+        }
+    }
+    init(9);
+    /********************************************/
+
+    
+})
+</script>
+</body>
+</html>

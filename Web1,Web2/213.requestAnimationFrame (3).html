@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    requestAnimationFrame
+        setInterval 과 비슷하지만
+        setInterval은 화면을 보고있지 않는 경우에도 계속 돌고
+        requestAnimationFrame은 해당 브라우저를 보고있지 않을때는 멈춰있다. (뒤에서 동작하고 있지 않기 때문에 리소스를 적게 씀)
+        1초 60번 동작하는것을 목표로 함.
+        아직 웹표준이 정해지지 않은 상태.
+
+    cancelAnimationFrame(rfa이름)
+*/
+    let count = 0;
+    let index = 0;
+    let interval;
+
+    function tmp() { 
+
+        if(index % (60 * 2/*초*/) == 0) {
+            console.log(index);
+        }
+        index++;
+        interval = window.requestAnimationFrame(tmp)
+    }
+    tmp();
+
+    setTimeout(function(){
+        cancelAnimationFrame(interval)
+    }, 1000)
+ 
+</script>
+</body>
+</html>

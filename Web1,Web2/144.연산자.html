@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    1) 사칙연산: + - * / 
+                %(나머지, 반복되는 수를 뽑을때 사용)
+*/
+    console.log("== 사칙연산 =="); 
+    console.log(0%3);
+    console.log(1%3);
+    console.log(2%3);
+    console.log(3%3);
+    console.log(4%3);
+    console.log(5%3); 
+
+    /*
+    2) 비교(일치)연산: 1대1 비교만 가능 
+                      < > <= >=
+                      ==, !=
+                      ===, !==
+
+                      A == B : A랑 B랑 같다 
+                               모양만 비교
+                      A === B : A랑 B랑 같다 
+                                모양과 자료형 비교
+
+*/
+    console.log("== 비교(일치)연산 =="); 
+    console.log("100" == 100); // true
+    console.log("100" != 100); // false
+    console.log("100" === 100); // false
+    console.log("100" !== 100); // ture
+
+
+/*
+    3) 논리연산: &&(and) - 앞뒤 다 true 일때만 true
+                ||(or) - 앞뒤 중 하나라도 true 면 true
+                *1대1 비교
+
+            A && B: A와 B가 다 참일때만 결과가 참
+                    T && T => T
+                    F && T => F
+                    T && F => F
+                    F && F => F
+ 
+            A || B: A 또는 B가 참이면 결과가 참
+                    T || T => T
+                    F || T => T
+                    T || F => T
+                    F || F => F
+*/
+    console.log("== 논리연산 =="); 
+    console.log(100 > 10);
+    console.log(100 > "10"); // js 에서는 자료형이 달라도 어느정도는 알아서 변환해서 결과를 출력
+    console.log(100 > "ㅁ"); // 이런건 하지 말자
+ 
+    
+/*
+    4) 복합대입연산자: +=, -=, *=, /=, %=
+*/
+    console.log("== 복합대입연산자 =="); 
+    let num = 10;
+    console.log(num);
+
+    // num = num+5;
+    num += 5;
+    console.log(num) ;
+
+/*
+    5) 증감연산자: ++ (더하기 1)
+                  -- (빼기 1)
+
+                    변수++: 할거 다 하고 더하기
+                    ++변수: 하기 전에 더하기
+                    
+                    변수--: 할거 다 하고 빼기
+                    --변수: 하기 전에 빼기
+*/
+
+    let num2 = 10;
+    console.log("== 증감연산자 =="); 
+    
+    // num2 = num2 + 1;
+    // num2++; 
+    // console.log(num2) ;
+
+    console.log(num2); //10
+    console.log(num2++);//10
+    console.log(++num2); //12
+</script>
+</body>
+</html>

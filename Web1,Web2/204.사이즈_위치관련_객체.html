@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        #box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            font-size: 100px;
+            font-weight: 900;
+
+            margin: 100px 200px ;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">요소 위치</div>
+<script>
+/*
+    스크린, 브라우저 전체, 브라우저 사용 가능한 영역을 구한다.
+
+    - 사이즈
+        1) screen: 화면 전체의 크기
+                avail~: 작업표시줄을 제외한 실제 사용할 수 있는 영역
+        2) document.body.client~: 실제 body의 사이즈
+        3) window.inner~: 윈도우창 안쪽(실제 사용가능한 영역) 사이즈
+                            (개발자 도구 키면 그부분은 제외한 사이즈 확인-body 영역만)
+        4) window.outer~: 윈도우창 자체 경계 끝까지(개발자 도구 켜도 거기까지 다 사이즈 확인)
+    ------------------------------------------------------------------------------
+    - 위치 
+        1) window.screen~: 스크린 기준(왼쪽,위) 현재 윈도우창의 위치
+        *2) 요소.offsetTop: 문서 최상단 기준 현재 요소의 위치
+*/  
+
+    document.write("=== screen ==="+"<br>")
+    document.write(screen.width+"<br>")
+    document.write(screen.height+"<br>")
+    document.write(screen.availWidth+"<br>")
+    document.write(screen.availHeight+"<br>")
+    document.write(""+"<br><br>")
+    
+    document.write("=== body.client ==="+"<br>")
+    document.write(document.body.clientWidth+"<br>")
+    document.write(document.body.clientHeight+"<br>")
+    document.write(""+"<br><br>")
+    
+    document.write("=== window.inner ==="+"<br>")
+    document.write(window.innerWidth+"<br>")
+    document.write(window.innerHeight+"<br>")
+    document.write(""+"<br><br>")
+    document.write("=== window.outer ==="+"<br>")
+    document.write(window.outerWidth+"<br>")
+    document.write(window.outerHeight+"<br>")
+    document.write(""+"<br><br>")
+
+    document.write("=== 창 위치 ==="+"<br>")
+    document.write(window.screenLeft+"<br>")
+    document.write(window.screenTop+"<br>")
+
+    // document.write("=== 요소의 현재 위치 ==="+"<br>")
+    document.write(document.getElementById('box').offsetTop+"<br>")
+    document.write(document.getElementById('box').offsetLeft+"<br>")
+
+</script>
+</body>
+</html>

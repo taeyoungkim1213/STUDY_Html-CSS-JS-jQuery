@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text"><br>
+    <input type="button" value="reload" onclick="reload()">
+    <input type="button" value="href" onclick="href()">
+    <input type="button" value="replace" onclick="replace()">
+    <script>
+    /*
+        location 객체 - a태그처럼 링크를 거는 객체
+
+            1. location.reload() => 새로고침
+            2. location.href("경로");
+                => a태그와 동일
+                    히스토리가 남는다.
+            3. location.replace("경로");
+                =>히스토리가 안남는다.
+                    (해당 페이지로 돌아갈 수 없다.)
+
+                    
+            location.hostname => 웹 호스트의 도메인 네임
+            location.href => 현재 페이지 주소
+            location.pathname => 현재 페이지의 경로
+    */
+
+       function reload() { location.reload();}
+       function href() { location.href= "http://www.naver.com";}
+       function replace() { location.replace("http://www.naver.com");}
+
+    </script>
+</body>\
+</html>

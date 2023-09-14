@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .main_banner_box {
+            width: 600px;
+            height: 300px;
+            border: 5px solid #000;
+            margin: 0 auto;
+
+            position: relative;
+        }
+        .main_banner {
+            width: 100%;
+            height: 100%;
+
+            position: relative;
+        }
+        .banner {
+            width: 100%;
+            height: 100%;
+
+            position: absolute;
+            top: 0;
+            left: 100%;
+
+            opacity: 0.5;
+            font-size: 150px;
+            font-weight: 900;
+        }
+        .banner0 {
+            /* left: 0; */
+            background: red;
+        }
+        .banner1 {
+            background: green;
+        }
+        .banner2 {
+            background: blue;
+        }
+        .btn_slide {
+            position: absolute;
+            top: 0;
+
+            width: 100px;
+            height: 100px;
+        }
+        .btn_slide_L {
+            left: 0;
+        }
+        .btn_slide_R {
+            right: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_banner_box">
+        <div class="main_banner">
+            <div class="banner banner0">0</div>
+            <div class="banner banner1">1</div>
+            <div class="banner banner2">2</div>
+        </div>
+
+        <input type="button" value="오른쪽" class="btn_slide btn_slide_R">
+        <input type="button" value="왼쪽" class="btn_slide btn_slide_L">
+    </div>
+
+    
+<script>
+    $(document).ready(function() {
+        // css에서 banner0 한테 left:0 주던가 여기서 이거로 주던가
+        $('.banner').eq(0).css({left: 0});
+
+    /*
+        - 이미지 슬라이드 순서
+            1) 오른쪽 버튼 클릭감지 => click 이벤트
+            2) 나갈판 위치 0->-100% => curr_idx % 방개수
+               들어올판 위치 100% -> 0  => (curr_idx + 1) % 방개수
+                    animate 사용
+            3) 다음방 잡기 => curr_idx+1
+    */  
+
+        let curr_idx=0;
+        let bn_count = $('.banner').length;
+        let timer = 1000; // 모든 애니메이션에 적용될 시간
+        let interval;
+
+        $('.btn_slide_R').click(function(){
+            
+         
+             // 나갈방
+             $('.banner').eq(curr_idx % bn_count).animate({
+                left: '-100%'
+            }, timer)
+
+            // 들어올방
+            $('.banner').eq((curr_idx+1) % bn_count).css({
+                left: '100%'
+            }).animate({
+                left: 0
+            }, timer)
+
+            // curr_idx++;
+            curr_idx+=1;
+        
+            })
+
+        function auto_slide(){
+            interval = setInterval(function(){
+                $('.btn_slide_R').trigger('click')
+            },1000)
+        }
+        auto_slide()
+
+        $('.main_banner_box').hover(function(){
+            clearInterval(interval);
+            auto_slide()
+        })
+
+        
+        $('.btn_slide_L').click(function() {
+            
+        $('.banner').eq(curr_idx % bn_count ).animate({
+            left: '100%'
+        }, timer)
+
+        $('.banner').eq((curr_idx -1) % (bn_count)).css({
+            left : '-100%'
+        })
+        .animate({
+            left: '0%'
+        }, timer)
+
+        curr_idx = (curr_idx-1);
+
+        })
+    })
+</script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            마우스오버 : hover
+
+                    해당요소에 마우스가 올라가면 hover
+                    (부모 자손 관계 확실히 지켜야함)
+        */
+        .pink{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: relative;
+        }
+
+        .red{
+            width: 100px;
+            height: 100px;
+            background-color:red;
+            position: absolute;
+            top:   0;
+            right: 0;
+            display: none;
+        }
+
+        .blue{
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            bottom: 0;
+            display: none;
+        }
+        /* 클래스 pink에 hover(마우스올리면)하면 자손중에 클래스 blue인 요소를 선택 */
+        .pink:hover > .box {
+            display: block;
+            background: blue;
+            /* transition:all 0.5s; */
+
+        }
+
+    
+    </style>
+</head>
+<body>
+    <div class="pink">
+        <div class="box blue"></div>
+        <div class="box red"></div>
+    </div>
+</body>
+</html>

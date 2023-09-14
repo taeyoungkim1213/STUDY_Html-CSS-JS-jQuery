@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            overflow : 영역을 넘어가는 부분을 관리
+            visible : 기본값
+            **hidden : 넘치는 부분 다 숨김
+            scroll : 넘치던 말던 스크롤바 달아줌
+
+            auto : 
+        */
+        
+        /* body{ overflow-y: scroll;} */
+        div{
+            width: 300 ;
+            height: 100px;
+            background-color: pink;
+
+            margin-bottom: 50px;
+        }
+
+        .visible{ overflow: visible;}
+
+        .hidden{overflow: hidden;}
+
+        .scroll{overflow: scroll;}
+
+        .auto{overflow: auto;}
+    </style>
+</head>
+<body>
+    <div class="visible">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur enim unde recusandae neque alias, corrupti, consequuntur illum nulla ratione quam voluptatem natus saepe consequuntur illum nulla ratione quam voluptatem natus saepe asperiores debitis at expedita sit atque distinctio consequuntur illum nulla ratione quam voluptatem natus saepe!</div>
+
+    <div class="hidden">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur enim unde recusandae neque alias, corrupti, consequuntur illum nulla ratione quam consequuntur illum nulla ratione quam voluptatem natus saepe voluptatem natus saepe asperiores debitis at expedita sit atque distinctio consequuntur illum nulla ratione quam voluptatem natus saepe!</div>
+
+    <div class="scroll">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur enim unde recusandae neque alias, corrupti, consequuntur illum nulla ratione quam consequuntur illum nulla ratione quam voluptatem natus saepe voluptatem natus saepe asperiores debitis at expedita sit atque distinctio consequuntur illum nulla ratione quam voluptatem natus saepe!</div>
+
+    <div class="auto">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur enim unde recusandae neque alias, corrupti, consequuntur illum nulla ratione quam consequuntur illum nulla ratione quam voluptatem natus saepe voluptatem natus saepe asperiores debitis at expedita sit atque distinctio consequuntur illum nulla ratione quam voluptatem natus saepe!</div>
+</body>
+</html>

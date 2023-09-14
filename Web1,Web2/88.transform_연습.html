@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .outer {
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid;
+            transform: scale(1);
+        }
+        .red {
+            background-color: red; 
+        }
+        .outer:hover .red {
+            /* transform 속성의 순서에 따라서 같은 값을 주더라도 결과가 다르게 나온다.*/
+            /* transform: translate(100%,100%)  rotate(45deg); */
+            transform:  rotate(45deg) translate(100%,100%) ;
+
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box red"></div>
+    </div>
+</body>
+</html>

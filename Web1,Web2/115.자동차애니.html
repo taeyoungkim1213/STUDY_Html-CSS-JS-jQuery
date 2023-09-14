@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{overflow: hidden;}
+        .wrap{
+            width: 800px;
+            height: 500px;
+            /* background-color: pink; */
+            position: relative;
+            top: 0;
+            
+            animation: move 2s infinite;
+
+        }
+        .img{
+            width: 800px;
+            height: 470px;
+
+            background: url(./img/car.png) no-repeat center/contain;
+
+            position: absolute;
+            top: 0;
+        }
+        .tire1{
+            width: 120px;
+            height: 339px;
+            background: url(./img/tire.png) no-repeat center/contain;
+            position: absolute;
+            top: 150px;
+            left: 102px;
+
+            animation: tire 2s infinite;
+        }
+        .tire2{
+            width: 120px;
+            height: 339px;
+            background: url(./img/tire.png) no-repeat center/contain;
+            position: absolute;
+            top: 150px;
+            left: 605px;
+
+            animation: tire 2s infinite;
+        }
+        @keyframes move {
+            0%{left: 100%;}
+            100%{left:calc(50% - 400px);}
+
+        }
+        @keyframes tire{
+            0%{transform: rotate(0deg);}
+            100%{transform: rotate(-1080deg);}
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="img"></div>
+        <div class="tire1"></div>
+        <div class="tire2"></div>
+
+    </div>
+</body>
+</html>

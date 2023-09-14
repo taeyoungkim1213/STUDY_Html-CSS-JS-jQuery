@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            객체 - object
+                  *클래스 이용해서 만든거
+                  키(왼쪽):값(오른쪽) 으로 구성
+                  객체 안에는 변수,배열,함수,객체 등을 사용할 수 있다.
+                {} 괄호 사용.
+
+            let object = {
+                 key:"값"
+       }
+        */
+       let 우리반 = {
+        className:"디지털컨벌전스(A30)",
+        time : "09~18" ,
+        s_num : 26,
+
+        능력단위:['디자인UI','SQL응용','SQL활용'],
+
+        하는일:function(){
+            alert("공부(5%), 복습(3%), 유튜브(30%), 웹툰(30%), 잠(28%)");
+        }
+       }
+       console.log(우리반);
+
+       //객체 값 불러오기,함수 실행하기
+       console.log(우리반.className);
+       console.log(우리반.능력단위[1]);
+       우리반.하는일();
+       
+       //기존 객체에 삽입
+       우리반['branch'] = "강남";
+
+       console.log(우리반);
+    </script>
+</body>
+</html>

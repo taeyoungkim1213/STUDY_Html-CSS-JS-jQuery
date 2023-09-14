@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <!-- /* 구글폰트 */ -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap" rel="stylesheet">
+
+    <style>
+    /* 
+        - 웹폰트: 남의 서버에 있는 폰트를 끌어다 쓰는거(CDN 방식)
+                장점: 여러 폰트들을 사용할수 있다.
+                단점: 로딩이 느리다
+                      폰트를 가지고 있는 서버에 문제가 생기면 내 사이트에도 문제가 생김
+
+                    FOUT: 웹폰트가 로드 될때까지 기본폰트로 그려졌다가, 다 로드 되면 그때 폰트가 변환되면서 깜빡이는 현상
+                           (크롬, 사파리, 엣지)
+                    FOIT: 웹폰트가 로드 될때까지 안보여주다가, 다 로드 되면 그때 웹페이지를 로드
+    */
+
+
+
+        /* 구글폰트 */
+        /* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap'); */
+
+
+        /* 눈누 */
+        @font-face {
+            font-family: 'BMEuljirooraeorae';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2110@1.0/BMEuljirooraeorae.woff2') format('woff2');
+            font-weight: normal;
+            font-style: normal;
+        }
+
+        .p1 {
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .p2 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 100;
+        }
+        .p3 {
+            font-family: 'Noto Sans KR', sans-serif;
+            font-weight: 900;
+        }
+    </style>
+    
+</head>
+<body>
+    
+    
+    <p>비트스터디bitstudy</p>
+    <p class="p1">비트스터디bitstudy</p>
+    <p class="p2">비트스터디bitstudy</p>
+    <p class="p3">비트스터디bitstudy</p>
+</body>
+</html>

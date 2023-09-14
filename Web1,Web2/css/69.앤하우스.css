@@ -1,0 +1,154 @@
+body{margin: 0;}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.header{
+    width: 100%;
+    height: 136px;
+    /* background-color: pink; */
+}
+.header1{
+    width: 100%;
+    height: 106px;
+}
+.logo{
+    width: 390px;
+    height: 106px;
+    background: url(../img/ann_house/logo.gif) no-repeat center/cover;
+    margin: 0 auto;
+}
+
+.header2{
+    width: 100%;
+    height: 30px;
+    
+}
+.nav{
+    width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    
+}
+.nav li{
+    float: left;
+    text-align: center;
+    padding: 0 50px;
+    font-weight: 900;
+    box-sizing: border-box;
+}
+.nav li:hover{
+    background-color: aqua;
+}
+/*본문  */
+.container{
+    width: 1200px;
+    /* height: 1000px; */
+    overflow: hidden;
+    margin: 100px auto;
+    /* background-color: pink; */
+}
+.item_box{
+    width: calc((100% - 40px) / 3);
+    height: 600px;
+    float: left;
+    margin-right: 20px;
+    margin-bottom: 20px;
+    
+}
+.mr0{margin-right: 0;}
+
+.item_box_img1{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item1.jpg) no-repeat center/cover;
+}
+.item_box_txt{
+    width: 100%;
+    height: 145px;
+}
+.item_box_img2{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item2.jpg) no-repeat center/cover;
+}
+.item_box_img3{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item3.jpg) no-repeat center/cover;
+}
+.item_box_img4{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item4.jpg) no-repeat center/cover;
+}
+.item_box_img5{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item5.jpg) no-repeat center/cover;
+}
+.item_box_img6{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item6.jpg) no-repeat center/cover;
+}
+.item_box_img7{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item7.jpg) no-repeat center/cover;
+}
+.item_box_img8{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item8.jpg) no-repeat center/cover;
+}
+.item_box_img9{
+    width: 100%;
+    height: 455px;
+    background: url(../img/ann_house/item9.jpg) no-repeat center/cover;
+}
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: pink;
+    margin-top: 100px;
+    float: left;
+}
+/*  돋보기  */
+.container2{
+    width: 1200px;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    
+}
+.container2_box{
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 60px;
+    left: -100px;
+
+}
+.container2_txt{
+    width: 100%;
+    height: 200px;
+}
+.container2_search{
+    width: 100%;
+    height: 100px;   
+}
+.container2_search_img{
+    width: 40px;
+    height: 40px;
+    background: url(../img/ann_house/icon_search.gif) no-repeat center/cover;
+    
+}
+a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-indent: -9999px;
+}

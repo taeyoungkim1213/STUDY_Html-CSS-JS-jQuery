@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*
+        선형 그라디언트: 직선 방향으로 점점 색이 바뀌는것
+                    background-image 속성값임
+                    linear-gradient(방향, 시작색, .... , 끝색)
+                        방향: 1) 사방값
+                                    -webkit- 는 시작방향
+                                    나머지는 끝나는 방향(최신 방식은 to 붙이기)
+                                    
+                              2) deg - 각도
+
+                        색 위치: linear-gradient(방향, 시작색 [위치], .... , 끝색 [위치])
+                            linear-gradient(to right, red 0%, green 50%, blue 100%);
+                            단위 - px, %
+    */
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+            margin: 10px;
+        }
+        .box1 {
+            background-image: -webkit-linear-gradient(left, red, blue);
+            background-image: -moz-linear-gradient(right, red, blue);
+            background-image: -ms-linear-gradient(right, red, blue);
+            background-image: -o-linear-gradient(right, red, blue);
+            background-image: linear-gradient(to right, red, blue);
+        }
+        .box2 {
+            background: linear-gradient(to right, red, green 50px, blue);
+        }
+        .box3 {
+            background: repeating-linear-gradient(to right, red, green , blue 10% );
+        }
+    </style>
+</head>
+<body>
+    <div class="box box1"></div>
+    <div class="box box2"></div>
+    <div class="box box3"></div>
+</body>
+</html>

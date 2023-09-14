@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0; overflow: hidden;}
+        .wrap{
+            width: 100%;
+            height: 100vh;
+            background-color: white;
+            position: relative;
+            
+        }
+        .txt{
+            white-space: nowrap;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            font-size: 30px;
+            color: white;
+
+            z-index: 99;
+        }
+        .circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #222;
+            
+
+            position: absolute;
+            z-index: -1;
+            animation: circle 1s forwards;
+            
+        }
+        .circle_c7{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #222;
+
+            position: absolute;
+            animation: c7 1s 1s forwards;
+            z-index: -1;
+        }
+        @keyframes circle{
+            0%{transform: scale(0);z-index: 0;opacity: 1;}
+            30%{transform: scale(2);z-index: 0;opacity: 1;}
+            100%{transform: scale(0);z-index: 0;opacity: 0;}
+        }
+        .c1{left: 30%;
+            top: 40%;
+            animation-delay: 0.1s;
+        }
+        .c2{left: 50%;
+        top: 40%;
+        animation-delay: 0.2s;
+        }
+        .c3{left: 30%;
+        top: 60%;
+        animation-delay: 0.3s;
+        }
+        .c4{left: 60%;
+        top: 50%;
+        animation-delay: 0.4s;
+        }
+        .c5{left: 40%;
+        top: 20%;
+        animation-delay: 0.5s;
+        }
+        .c6{left: 50%;
+        top: 60%;
+        animation-delay: 0.6s;
+        }
+        .circle_c7{left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+        }
+        @keyframes c7{
+            0%{transform: scale(0);z-index: 0;}
+            100%{transform: scale(30);z-index: 0;}
+        }
+</style>
+</head>
+<body>
+    <div class="wrap">
+             <div class="txt">
+                <h1>Web Publisher</h1>
+                <h1>Web Publisher</h1>
+             </div>
+            <div class="circle c1"></div>
+            <div class="circle c2"></div>
+            <div class="circle c3"></div>
+            <div class="circle c4"></div>
+            <div class="circle c5"></div>
+            <div class="circle c6"></div>
+            <div class="circle_c7"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .size {
+            width: 300px;
+            height: 300px;
+        }
+        .border {
+            border: 1px solid;
+        }
+        .font {
+            font-size: 100px;
+            font-weight: 900;
+        }
+        .bg_red { background-color: red;}
+        .bg_green { background-color: green;}
+        .bg_blue { background-color: blue;}
+    </style>
+
+</head>
+<body>
+    <div id="wrap">
+        <div class="size border font " id="box2">box1</div>
+        <div class=" border  " id="box">box2</div>
+    </div>
+
+<script>
+/*
+    - class 추가,삭제,변경
+
+        1) className: 문자열로 가져옴
+        2) classList: 배열로 가져옴
+    -----------------------------------------
+    1) 클래스 확인
+        요소.className - 특정 요소의 클래스 값을 문자형태로 가져온다
+                        (실수로라도) 해당 요소에 클래스 사이에 빈칸들이 있으면 split(" ")로 분리시킬때 방번호 잡기 힘들다
+        요소.classList - 배열로 받아온다.
+                        (클래스가 하나만 있어도 0번방)
+                        (읽기 전용 프로퍼티)
+    
+    2) 추가
+        - 한개만 추가-
+            요소.classList.add('클래스명')
+            요소.classList+='클래스명'
+        
+        - 여러개 추가 -
+            요소.classList.add('클래스명', '클래스명', ...)
+            요소.classList+='클래스명 클래스명...'
+
+    3) 수정
+        요소.classList.replace("없앨문자열", "삽입할문자열")
+
+    4) 삭제
+        요소.classList.remove('클래스')
+        요소.classList.remove('클래스','클래스','클래스',.....)
+        요소.className = ""; <= 전부를 다 삭제할 경우
+
+    5) toggle
+        해당 요소에 클래스가 있으면 삭제
+        없으면 넣어줌
+
+    6) contains
+        해당 요소에 클래스가 있는지 확인
+        있으면 true, 없으면 false
+*/
+    let el_box = document.getElementById('box');
+
+    // 1) 확인
+    console.log(el_box);
+    console.log(el_box.className); // "size border font "
+    console.log(el_box.classList); // ['size', 'border', 'font']
+
+    // 2) 추가
+    // el_box.classList.add('bg_red');
+    // el_box.classList += 'bg_red'
+
+    el_box.classList.add('font', 'size', 'bg_red');
+    // el_box.classList += 'font size bg_red';
+
+    // 3) 수정
+    el_box.classList.replace('bg_red', 'bg_green');
+
+    // 4) 삭제
+    // el_box.classList.remove('bg_green')
+    // el_box.classList.remove("border","font","size","bg_green")
+    
+    /* 해당 요소에 있는 모든 클래스를 삭제하고 싶을때 배열로 가져와서 for 으로 돌려가면서 remove 해도 된다.
+        대신 무조건 0번방꺼만 삭제해야한다.
+        이유는 처음 불러올때는 ["border","font","size","bg_green"] 이렇게 불러오지만
+        remove 하면 ["font","size","bg_green"]
+                    ["size","bg_green"]
+                    ["bg_green"]
+        이런식으로 지워지기 떄문에 무조건 0번방꺼만 지우면 된다.
+
+        for 문에서는 i를 0부터  el_box.classList.length 까지 하면 안된다.
+        왜냐면 remove 하면서 배열의 개수가 바뀌기 때문임.
+        그래서 for 문 위에서 미리 remove 하기 전에 개수를 변수에 저장하고 그 변수를 이용해서 i 범위를 잡아준다.
+    */
+    // let class_length = el_box.classList.length;
+    // for(let i=0; i<class_length; i++) { 
+    //     el_box.classList.remove(el_box.classList[0])
+    // }
+    // el_box.className="";
+
+    // 5) toggle
+        el_box.classList.toggle('bg_blue'); // 현재 el_box 에 bg_blue 없으니까 삽입
+        el_box.classList.toggle('bg_blue'); // 윗줄에서 넣고 왔으니까 있음. 그래서 삭제
+    
+        let chk = true;
+        el_box.addEventListener('click', function(){
+            // if(chk) {
+            //     el_box.classList.add('bg_blue');
+            // }
+            // else {
+            //     el_box.classList.remove('bg_blue');
+            // }
+            // chk=!chk
+
+            el_box.classList.toggle('bg_blue');
+            
+            // 6) contains
+            console.log(el_box.classList.contains('bg_blue'))
+        })
+ 
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>  
+        * {transition: all 0.3s;} 
+        h1 {
+            color: #fff;
+            font-size: 26px;
+            font-weight: 900;
+        }
+        p {
+            color: #fff;
+        }
+    /* ******************************* */  
+        .outer {
+            width: 640px;
+            height: 421px; 
+            position: relative;
+            overflow: hidden;  
+        }
+        img {
+            width: 100%;
+            height: calc(100% + 50px);
+            transform: translateY(-50px);
+            transition: all 0.3s;
+        }
+        .outer:hover > img {
+            transform: translateY(0px);
+        }
+
+        .pan_v {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            right: 50px;
+            left: 50px;
+            border-left: 1px solid #fff;
+            border-right: 1px solid #fff;
+            transform: scale(2);
+            transition: all 0.3s;
+
+            /* background-color: blue; */
+        }
+        .pan_h {
+            position: absolute;
+            top: 50px;
+            bottom: 50px;
+            right: 0;
+            left: 0;
+            border-top: 1px solid #fff;
+            border-bottom: 1px solid #fff; 
+            transform: scale(2);
+            transition: all 0.3s;
+
+            /* background-color: red; */
+        }
+        .outer:hover > .pan_v,
+        .outer:hover > .pan_h {
+            /* transform: scale(1); */
+            transform: scale(1) rotate(360deg);
+        }
+
+        h1 {
+            position: absolute;
+            top: 45%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+
+            transform: translateY(-50px);
+            transition: all 0.3s;
+        }
+        .outer:hover > h1 {
+            transform: translateY(0);
+        }
+        p {
+            position: absolute;
+            top: 60%;
+            left: 0;
+            width: 100%;
+            text-align: center;
+            
+            transform: translateY(-10px);
+            transition: all 0.3s;
+            opacity: 0;
+        }
+        .outer:hover > p {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="./img/트랜지션/books.jpg" alt=""> 
+
+        <div class="pan pan_v"></div>
+        <div class="pan pan_h"></div>
+
+        <h1>Crazy Layla</h1>
+        <p>Oscar is a decet man. He used to clean porches with pleasure</p>
+
+    </div>
+</body>
+</html>

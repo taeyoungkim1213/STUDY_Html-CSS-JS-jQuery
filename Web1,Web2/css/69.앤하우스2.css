@@ -1,0 +1,140 @@
+body{margin: 0;}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.header{
+    width: 100%;
+    height: 136px;
+    /* background-color: pink; */
+}
+.header1{
+    width: 100%;
+    height: 106px;
+}
+.logo{
+    width: 390px;
+    height: 106px;
+    background: url(../img/ann_house/logo.gif) no-repeat center/cover;
+    margin: 0 auto;
+}
+
+.header2{
+    width: 100%;
+    height: 30px;
+    
+}
+.nav{
+    width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 auto;
+    
+}
+.nav li{
+    float: left;
+    text-align: center;
+    padding: 0 50px;
+    font-weight: 900;
+    box-sizing: border-box;
+}
+.nav li:hover{
+    background-color: aqua;
+}
+/*  돋보기  */
+.container2{
+    width: 1200px;
+    position: fixed;
+    top: 0;
+    margin: 0 auto;
+    
+}
+.container2_box{
+    width: 200px;
+    height: 400px;
+    position: absolute;
+    top: 60px;
+    left: -100px;
+
+}
+.container2_txt{
+    width: 100%;
+    height: 200px;
+}
+.container2_search{
+    width: 100%;
+    height: 100px;   
+}
+.container2_search_img{
+    width: 40px;
+    height: 40px;
+    background: url(../img/ann_house/icon_search.gif) no-repeat center/cover;
+    
+}
+a{
+    width: 100%;
+    height: 100%;
+    display: block;
+    text-indent: -9999px;
+}
+
+.container{
+    width: 1200px;
+    height: 1200px;
+    margin: 0 auto;
+}
+.search_title{
+    width: 1200px;
+    /* height: 900px; */
+    margin: 100px auto;
+}
+.search_title_logo{
+    text-align: center;
+}
+.txt_box{
+    width: 100%;
+    height: 700px;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+.list_box{
+    width: 800px;
+    height: 500px;
+    margin: 100px auto;
+    border: 1px solid;
+    box-sizing: border-box;
+}
+.list1_title{
+    width: 100px;
+    height: 50px;
+    line-height: 50px;
+    float: left;
+    /* text-align: center; */
+}
+.list1_title_select{
+    width: 600px;
+    height: 50px;
+    float: left;
+    padding: 10px 0;
+}
+.select1{
+    height: 30px;
+    width: 100%;
+}
+.select2{
+    width: 100px;
+    height: 30px;
+    float: left;
+}
+.input2{
+    width: 493px;
+    height: 25px;
+    float: left;
+}
+.ex{
+    width: 400px;
+    height: 30px;
+    line-height: 30px;
+    float: left;    
+}

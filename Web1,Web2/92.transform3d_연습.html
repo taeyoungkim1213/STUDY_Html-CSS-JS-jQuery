@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { background: #ddd;}
+    /*
+        3d - rotateX, Y 랑 주로 같이 쓴다.
+            원근감 => perspective
+                      3d 주고 싶은 요소의 부모
+                      단위 - px(숫자가 클수록 눈에서 멀리 있다)
+
+
+            - perspective 사용법
+                1) 부모한테 주는 방법 
+                        '속성: 값' 방식으로 적용
+                            ex) perspective: 400px;
+
+                2) 자체에 주는 방법
+                        transform의 속성값 처럼 사용
+                            ex) transform: perspective(400px) rotateX(45deg);
+
+    */
+        .outer {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            margin: 100px;
+
+            /* perspective 사용법 1번 방법 */
+            perspective: 400px;
+        }
+        .blue {
+            width: 100%;
+            height: 100%; 
+            /* background: blue url(./img/pikachu/pikachu01.png) no-repeat center / contain; */
+
+            transition: all 0.5s;
+            transform-style: preserve-3d;
+
+            /* backface-visibility: hidden; */
+
+            /*****************************/
+            /* 빨간박스 가운데 정렬 방법 1 */
+            /* display: flex;
+            justify-content: center;
+            align-items: center; */
+        }
+        .outer:hover .blue {
+            /* width: 400px; */
+            transform: perspective(400px) rotateX(80deg);
+            /* transform: rotateY(80deg); */
+            
+        }
+
+        .red {
+            width: 70%;
+            height: 70%;
+            background: rgba(255,255,255,0.5) url(./img/pikachu/pikachu02.png) no-repeat center / contain;
+            /* transform: translateZ(100px); */
+            /* transform: rotateZ(50deg); */
+
+            /*****************************/
+            /* 빨간박스 가운데 정렬 방법 2 */
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%) translateZ(30px);
+            
+            
+            /*****************************/
+            /* 빨간박스 가운데 정렬 방법 3 */
+            /* width: auto;
+            height: auto;
+            position: absolute;
+            left: 100px;
+            right: 100px;
+            top: 100px;
+            bottom: 100px; */
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="outer">
+        <div class="blue">
+            <div class="red"></div>
+        </div> 
+    </div>
+</body>
+</html>

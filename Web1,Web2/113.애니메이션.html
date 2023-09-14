@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+    /* 
+        애니메이션: 트랜지션과 트랜스폼을 이용한 움직임처럼 나타나지만, 다른점은 조건만 맞으면 혼자 알아서 돌아간다.
+        *transition 과 같이 상용하지 말것
+        
+        -필수 요소-
+            @keyframes : frame들의 집합체
+                         애니메이션이 정해진 시간대에 맞춰 바뀌는 지점을 설정
+                         프레임의 개수가 많을수록 부드럽게 표현 가능
+                         재사용 가능
+
+        - 사용법 -                         
+            @keyframes 이름 {
+                0% { css속성들; }
+                ...
+                100% { css속성들; }
+                -----------------------
+                from {}
+                (숫자% 사용 가능)
+                to {}
+            }
+
+        - 애니메이션 속성 -
+        1) animation-name: keyframes 이름으로 해당 요소에 애니메이션 연결
+        2) animation-duration: keyframes(애니메이션)을 동장시킬 시간
+                                단위 - 초(s)
+        3) animation-timing-function: 속도
+                                        ease, ease-in, ease-out, ease-in-out, linear
+        4) animation-delay: 지연
+                            최초의 애니메이션이 돌기 전에만 딱 한번 동작
+                            (애니메이션 동작하면 없는거나 마찬가지)
+        5) animation-iteration-count: 반복횟수
+                                       단위 - 정수
+                                              infinite(무한)
+                                        *6번(direction)에서 alternate와 같이 쓸거면 infinite를 쓰거나
+                                         정수로 쓸때는 짝수로 쓰기
+        6) animation-direction: 방향성
+                                normal: 기본값, 0% 지점에서 100% 지점으로만 가는거
+                                alternate: 100% 까지 갔다가 0%로 돌아오는거
+        7) animation-fill-mode: 애니메이션이 끝나는 지점을 설정
+                                none(끝나면 원래꺼로 돌아감)
+                                forwards(끝나면 원래꺼로 안돌아감)
+                                *5번(iteration-count)에서 infinite 랑 같이 못씀
+
+        *한방
+            animation: name / duration timing-function / delay / iteration-count /direction / fill-mode;
+
+
+    */
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: green;
+
+            animation-name: bg_color, move;
+            animation-duration: 0.3s, 1s;
+            animation-timing-function: ease;
+            /* animation-delay: 5s; */
+            animation-iteration-count: infinite ;
+            animation-direction: alternate;
+            animation-fill-mode: forwards;
+
+            
+            /* animation: bg_color 0.3s ease 0s  infinite alternate  ,
+                        move     1s           infinite alternate;  */
+        }
+        .box2 {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            margin: 10px;
+            
+            /* animation: bg_color 1.3s infinite ; */
+        }
+
+        @keyframes bg_color {
+            0% { background-color: red;} 
+            100% { background-color: blue;}
+
+            /* from { background-color: green;} 
+            50% { background-color: gold;  }
+            to { background-color: purple;} */
+        }
+        @keyframes move {
+            0% { transform: translateX(0)} 
+            100% { transform: translateX(30px);}
+
+            /* from { background-color: green;} 
+            50% { background-color: gold;  }
+            to { background-color: purple;} */
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <!-- <div class="box2"></div> -->
+</body>
+</html>

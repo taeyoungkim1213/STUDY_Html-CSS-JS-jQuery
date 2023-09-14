@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            입력 총 3개
+
+            1, 숫자
+            2, 사칙연산(+ - * /)
+            3, 숫자
+
+            -출력
+            1 2 3 = 결과 ex) 4 + 3 = 7
+        */
+        let number1 = +prompt("첫번째 숫자");
+        let mark = prompt("사칙연산");
+        let number2 = +prompt("두번째 숫자");
+        cal(number1 , mark , number2)
+        
+        function cal(num1 , mark , num2){
+           let result = 0;
+            if(mark == "+"){
+                result =  num1 +num2;
+            }
+            else if(mark == "-"){
+                result =  num1 - num2;
+            }
+            else if(mark == "*"){
+                result =  num1 * num2;
+            }
+            else if(mark == "/"){
+                result =  num1 / num2;
+            }
+            console.log( result);
+        }
+        
+        
+
+        
+        
+    </script>
+</body>
+</html>

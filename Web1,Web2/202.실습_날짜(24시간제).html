@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <input type="button">변경
+
+<script>
+/*
+   
+*/
+ 
+    let dt = new Date();
+    let year = dt.getFullYear();
+    let month = dt.getMonth()+1;
+    let date = dt.getDate();
+    let day = dt.getDay()
+    let day_arr = ["일","월","화","수","목","금","토"];
+    day = day_arr[day]
+    let hours = dt.getHours();
+    let min = dt.getMinutes();
+    let sec = dt.getSeconds();
+
+    
+    let ampm = "AM";
+    if(12 <= hours && hours < 24 ){ 
+        ampm = "PM";
+    } 
+
+    if(hours == 24) {
+        hours = 0;
+    }
+    else if(hours > 12) {
+        // hours -= 12;
+        hours = hours - 12;
+    }
+
+
+    console.log(`${year}-${zero(month)}-${zero(date)} ${zero(hours)}:${zero(min)}:${zero(sec)} ${ampm}` )
+ 
+
+
+
+
+
+    function zero(num) { 
+        if(num < 10) {
+            num = "0"+num;
+        } 
+        return num;
+    } 
+</script>
+</body>
+</html>

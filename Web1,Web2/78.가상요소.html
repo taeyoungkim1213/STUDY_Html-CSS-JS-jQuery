@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+    /* - 가상요소: 가상으로 body 안에 요소처럼 들어가 있는거
+                  (실제 코드에는 없다.)
+                  inline 레벨
+
+
+        - 종류
+            1) 선택자::before => *선택자 요소 안에 맨 처음 요소처럼 나타남
+            2) 선택자::after => *선택자 요소 안에 마지막 요소처럼 나타남
+                    * 필수속성: content
+                    필요 없어도 빈칸으로라도 속성을 적용해줘야한다.
+        
+        
+    */  
+        .header {
+            display: flex;
+        }
+
+        li {
+            /* border: 1px solid; */
+            position: relative;
+            
+            padding: 0 20px;
+        }
+
+        li::before {
+            content: "="
+        }
+        li::after {
+            content: "";
+            width: 2px;
+            height: 10px;
+            background-color: red;
+            display: inline-block;
+
+            box-sizing: border-box;
+
+            position: absolute;
+            top: calc(50% - 5px);
+            right: -1px;
+        }
+    </style>
+</head>
+<body>
+    <ul class="header">
+        <li>비트스터디</li>
+        <li>비트스터디</li>
+        <li>비트스터디</li>
+    </ul>
+</body>
+</html>

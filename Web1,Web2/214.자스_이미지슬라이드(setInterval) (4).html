@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        #wrap {height: 5000px;}
+        .main_banner {
+            width: 100%;
+            height: 400px;
+            /* background-color: pink; */
+            border: 10px solid;
+            box-sizing: border-box;
+
+            position: relative;
+        }
+        .banner {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+
+            opacity: 0.5;
+            font-size: 150px;
+            font-weight: 900;
+        }
+        .banner0 {
+            left: 0;
+            background-color: red;
+        }
+        .banner1 {
+            left: 100%;
+            background-color: green;
+        }
+        .banner2 {
+            left: 100%;
+            background-color: blue;
+        }
+        .banner3 {
+            left: 100%;
+            background-color: purple;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <!-- &lt; &gt; &amp; &quot; -->
+    <input type="button" value="&lt;" class="btn_slide btn_slide_L">
+    <input type="button" value="&gt;" class="btn_slide btn_slide_R">
+
+    <div class="main_banner">
+        <div class="banner banner0">0</div>
+        <div class="banner banner1">1</div>
+        <div class="banner banner2">2</div>
+        <div class="banner banner3">3</div>
+    </div>
+</div>
+
+<script>
+    let btn_L = document.getElementsByClassName('btn_slide_L')[0];
+    let btn_R = document.getElementsByClassName('btn_slide_R')[0];
+    btn_L.addEventListener('click', function(){slide("left")} );
+    btn_R.addEventListener('click', ()=>{slide("right")} );
+
+    let banner_arr = document.getElementsByClassName('banner');
+                    // ["빨","초","파","보"]
+    let curr_index = 0;
+    let interval;
+    let pos_x = 0;
+    function slide(direction) {
+        let bc = banner_arr.length
+
+        interval=setInterval(()=>{
+            if(direction == "right") {
+                // 현재 보고있는판
+                banner_arr[curr_index % bc].style.left = -pos_x+"%";
+                
+                // 들어올판 - 우측(left:100%)에 대기하고 있는 판
+                banner_arr[(curr_index+1) % bc].style.left = (100-pos_x)+"%";
+
+                if(pos_x >= 100) {
+                    clearInterval(interval);
+                    curr_index+=1;
+                    pos_x=0 
+                }
+            }
+            else if(direction == "left") {
+                // 보고있는판
+                banner_arr[curr_index % bc].style.left = pos_x+"%";
+
+                // 들어올판 
+                // banner_arr[(curr_index+(bc-1)) % bc].style.left = -(100-pos_x)+"%";
+                banner_arr[ (curr_index-1%bc)<0?(bc-1):(curr_index-1%bc)].style.left = -(100-pos_x)+"%";
+
+                // let tmp = (curr_index-1) % bc;
+                // if(tmp < 0) {
+                //     tmp = bc-1;
+                // }
+                // banner_arr[ tmp ].style.left = -(100-pos_x)+"%";
+                
+                if(pos_x >= 100) {
+                    clearInterval(interval);
+                    // curr_index+=bc-1;
+                    curr_index = (curr_index-1%3)<0?(bc-1):(curr_index-1%3)
+                    pos_x=0
+                } 
+            }
+            pos_x++;
+        }, 10)
+    }
+
+</script>
+
+</body>
+</html>

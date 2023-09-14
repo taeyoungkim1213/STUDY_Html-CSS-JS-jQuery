@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="empty_open" onclick="empty_open()">
+    <input type="button" value="blank_open" onclick="blank_open()">
+    <input type="button" value="self_open" onclick="self_open()">
+
+    <input type="button" value="child_open" onclick="child_open()">
+    <input type="button" value="child_close" onclick="child_close()">
+    <br>
+    <br>
+
+    <input type="text" id="parent_txt">
+    <input type="button" value="자식창에 보내기" onclick="send_to_child()">
+    
+<script>
+
+/*
+    window - 창(브라우저) 관리
+             팝업창 생성/삭제(탭으로 동작)
+             창에서 창으로 정보 전달
+             (크롬에서는 보안상의 이유로 로컬에서는 막힘)
+
+        window.open(); - 빈탭 띄움
+        window.open("경로"); - 새탭에서 띄움
+        window.open("경로", "_self"); - 현재탭에서 띄움
+                            _blank(기본값)
+        window.open("경로", "_blank", "자식창정보");
+            자식창정보 - width, height, left, top
+
+    
+    * open - 새로운 탭을 여는 동작
+      opener - 자기를 생성해준 부모를 뜻함
+
+*/
+    function empty_open() {
+        window.open();
+    }
+    function blank_open() {
+        window.open("./210.window_자식창.html");
+    }
+    function self_open() {
+        window.open("./210.window_자식창.html", '_self');
+    }
+
+    let child;
+    function child_open() {
+        // 부모창 위치
+        let parent_pos_x = window.screenLeft;
+        let parent_pos_y = window.screenTop;
+
+        // 부모창 가운데 위치
+        let parent_x = window.innerWidth / 2;
+        let parent_y = window.innerHeight / 2;
+
+        // 자식창 크기
+        let child_x = 300;
+        let child_y = 300;
+
+        // 자식창 열리는 위치
+        let pos_x = parent_pos_x + parent_x - (child_x / 2)
+        let pos_y = parent_pos_y + parent_y - (child_y / 2)
+
+        // 기존에 자식창이 있으면 삭제하고 새로 생성
+        // child_close();
+
+        child = window.open("./210.window_자식창.html", '_blank',"width="+child_x+"px, height="+child_y+"px, left="+pos_x+"px, top="+pos_y+"px");
+    }
+    function child_close() {
+        child.window.close();
+    } 
+
+
+    /* 정보 전달은 서버에 올려놔야만 확인 가능함. 로컬에서는 에러남 */    
+    function send_to_child() {
+        // child.document.getElementById('child_txt').value=document.getElementById('parent_txt').value;
+
+        let txt = document.getElementById('parent_txt').value;
+        child.get_from_parent(txt);
+        child.bg_color();
+    }
+    function get_from_child(txt) {
+        document.getElementById('parent_txt').value=txt;
+    }
+
+
+</script>
+</body>
+</html>

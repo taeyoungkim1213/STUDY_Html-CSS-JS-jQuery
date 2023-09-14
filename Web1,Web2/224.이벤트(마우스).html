@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .outer {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+
+            position: relative;
+        }
+        .inner {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+</head>
+<body>
+    <div class="outer outer1">
+        <div class="inner inner1"></div>
+    </div>
+    <div class="outer outer2">
+        <div class="inner inner2"></div>
+    </div>
+<script>
+/*
+    1) $('선택자').click(function(){ }) - 한번 클릭
+    2) $('선택자').dblclick(function(){ }) - 더블 클릭
+
+    3) $('선택자').mousemove(function(){ }) - 해당요소 위에서 마우스 움직일때 동작
+
+    4) $('선택자').mouseover(function(){ }) - 마우스가 올라갔을때, 버블링효과
+    5) $('선택자').mouseout(function(){ }) - 마우스가 나갔을때, 버블링효과
+            *버블링 효과 - (부모자식관계) 두개의요소가 겹쳐있을때 나타나는 현상
+                          자식요소에 마우스오버/아웃 이벤트가 발생했을때 부모요소에 다시 마우스오버/아웃 된것같은 효과
+            *버블링 효과막기 - event.stopPropagation()
+                                자식한테 주기
+                                감싸고 있는 부모 요소의 이벤트가 반응하지 않게 함.
+
+    6) $('선택자').mouseenter(function(){ }) - 마우스가 올라갔을때, 버블링효과 없음
+    7) $('선택자').mouseleave(function(){ }) - 마우스가 나갔을때, 버블링효과 없음
+
+    1~7번은 이거로 대체 가능
+    $(document).on('이벤트', '선택자', function(){
+        *기존꺼와는 달리 나중에 js로 추가한 요소도 알아볼 수 있다.
+    })
+
+    // 이벤트 바인딩 - 메모리적으로 좀 더 유리함
+    $('선택자').on({
+        이벤트:function(){
+            ...
+        },
+        이벤트:function(){
+            ...
+        }
+    })
+
+
+    8) $('선택자').hover(function(){
+        //마우스 올라갔을때
+     },
+     function(){
+        //마우스 빠졌을때
+      }) 
+*/  
+    $('.outer').mousemove(function(){
+        // console.log(event.offsetX, event.offsetY)
+    });
+
+    $('.outer1').mouseover(function(){
+        console.log("부모 오버")    
+    })
+    $('.outer1').mouseout(function(){
+        console.log("부모 아웃")    
+    })
+    $('.inner1').mouseover(function(){
+        console.log("자식 오버")    
+        event.stopPropagation()
+    })
+    $('.inner1').mouseout(function(){
+        console.log("자식 아웃")    
+        event.stopPropagation()
+    })
+    // ------------------------------------------
+    $('.outer2').mouseenter(()=>{
+        console.log("부모 오버")    
+    })
+    $('.outer2').mouseleave(()=>{
+        console.log("부모 아웃")    
+    })
+    $('.inner2').mouseenter(()=>{
+        console.log("자식 오버")    
+    })
+    $('.inner2').mouseleave(()=>{
+        console.log("자식 아웃")    
+    })
+
+    $('.outer2').hover(function(){
+        $(this).children('.inner2').css({
+            background : "red"
+        
+        })
+    },function(){
+        $(this).children('.inner2').css({
+            background : "blue"
+        
+        })
+    })
+    
+</script>
+</body>
+</html>

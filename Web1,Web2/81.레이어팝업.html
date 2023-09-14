@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { background-color: cadetblue;}
+
+        .layer_popup {
+            width: 400px;
+            height: 200px;
+            background-color: yellow;
+
+            position: absolute;
+            left: 100px;
+            top: 100px;
+        }
+        .btn_close_24 {
+            position: absolute;
+            bottom: 5px;
+            left: 5px;
+        }
+        .btn_close {
+            position: absolute;
+            bottom: 5px;
+            right: 5px;
+        }
+
+        #rd,
+        #rd:checked + .layer_popup {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="radio" id="rd">
+    <div class="layer_popup">
+        <label for="rd" class="btn_close_24">오늘하루 열지 않기</label>
+        <label for="rd" class="btn_close">닫기</label>
+    </div>
+</body>
+</html>

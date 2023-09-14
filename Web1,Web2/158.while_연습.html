@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+<script>
+/* 
+    0 넣기 전까지 숫자만 계속 입력받기
+    0 넣으면 현재까지 넣은 수들의 합 출력
+
+    - 순서 -
+        1) 숫자 입력받기
+        2) 숫자로 변환
+        3) 변수에 저장
+        4) 저장된 값 0인지 아닌지 판별
+        5-1) 0이면 total 출력
+        5-2) 0아니면 다시 1) 시작 
+
+*/
+    let chk = true;
+    let cal = 0;
+    
+    while(chk = true) {
+        let input = +prompt("숫자 입력하시오");
+        
+        // 0인지 아닌지 판별
+        if(input != 0) {
+            // cal = cal + input;
+            cal += input;  
+        }  
+        else if(input == 0) {
+            console.log(cal);
+            chk=false;
+            //chk=!chk;
+        }
+        
+    }
+
+</script>
+</body>
+</html>

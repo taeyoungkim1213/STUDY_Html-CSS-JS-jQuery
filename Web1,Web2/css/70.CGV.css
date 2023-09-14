@@ -1,0 +1,425 @@
+body{margin: 0;}
+.header{
+    width: 980px;
+    height: 112px;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+
+.logo{
+    width: 200px;
+    height: 100%;
+    background: url(../img/CGV/logo.png) no-repeat center/contain;
+    float: left;
+}
+.logo_txt{
+    width: 200px;
+    height: 100%;
+    line-height: 100%;
+    float: left;
+    font-size: 26px;
+    text-align: center;
+
+    position: relative;
+
+}
+.logo_txt1{
+    position: absolute;
+    bottom: 10px;
+    letter-spacing: 5px;
+}
+.h_right{
+    width: 300px;
+    height: 100%;
+    float: right;
+    padding: 15px 0;
+}
+.h_r_box{
+    width: calc(100% / 4);
+    float: left;
+    height: 100%;
+    text-align: center;
+}
+.login_img{
+    width: 100%;
+    height: 60%;
+    background: url(../img/CGV/icon_login.png)no-repeat center/contain;
+}
+.insert_img{
+    width: 100%;
+    height: 60%;
+    background: url(../img/CGV/icon_join.png)no-repeat center/contain;
+}
+.MY_img{
+    width: 100%;
+    height: 60%;
+    background: url(../img/CGV/icon_mypage.png)no-repeat center/contain;
+}
+.custom_img{
+    width: 100%;
+    height: 60%;
+    background: url(../img/CGV/icon_cs.png)no-repeat center/contain;
+}
+.nav{
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    border-top: 1px solid;
+    border-color: #3333;
+    margin-top: 20px;
+}
+.nav_box{
+    width: 980px;
+    height: 30px;
+    margin: 10px auto;
+}
+.nav_txt div{
+    width: 80px;
+    float: left;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 900;
+}
+.n_t{
+    color: red;
+}
+.nav_right{
+    width: 200px;
+    height: 100%;
+    float: right;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    box-sizing: border-box;
+    border-color: #3336;
+}
+.nav_right_txt{
+    height: 100%;
+    float: left;
+    padding: 0 10px;
+}
+.nav_right_txt input{
+    width: 130px;
+    border: none;
+    outline: none;
+    height: 100%;
+}
+.nav_right_search{
+    width: 40px;
+    height: 27px;
+    float: right;
+    background: url(../img/google_search.png) no-repeat 0 3px/contain;
+
+}
+.mainbanner{
+    width: 100%;
+    height: 498px;
+    background-color:black;
+
+    
+
+}
+.mainbanner_img{
+    width: 980px;
+    height: 498px;
+    margin: 0 auto;
+    /* background: url(../img/움짤.gif)no-repeat center/cover; */
+
+    position: relative;
+    top: 0;
+}
+.mainbanner_txt{
+    width: 300px;
+    height: 300px;
+    font-size: 20px;
+    color: white;
+    position: absolute;
+    top: 100px;
+    z-index: 9;
+
+
+}
+/* 무비 차트 */
+.movie_cahart_box{
+    width: 100%;
+    height: 461px;
+    background-color: #f9f9f9;
+    margin: 30px 0;
+}
+.cahart_box{
+    width: 980px;
+    height: 461px;
+    margin: 0 auto;
+}
+.movie_cahart_title{
+    width: 100%;
+    height: 61px;
+    /* background-color: pink; */
+}
+.title_left{
+    width: 300px;
+    float: left;
+}
+
+.chart_txt{
+    
+    font-weight: 900;
+}
+.ba{
+    width: 2px;
+    height: 20px;
+    float: left;
+    margin-top: 20px;
+    background-color: gray;
+}
+
+.m_txt{
+    width: 110px;
+    padding: 0 15px;
+    line-height: 61px;
+    float: left;
+    font-size: 22px;
+    text-align: center;
+}
+.title_right{
+    width: 150px;
+    height: 100%;
+    float: right;
+}
+.input{
+    width: 100px;
+    height: 30px;
+    margin-top: 15px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 30px;
+    float: right;
+}
+.input:hover{
+    /* background-color: gray; */
+    background: rgba(255, 255, 255, 0.3);
+
+}
+
+.movie_cahart{
+    width: 100%;
+    height: 400px;
+    /* background-color: pink; */
+}
+.movie_cahart_list{
+    width: calc((100% - (32px * 4)) / 5);
+    height: 400px;
+    margin-right: 32px;
+    float: left;
+}
+.mr0{margin-right: 0;}
+.movie_cahart_list_img{
+    width: 100%;
+    height: 300px;
+    
+}
+.movie_cahart_list_txt{
+    width: 100%;
+    height: 100px;
+    text-align: center;
+    padding-top: 30px;
+}
+.c1{background: url(../img/CGV/movie_chart1.jpg)no-repeat center/cover;}
+.c2{background: url(../img/CGV/movie_chart2.jpg)no-repeat center/cover;}
+.c3{background: url(../img/CGV/movie_chart3.jpg)no-repeat center/cover;}
+.c4{background: url(../img/CGV/movie_chart4.jpg)no-repeat center/cover;}
+.c5{background: url(../img/CGV/movie_chart5.jpg)no-repeat center/cover;}
+/* 이벤트 */
+.event_container{
+    width: 980px;
+    height: 500px;
+    margin: 0 auto;
+
+}
+.stop{
+    width: 30px;
+    height: 30px;
+    margin-top: 15px;
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 30px;
+    font-size: 18px;
+    text-align: center;
+}
+.event_box{
+    width: calc((100% - 48px) / 3);
+    height: 400px;
+    margin-right: 24px ;
+    float: left;
+
+}
+.event_list{position: relative;}
+.mr0{margin-right: 0;}
+.event_list_img{
+    width: 100%;
+    height: 300px;
+}
+.event_list_txt{
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-weight: 900;
+    font-size: 17px;
+}
+.event_list_txt p{
+    font-size: 16px;
+    color: gray;
+}
+.e1{
+    background: url(../img/CGV/event3.jpg) no-repeat center/contain;
+
+}
+.e1h{
+    width: 100%;
+    height: 400px;
+    background: url(../img/CGV/event3.jpg) no-repeat center/cover;
+    position: absolute;
+    
+    display: none;
+}
+
+.e1:hover {
+    scale: 1.1;
+}
+.e2{
+    background: url(../img/CGV/event2.jpg) no-repeat center/contain;
+    
+}
+.e2:hover:hover {
+    scale: 1.1;
+}
+.e3{
+    background: url(../img/CGV/event1.jpg) no-repeat center/contain;
+    
+}
+.e3:hover {
+    scale: 1.1;
+}
+/* 스페셜홀 */
+.specialHal{
+    width: 980px;
+    /* overflow: hidden; */
+    margin: 0 auto;
+}
+.sp{
+    width: 100%;
+}
+.specialHal_box{
+    width: 100%;
+    height: 100%;
+    
+}
+.specialHal_img{
+    width: 500px;
+    height: 264px;
+    background: url(../img/CGV/special_hall.png)
+    no-repeat center/cover;
+    float: left;
+}
+.specialHal_txt{
+    width: 440px;
+    height: 264px;
+    
+    float: right;
+}
+.st_list{
+    width: 100%;
+   height: calc(100% / 4);
+   border-bottom: 1px solid #3333;
+   box-sizing: border-box;
+    padding: 0 10px;
+   
+}
+.st_list:hover{
+    border: 1px solid;
+    box-sizing: border-box;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.st_1_l{
+    float: left;
+    line-height: 60px;
+    font-size: 20px;
+    padding: 0 10px;
+}
+.st_1_r{
+    float: right;
+    margin-top: 20px;
+    font-size: 16px;
+    margin-right: 5px;
+    
+}
+.tag{
+    background-color: rgb(141, 134, 134);
+    box-sizing: border-box;
+    border-radius: 15px;
+    padding: 0 12px;
+}
+.giftcon_container{
+    width: 980px;
+    height: 436px;
+    margin: 100px auto;
+    
+}
+.giftcon_list{
+    width: calc(100% / 3);
+    height: 636px;
+    
+    float: left;
+}
+.gift_title{
+    /* width: 100%; */
+    height: 80px;
+    line-height: 80px;
+    padding: 0 60px 0 20px;
+    /* margin-top: 50px; */
+}
+.gift_title_l{
+    float: left;
+    font-size: 20px;
+    font-weight: 900;
+}
+.gift_title_r{
+    float: right;
+    font-size: 16px;
+    color: gray;
+}
+.gift_box{
+    width: 80%;
+    height: 160px;
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.gift_box_img{
+    width: 30%;
+    height: 100%;
+    background-color: gray;
+    float: left;
+}
+
+.long_banner{
+    width: 100%;
+    height: 180px;
+    margin-top: 400px;
+    background-color: #fed900;
+    clear: both;
+    position: relative;
+}
+.long_banner_img{
+    width: 100%;
+    height: 240px;
+    background: url(../img/CGV/long_bannerpng.png)no-repeat center/contain;
+    position: absolute;
+    top: -58px;
+}
+.footer{
+    width: 100%;
+    height: 300px;
+}

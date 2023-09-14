@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*
+        transform - 요소의 위치, 크기, 각도, 모양 '임시로' 바꾸는것
+                    자기 자신 대비
+                    *hover랑 궁합이 좋다.
+                    *transform 속성의 순서에 따라서 같은 값을 주더라도 결과가 다르게 나온다.
+
+            -속성값-
+                **1) 위치- translate
+                         단위: px, %
+                            translateX: 가로방향
+                            translateY: 세로방향
+                            translateZ: 깊이 (2d 에서는 소용 없음)
+                            translate: (x축, y축)
+                                    *z축값 넣으면 동작 안함
+                            translate3d: (x축, y축, z축)
+                                    *z축값 안넣으면 동작 안함
+
+                **2) 크기 - scale(배수)
+                         단위: 0 이상의 실수
+                            scaleX(): 가로방향
+                            scaleY(): 세로방향
+                            scale()
+                            scale(x,y)
+
+                **3) 각도 - rotate(각도)
+                        단위: deg
+                        rotateX(): 3d 없이 사용하면 찌부되듯 나온다
+                        rotateY(): 3d 없이 사용하면 찌부되듯 나온다
+                        rotateZ(): rotate() 랑 같다
+                        rotate() : rotateZ() 랑 같다
+                        rotate3d(x,y,z)
+
+                4) 모양 - skew(각도)
+                
+        * 기준점 바꾸는 속성
+            transform-origin
+                단위: 사방값, %, px
+    */  
+        .outer {
+            width: 400px;
+            /* height: 400px; */
+            border: 1px solid;
+        }
+        .box {
+            width: 100px;
+            height: 100px;}
+        .red { 
+            background: red;
+            /* transform: translate(50px, 100px); */
+        }
+        .green { 
+            background: green;
+            margin: 0 auto;
+            /* transform: scaleX(2) scaleY(3);   */
+
+            transform: scale(2);
+            /* transform-origin: 20px 20px; */
+            
+        }
+        .blue {  
+            background: blue ;
+            transform: rotate(70deg);
+        }
+        .gray {  
+            background: gray ;
+            transform: skewY(30deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box red"></div>    
+        <div class="box green"></div>     
+        <div class="box blue"></div>    
+        <!-- <div class="box gray"></div>      -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,184 @@
+body{margin: 0;}
+.header{
+    width: 100%;
+    height: 150px;
+}
+.logo{
+    width: 200px;
+    height: 50px;
+    margin:  50px auto;
+    background-color: pink
+}
+
+.wrap{
+    width: 1185px;
+    height: 882px;
+    /* border: 1px solid;
+    box-sizing: border-box; */
+    margin: auto;
+    position: relative;
+}
+.img1{
+    width: 474px;
+    height: 528px;
+    background-image: url(../img/다홍/겨울/1_1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+
+    position: absolute;
+    left: 0;
+    
+}
+.img1_h{
+    width: 474px;
+    height: 528px;
+    background-image: url(../img/다홍/겨울/1_1.jpg);
+    background-repeat: no-repeat;
+    background-size: 120%;
+    display: none;
+    position: absolute;
+    left: 0;
+
+}
+.img1:hover .img1_h{
+    display: block;
+    background-size: cover;
+    background-position: center;
+}
+.img2{
+    width: 474px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/1_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    margin-top: 5px;
+}
+.img3{
+    width: 237px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/2_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    left: calc(474px);
+}
+.img3_h{
+    width: 100%;
+    height: 100%;
+    background-image: url(../img/다홍/겨울/2_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: brightness(0.5);
+    display: none;
+
+}
+.img3:hover .img3_h{
+    display: block;
+}
+
+
+.img4{
+    width: 237px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/2_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 237px;
+
+}
+.img4_box{
+   width: 100%;
+   height: 100%;
+   background-color: #333;
+    display: none;
+    position: relative;
+   
+}
+.box{
+    width: 150px;
+    height: 150px;
+    margin: auto;
+
+    border: 5px solid #fff;
+    box-sizing: border-box;
+    padding: 0px;
+    position: absolute;
+    left: calc(50% - 75px);
+    top: calc(50% - 75px);
+}
+
+
+
+.img4:hover > .img4_box{
+    display: block;
+    background-color: rgba(3, 3, 3, 0.5);
+}
+
+
+
+.img5{
+    width: 237px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/3_1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+
+}
+.img6{
+    width: 474px;
+    height: 176px;
+    background-image: url(../img/다홍/겨울/2_3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    top: 352.98px;
+    right: 238px;
+    /* border: 5px solid red; */
+}
+.img7{
+    width: 237px;
+    height: 176px;
+    background-image: url(../img/다홍/겨울/3_2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    right: 0;
+    top: 352.98px;
+
+}
+.img8{
+    width: 237px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/2_4.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: 474px;
+}
+.img9{
+    width: 237px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/2_5.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    left: calc(474px + 237px);
+}
+.img10{
+    width: 237px;
+    height: 352px;
+    background-image: url(../img/다홍/겨울/3_3.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}

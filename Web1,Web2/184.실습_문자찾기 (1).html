@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 파일 선택하고, 업로드 버튼 눌렀을때
+    확장자가 jpg면 "성공"
+    아니면 "실패"
+
+    -순서-
+    1) 파일선택 -> input type="file"
+    2) 업로드 버튼 클릭 감지 -> 업로드버튼에 onclick
+                              onclick하면 동작할 함수 생성
+                              함수에서 3)번 확인
+    3) 확장자 확인
+        - file 의 현재값 잡아오기
+        - 잡아온 문자열에 jpg -> 메세지 "성공"
+        -               그 외 -> 메세지 "실패"
+-->
+    <input type="file" id="u_file" >
+    <input type="button" value="업로드" onclick="f_upload();">
+
+<script>
+    function f_upload() {
+
+        let f_name = document.getElementById('u_file').value;
+        console.log(f_name) 
+        let f_type = f_name.split(".");
+        f_type = (f_type[f_type.length - 1]).toLocaleLowerCase();
+
+        // let f_type = f_name.lastIndexOf("."); // 쩜이 6번째에 있음
+        // f_type = f_name.slice(f_type+1).toLocaleLowerCase();
+        // console.log(f_type) 
+
+        if(f_type=="html") {
+            console.log("성공")
+        }
+        else {
+            console.log("실패")
+        }
+    }
+
+
+
+
+
+
+
+</script>
+</body>
+</html>

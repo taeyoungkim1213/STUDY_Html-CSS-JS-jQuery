@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 
+        - 선택자
+            1) 아이디 - #
+            2) 클래스 - .
+            3) 태그 - 태그명
+            -----------------------------------
+            4) 전체 - *
+                      body 태그를 포함한 모든 태그 선택 가능
+                      모든 태그를 건드리는 선택자 이지만, 특정 요소 안에 있는 것들한테 주로 준다.
+                      우선순위에 포함되지 않음
+            5) 그룹 - ,
+                     똑같은 css속성을 여러 선택자에게 적용킬때 , 로 구분하면서 한번에 명시 가능
+
+        - 복합선택자(기준선택자와 적용선택자의 결합)
+            *선택자 우선순위를 무시하는 경우도 있다.
+            *기준선택자는 여러개가 될수도 있다.
+                ex) .container > .nav_ul > .nav_li > .sub_menu > li {}
+
+            6) 자손 - 빈칸
+            7) 자식 - > 
+            8) 인접 - + (바로 아래동생 하나만)
+            9) 형제 - ~ (모든 동생들)
+            10) 속성 - 선택자[속성=속성명]
+                        ex) input[name="rd"]
+
+        *선택자를 붙여서도 사용 가능
+            ex) p.txt1
+                p.txt1#txt1
+                .txt1#txt1
+
+
+    */
+        #nav_li > ul {
+            margin: 5px;
+        }
+        .ttt {
+            margin: 0;
+        }
+
+        .container > .nav_ul > .nav_li > .sub_menu > li {
+            color: red;
+        }
+
+        input[name="rd"] {
+            background: red;
+        }
+
+        .nav_ul {
+            background-color: purple;
+        }
+        #txt1.txt1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <p class="txt1" id="txt1">안녕하세요</p>
+    <span class="txt1">안녕하세요</span>
+    <div>안녕하세요</div>
+    <span>안녕하세요</span>
+    <p>안녕하세요</p>
+    <p class="txt1">안녕하세요</p>
+    <p>안녕하세요</p>
+
+
+
+
+     <header class="header">
+        <h3>HTML5 웹 프로그래밍</h3>
+    </header>
+
+    <main class="container">
+        <ul class="nav_ul">
+            <li class="nav_li">
+                <span class="">Home</span>
+                <ul class=" ttt sub_menu">
+                    <li><input type="text"></li>
+                    <li><input type="text"></li>
+                </ul>
+            </li>
+            <li class="nav_li">
+                <span>Menu 1</span>
+                <ul class="sub_menu">
+                    <li><input type="password"></li>
+                    <li><input type="password"></li>
+                </ul>
+            </li>
+            <li class="nav_li">
+                <span>Menu 2</span>
+                <ul class="sub_menu">
+                    <li>menu01</li>
+                    <li>menu02</li>
+                </ul>
+            </li>
+            <li class="nav_li">
+                <span>Menu 3</span>
+                <ul class="sub_menu">
+                    <li>menu01</li>
+                    <li>menu02</li>
+                </ul>
+            </li>
+        </ul>
+    </main>
+
+</div>
+</body>
+</html>

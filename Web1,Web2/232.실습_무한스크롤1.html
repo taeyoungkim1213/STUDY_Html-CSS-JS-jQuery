@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .header {
+            height: 100px;
+            background: yellowgreen;
+        }
+        .container {
+            width: 100%;
+            background: gray;
+        }
+        .main_banner {
+            height: 400px;
+            background-color: goldenrod;
+        }
+        .item_list {
+            width: 1100px;
+            margin: 0 auto;
+            
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .item {
+            width: calc((100% - (20px * 3)) / 4);
+            height: 300px;
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        .thumb {
+            width: 100%;
+            height: 200px;
+            background-color: greenyellow;
+
+            font-size: 100px;
+            text-align: center;
+        }
+        .desc {
+            width: 100%;
+            height: 100px;
+            background-color: hotpink;
+
+        }
+        .footer {
+            height: 400px;
+            background: #000;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <header class="header"></header>
+    <main class="container">
+        <div class="main_banner"></div>
+        <section class="item_list">
+            <!-- <div class="item">
+                <div class="thumb"></div>
+                <div class="desc"></div>
+            </div>  -->
+        </section>
+    </main>
+    <footer class="footer"></footer>
+</div>
+    
+<script>
+    function load_data() {
+        for(let i=0; i<16;i++) {
+            let item = `<div class="item">
+                            <div class="thumb">${i+1}</div>
+                            <div class="desc"></div>
+                        </div>`;
+
+            $(item).appendTo('.item_list')
+        }
+    }
+    load_data();
+
+
+    $(document).ready(function() {
+         
+
+        let count = 0;
+        $(window).scroll(function(){
+            let d_height = $(document).height();
+            let s_top = $(window).scrollTop();
+            let w_height = $(window).height();
+            let s_bot = s_top + w_height;
+            let f_height = $('.footer').height();
+
+            if(count < 5) {
+                if(d_height <= s_bot + f_height + 100) {
+                    load_data();
+                    count++;
+                }
+            }
+        });
+        
+    })
+</script>
+</body>
+</html>

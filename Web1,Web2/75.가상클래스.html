@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*
+        - 가상클래스(가상선택자 라고 하는 사람도 있다.)
+            별도의 클래스를 지정하지 않아도 지정한 것처럼 요소를 선택할 수 있게 해주는거
+
+        - 사용법
+            선택자:가상클래스 { }
+
+            ***1) 선택자:hover => 선택자 요소에 마우스 올라갔을때
+            *2) 선택자:checked => radio, checkbox 체크 됐을때
+            3) 선택자:focus => text, password에 커서 들어갔을때
+            4) 선택자1:not(선택자2) => 선택자1 중에 선택자2와 매칭되는거 빼고 적용해라
+                ex) .txt:not(span)
+            5) 선택자:first-child => 첫번째 요소들 중에 선택자와 매칭되는 요소 있으면 적용
+               선택자:last-child=> 마지막번째 요소들 중에 선택자와 매칭되는 요소 있으면 적용
+            ***6) 선택자:nth-child(숫자) =>  뒤에서 부터 해석
+                                            숫자번째 요소이면서 선택자와 매칭되는 요소 있으면 적용
+                                            단위 - 1 이상의 정수
+                                                  odd(홀), even(짝)
+                                                  2n+1(홀) 2n(짝)
+               선택자:nth-of-type(숫자) => 앞에서 부터 해석
+                                     선택자와 매칭되는 모든 요소중에 숫자번째 (태그)요소인것
+    ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ
+            
+    */
+        .txt:not(span) {
+            color: red;
+        }
+        .txt:last-child {
+            color: blue;
+        }
+
+        .txt:nth-of-type(1) {
+            color: green;
+        }
+
+    </style>
+</head>
+<body> 
+    
+    <div id="wrap0">
+        <div class="txt">div1</div>
+        <span class="txt">span1</span>
+        <div class="txt">div2</div>
+        <div class="txt">div3</div>
+        <p class="txt">p4</p>
+        <div class="txt">div5</div>
+    </div>
+    <!-- <div id="wrap1">
+        <div class="txt">div</div>
+        <span class="txt">span</span>
+        <div class="txt">div</div>
+        <div class="txt">div4</div>
+        <div>div5</div>
+    </div>
+    <hr>
+    <div id="wrap2">
+        <div class="txt">div</div>
+        <div class="txt">div4</div>
+        <div class="txt">div4</div>
+    </div> -->
+</body>
+</html>

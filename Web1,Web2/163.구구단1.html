@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        let input1 =  +prompt ("첫 숫자입력");
+        let input2 =  +prompt ("두번째 숫자입력");
+
+        for(let i = input1; i <= input2;  i++){
+
+            if(i == 0 || i == 1){
+            alert("0이나 1이 아닌 다른 숫자를 입력하시오.");
+            break;
+            }
+
+            document.write("<br>");
+            document.write("==="+ i +"단===<br>");
+            document.write("<br>");
+            for(let j = 1; j < 10; j++){
+
+                 document.write(i +"*"+ j + ":" + (i * j ) + "<br>");
+                 
+                 
+            }
+        }
+        
+
+        
+    </script>
+</body>
+</html>

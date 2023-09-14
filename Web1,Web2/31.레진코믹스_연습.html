@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        #wrap {
+            width: 300px;
+            margin: 100px auto ;
+
+            /* border: 10px solid; */
+        }
+        .logo {
+            width: 100%;
+            border-radius: 7px;
+        }
+
+        input {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+            border: 1px solid #a9a9a9;
+            padding: 0 10px;
+            box-sizing: border-box;
+            border-radius: 7px;
+        }
+        .btn_login {
+            width: 100%;
+            height: 50px;
+            border: none;
+            background: #0095f2;
+            color: #ffffff;
+            border-radius: 7px;
+        }
+        .frm {
+            padding: 10px 0;
+            border-bottom: 1px solid;
+            margin-bottom: 10px;
+        }
+        /* .member_info {
+            margin-top: 10px;
+        } */
+        .link_a {
+            color: #222;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <a href="#" class="logo_box">
+            <img src="../img/lezhin_logo.png" alt="로고" class="logo">
+        </a>
+
+        <form action="#" class="frm">
+            <input type="text" placeholder="아이디를 입력하시오" name="uID">
+            <input type="password" placeholder="비밀번호를 입력하시오" name="uPW">
+            <button type="submit" class="btn_login">로그인</button>
+            <!-- <input type="submit" value="로그인"> -->
+        </form>
+
+        <div class="member_info">
+            <a href="#" class="link_a">회원가입</a>
+            <a href="#" class="link_a">아이디/비밀번호 찾기</a>
+        </div>
+    </div>
+</body>
+</html>

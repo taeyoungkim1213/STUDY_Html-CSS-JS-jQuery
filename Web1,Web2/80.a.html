@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0; background-color: #333;}
+        input[type="radio" ]{ display: none;}
+        .wrap{
+            width: 500px;
+            height: 770px;
+            /* overflow: hidden; */
+            margin: 100px auto;
+            background-color: white;
+
+            position: relative;
+        }
+        .txt{
+            width: calc(100% / 3);
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            float: left;
+            box-shadow: -1px 1px 4px 0.5px #333;
+            box-sizing: border-box;
+            font-weight: 900;
+        }
+        
+        .list_box1,.list_box2,.list_box3{
+            width: 100%;
+            position: absolute;
+            top: 50px;
+            
+            display: none;
+        }
+        /* 리스트 목록 */
+        .list{
+            width: 100%;
+            height: 70px;
+            line-height: 70px;
+            text-align: center;
+            font-weight: 900;
+        }
+        .list:hover{
+            height: 140px;
+        }
+        .list:nth-child(2n){
+            background-color: gainsboro;
+        }
+        /* 라벨 윗 줄 checked*/
+        #top:checked ~ label > .t_txt{
+            line-height: 30px;
+            border-top: 10px solid greenyellow;
+            box-sizing: border-box;
+        }
+        #pop:checked ~ label > .p_txt{
+            line-height: 30px;
+            border-top: 10px solid greenyellow;
+            box-sizing: border-box;
+        }
+        #art:checked ~ label > .a_txt{
+            line-height: 30px;
+            border-top: 10px solid greenyellow;
+            box-sizing: border-box;
+        }
+        /* 리스트 목록 checked */
+        #top:checked ~ .list_box1{
+            display: block;
+        }
+        #pop:checked ~ .list_box2{
+            display: block;
+        }
+        #art:checked ~ .list_box3{
+            display: block;
+        }
+    
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <input type="radio" id="top" checked name="rr">
+        <input type="radio" id="pop" name="rr">
+        <input type="radio" id="art" name="rr">
+
+        <label for="top"><div class="txt t_txt">TOP</div></label>
+        <label for="pop"><div class="txt p_txt">POP</div></label>
+        <label for="art"><div class="txt a_txt">아티스트</div></label>
+
+        
+
+        <div class="list_box1">
+            <div class="list">1-TOP 100</div>
+            <div class="list">2-TOP 100</div>
+            <div class="list">3-TOP 100</div>
+            <div class="list">4-TOP 100</div>
+            <div class="list">5-TOP 100</div>
+            <div class="list">6-TOP 100</div>
+            <div class="list">7-TOP 100</div>
+            <div class="list">8-TOP 100</div>
+            <div class="list">9-TOP 100</div>
+            <div class="list">10-TOP 100</div>
+
+        </div>
+        <div class="list_box2">
+            <div class="list">1-POP 100</div>
+            <div class="list">2-POP 100</div>
+            <div class="list">3-POP 100</div>
+            <div class="list">4-POP 100</div>
+            <div class="list">5-POP 100</div>
+            <div class="list">6-POP 100</div>
+            <div class="list">7-POP 100</div>
+            <div class="list">8-POP 100</div>
+            <div class="list">9-POP 100</div>
+            <div class="list">10-POP 100</div>
+
+        </div>
+        <div class="list_box3">
+            <div class="list">1-ARTIST 100</div>
+            <div class="list">2-ARTIST 100</div>
+            <div class="list">3-ARTIST 100</div>
+            <div class="list">4-ARTIST 100</div>
+            <div class="list">5-ARTIST 100</div>
+            <div class="list">6-ARTIST 100</div>
+            <div class="list">7-ARTIST 100</div>
+            <div class="list">8-ARTIST 100</div>
+            <div class="list">9-ARTIST 100</div>
+            <div class="list">10-ARTIST 100</div>
+
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+body{margin: 0;}
+.wrap{
+    min-width: 1300px
+}
+.top_btn{
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 12px;
+    border-radius: 50%;
+    background-color: black;
+    color: whitesmoke;
+
+    /* position: absolute; */
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    text-align: center;
+    font-weight: 900;
+
+}
+.top_txt{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+ul{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+.header{
+    width: 100%;
+    height: 112px;
+}
+.header1{   
+    width: 1200px;
+    height: 80px;
+    padding-top: 16px;
+    margin: 0 auto;
+
+    position: relative;
+}
+.h_l{
+    width: 300px;
+    line-height: 80px;
+    float: left;
+}
+.h_l li{
+    width: calc(100% / 6);
+    float: left;
+    text-align: center;
+    font-weight: 900;
+    height: 60px;
+    
+}
+.h_l li:hover{
+    /* text-decoration: underline; */
+    border-bottom: 1px solid;
+    box-sizing: border-box;
+}
+.h_logo{  
+    width: 80px;  
+    height: 80px;
+    background: url(../img/Lezhin/logo.png) no-repeat center/cover;
+   
+    position: absolute;
+    top: 16px;
+    left: calc(50% - 40px);
+}
+.logo{
+    height: 100%;
+    text-indent: -9999px;
+    display: block;
+}
+.h_r{
+    width: 250px;
+    height: 80px;
+    float: right;
+    position: relative;
+}
+.h_r_l{
+    /* float: left; */
+    background-color: #333;
+    text-align: center;
+    border-radius: 30px;
+    padding: 0 8px;
+    position: absolute;
+    top: calc(50% - 15px);
+}
+.h_r_l_img{
+    width: 20px;
+    height: 30px;
+    float: left;
+    background: url(../img/Lezhin/gnb_challenge_icon.png) no-repeat center/cover;
+}
+.h_r_l_txt{
+    width: 60px;
+    float: left;
+    font-size: 10px;
+    line-height: 27px;
+    color: white;
+}
+.h_r_m{
+    width: 20px;
+    height: 30px;
+    background: url(../img/Lezhin/home_search_icon.png) no-repeat center/cover;
+
+    position: absolute;
+    top: calc(50% - 15px);
+    left: calc(50% - 10px);
+
+}
+.h_r_r_box{
+    width: 90px;
+    height: 30px;
+    border-top: 3px solid #333;
+    border-bottom: 3px solid #333;
+
+    position: absolute;
+    top: calc(50% - 15px);
+    right: 0;
+    
+    
+}
+.h_r_r_box_txt{
+    width: 60px;
+    line-height: 30px;
+    float: left;
+    text-align: center;
+    font-size: 13px;
+    font-weight: 900;
+}
+.h_r_r_box_1px{
+    width: 30px;
+    height: 10px;
+    margin-top: 7px;
+    border-top: 3px solid #333;
+    border-bottom: 3px solid #333;
+    float: right;
+    
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ메인배너ㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.mainbanner{
+    width: 100%;
+    height: 450px;
+    background: url(../img/Lezhin/main_banner_01.jpg) no-repeat center/contain;
+    background-color: #001e57;
+
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ신작연재ㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.new_container{
+    width: 1200px;
+    overflow: hidden;
+    margin: 50px auto;
+    font-size: 18px;
+} 
+.new_title{
+    width: 100%;
+    height: 50px;
+    margin-top: 50px;
+    font-size: 20px;
+    /* line-height: 50px; */
+
+}
+.new_title_txt{
+    float: left;
+}
+.new_title_box{
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    line-height: 30px;
+    float: right;
+    border: 1px solid #bbb1b1;
+    box-sizing: border-box;
+}
+.new_title_box:hover{
+    cursor: pointer;
+    border-color: #333;
+}
+.new_box{
+    width: 100%;
+}
+.new_item{
+
+    width: calc((100% - (20px*3))/ 4);
+    float: left;
+    margin-right: 20px;
+}
+.mr0{
+    margin-right: 0;
+}
+.new_item_img1{
+    width: 100%;
+    height: 300px;
+    background: url(../img/Lezhin/메리고라운드.jpg)
+    no-repeat center/cover;
+}
+.img1_a{
+    text-indent: -9999px;
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.new_item_txt1{
+    width: 100%;
+    height: 100px;
+    background-color: gainsboro;
+    font-size: 900;
+}
+.new_item_img2{
+    width: 100%;
+    height: 300px;
+    background: url(../img/Lezhin/발렌타인키스.jpg)
+    no-repeat center/cover;
+}
+.new_item_txt2{
+    width: 285px;
+    height: 100px;
+    background-color: gainsboro;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-size: 900;
+}
+.new_item_img3{
+    width: 100%;
+    height: 300px;
+    background: url(../img/Lezhin/사랑은개싸움.jpg)
+    no-repeat center/cover;
+}
+.new_item_txt3{
+    width: 100%;
+    height: 100px;
+    background-color: gainsboro;
+    font-size: 900;
+}
+.new_item_img4{
+    width: 100%;
+    height: 300px;
+    background: url(../img/Lezhin/올바른인생을살아가는법.jpg)
+    no-repeat center/cover;
+}
+.new_item_txt4{
+    width: 100%;
+    height: 100px;
+    background-color: gainsboro;
+    font-size: 900;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ개그ㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.gag_title{
+    width: 100%;
+    margin-top: 50px;
+}
+.gag_container{
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.gag_box{
+    width: 100%;
+    height: 220px;
+}
+.gag_item{
+    width: calc((100% - 100px) / 6);
+    height: 220px;
+    margin-right: 20px;
+    float: left;
+    background-color: gray;
+}
+.mr0{margin-right: 0;}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ사이다ㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.soda_title{
+    width: 100%;
+    margin-top: 50px;
+}
+.soda_container{
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+.soda_box{
+    width: 100%;
+    height: 220px;
+}
+.soda_item{
+    width: calc((100% - 100px) / 6);
+    height: 220px;
+    margin-right: 20px;
+    float: left;
+    background-color: gray;
+}
+.mr0{margin-right: 0;}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡ100배너ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.banner100{
+    width: 100%;
+    height: 300px;
+    background: url(https://ccdn.lezhin.com/v2/inventory_items/6293983166005248/media/subBanner1.webp?width=1180) no-repeat center/cover;
+    
+}
+/* ㅡㅡㅡㅡㅡㅡㅡ신작연재 2ㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.new2_container{
+    width: 1200px;
+    overflow: hidden;
+    margin: 0 auto;
+    margin-bottom: 50px;
+
+}
+.new2_box{
+    width: 100%;
+}
+.new2_item{
+
+    width: calc((100% - (20px*2))/ 3);
+    height: 320px;
+    float: left;
+    margin-right: 20px;
+    background-color: gray;
+}
+.mr0{
+    margin-right: 0;
+}
+.footer1{
+    width: 100%;
+    height: 300px;
+    background-color: #333;
+}
+.footer2{
+    width: 100%;
+    height: 100px;
+    background-color: #333;
+    border-top: 1px solid #fff;
+    box-sizing: border-box;
+}

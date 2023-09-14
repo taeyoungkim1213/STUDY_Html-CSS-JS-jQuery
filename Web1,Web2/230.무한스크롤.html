@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jq-1.12.4.js"></script>
+    <style>
+        h1{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+    <h1>비트스터디</h1>
+
+    <script>
+        /*
+            무한스크롤 - 스크롤바가 맨 밑에(근처) 닿으면 동작 
+                        scroll_bottom = scrollTop + 모니터 높이
+                        문서 높이 <= scroll_bottom 하면 요소 추가
+                    if( $(document).height() <= scroll_bottom )
+        */
+       $(document).ready(function() {
+
+        let d_height = $(document).height();
+        
+        
+        $(window).scroll(function(){
+
+            let s_bot = $(window).scrollTop() + $(window).height();
+
+            if( d_height <= s_bot ) {
+                for(let i = 0; i<20; i++){
+                    let list = `<h1>비트스터디${i+1}</h1>`;
+                    $(list).appendTo('body').css({color:'red'})
+                }
+              
+
+              d_height = $(document).height();
+        }
+        });
+        
+
+       })
+    </script>
+</body>
+</html>

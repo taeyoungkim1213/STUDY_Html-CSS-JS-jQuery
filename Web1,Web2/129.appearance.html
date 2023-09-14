@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            appearance속성: 요소의 자체 css를 없앰
+                            prefix와 함께 사용할것
+            *ios 계열에서는 버튼이 다른 모양으로 나온다
+             그래서 appearance 속성을 이용해서 해당 버튼을 내가 지정한 css로 커스텀 한다.
+        */
+
+        input[type="text"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            -ms-appearance: none;
+            -o-appearance: none;
+            appearance: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="확인">
+    <button>확인</button>
+</body>
+</html>

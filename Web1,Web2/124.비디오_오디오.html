@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 
+        - 브라우저별 지원하는 비디오/오디오 확장자
+        
+        1) 비디오
+            - mp4: 모든 브라우저 지원
+                    고화질 지원
+                    웹용도로는 공짜. 그 외는 모두 라이센스 필요 
+            - webm: 크롬, 파이어폭스, 오페라, 엣지
+                    화질 우수
+                    무료
+            - ogv: 크롬, 파이어폭스, 오페라, 엣지
+                    화질 별로
+                    무료
+
+        2) 오디오
+            - mp3: 모든 브라우저 지원
+            - ogg: 크롬, 파이어폭스, 오페라, 안드로이드
+
+        *브라우저 정책상 속성이 적용 되는 것들이 있고 안되는 것들이 있을수 있다.
+
+        - 비디오
+            <video src="경로" [속성="속성값"]></video>
+            =속성=
+                *1) controls: 컨트롤 바
+                             비디오태그에서 컨트롤바 없으면 이미지처럼 나옴(플레이 안됨)
+                             오디오태그에서는 필수속성. 없으면 display: none 먹음
+                2) autoplay: 자동 재생
+                            웹 정책에 의해 자동이 막혔음
+                            muted(음소거)를 같이 명시하면 동작하는 브라우저도 있음
+                3) muted: 음소거
+                4) loop: 반복
+                5) poster: 썸네일 이미지
+                            autoplay가 있으면 소용 없음
+                             <video src="경로" poster="이미지경로"></video>
+    */
+    </style>
+</head>
+<body>
+    <!-- <video src="./media/Painting.mp4" poster="./img/1.jpg" controls autoplay muted loop></video> -->
+
+    <!-- 미디어 파일들은 html5를 지원하는 브라우저에서만 동작하기 때문에 옛날 브라우저를 위해서 대체 텍스트나 플러그인 같은 것들을 같이 준비해 놓는다. -->
+    <video poster="./img/1.jpg"  controls autoplay muted loop>
+        <source src="./media/Painting.mp4" type="video/mp4">
+        <source src="./media/Painting.webm" type="video/webm">
+        <source src="./media/Painting.ogv" type="video/ogv">
+        <object data="./media/Painting.swf" type="application/x-shockwave-flash"></object>
+        영상을 지원하지 않는 브라우저 입니다.
+    </video>
+
+
+    <!-- <audio src="./media/bgsound.mp3" controls ></audio> -->
+    <audio src="./media/bgsound.mp3" controls autoplay>
+        <source src="./media/bgsound.mp3" type="audio/mp3">
+        <source src="./media/bgsound.ogg" type="audio/ogg">
+        오디오를 지원하지 않는 브라우저 입니다.
+    </audio>
+
+</body>
+</html>

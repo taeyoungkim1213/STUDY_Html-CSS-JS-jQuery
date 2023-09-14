@@ -1,0 +1,528 @@
+body{
+    margin: 0;
+    min-width: 1140px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+.top_banner{
+    width: 100%;
+    height: 40px;
+    background-color: #f20152;
+    position: relative;
+    overflow: hidden;
+    
+    
+}
+.right{
+    width: 50%;
+    height: 40px;
+    background-color: #fc0175;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 9;
+    
+}
+.top_box{
+    width: 1140px;
+    height: 40px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 999;
+    
+}
+
+.t_1{
+    width: 380px;
+    height: 40px;
+    background: url(../img/텐바이텐/탑배너1.jpg) no-repeat center/cover;
+    float: left;
+}
+.t_2{
+    width: 380px;
+    height: 40px;
+    background: url(../img/텐바이텐/탑배너2.jpg) no-repeat center/cover;
+    float: left;
+}
+.t_3{
+    width: 380px;
+    height: 40px;
+    background: url(../img/텐바이텐/탑배너3.jpg) no-repeat center/cover;
+    float: left;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.header{
+    width: 1140px;
+    height: 87px;
+    margin: 0 auto;
+    
+}
+.header1{
+    width: 100%;
+    height: 87px;
+    position: relative;
+
+}
+.h1_logo{
+    width: 160px;
+    height: 87px;
+    background: url(../img/텐바이텐/logo.png) no-repeat center/contain;
+    position: absolute;
+    top: 0;
+}
+.h1_txt1{
+    width: 500px;
+    height: 40px;
+    position: absolute;
+    right: 0;
+}
+
+.h1_txt1ul li{
+    width: calc(100% / 5);
+    float: left;
+    text-align: center;
+    line-height: 40px;
+    font-size: 13px;
+    font-weight: 900;
+}
+.h1_txt2{
+    width: 800px;
+    height: 47px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.h2_li{
+    width: calc(100% / 7);
+    float: left;
+    text-align: center;
+    line-height: 47px;
+    font-weight: 900;
+    margin: 0 -10px;
+}
+.txt2_input{
+    width: 190px;
+    height: 25px;
+    border-radius: 30px;
+    padding: 0 30px 0 10px;
+    border-color: pink;
+    position: relative;
+    box-shadow: 0 0 0 2px pink;
+    outline: none;
+    border: none;
+}
+.search_icon{
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    right: 20px;
+    top: 15px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+
+.header2{
+    width: 100%;
+    height: 40px;
+    background-color: rgb(241, 226, 187);
+    border-top: 1px solid #333;
+    box-sizing: border-box;
+}
+.nav{
+    width: 1140px;
+    height: 40px;
+    margin: 0 auto;
+    
+}
+.nav_ul li{
+    width: calc(100%/15);
+    line-height: 40px;
+    float: left;
+    text-align: center;
+    font-size: 11px;
+    font-weight: 900;
+}
+.banner_bbox{
+    position: relative;
+    /* overflow: hidden; */
+}
+.mainbanner{
+    width: 100%;
+    height: 600px;
+    background: url(../img/텐바이텐/메인배너1.jpg) no-repeat center/cover;
+    /* position: absolute; */
+    left: 0;
+    z-index: 900;
+    /* overflow: hidden; */
+}
+.w_1140{
+    width: 1140px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+}
+.mainbanner2{
+    width: 100%;
+    height: 600px;
+    background: url(../img/텐바이텐/메인배너2.jpg) no-repeat center/cover;
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 100%;
+    display: none;
+
+    
+    
+    
+
+}
+.banner_bbox:hover > .mainbanner2{
+    display: block;
+    left: 0;
+    transition:all 0.5s;
+}
+
+.mainbanner_txt{
+    
+    position: absolute;
+    top: 20%;
+    left: 0;
+}
+.just_box{
+    width: 100%;
+    height: 440px;
+    background: url(../img/텐바이텐/JUST1Day_패턴.png);
+    padding: 60px 0;
+
+}
+.container{
+    width: 1140px;
+    height: 440px;
+    margin: 0 auto;
+    position: relative;
+    
+}
+.just{
+    width: 127px;
+    height: 73px;
+    background: url(../img/텐바이텐/tit_just_1day_v2.png) no-repeat center/cover;
+    position: absolute;
+    left: 0;
+    top: 58px;
+}
+.just_circle{
+    width: 300px;
+    height: 300px;
+    float: right;
+    margin: 58px 0px 58px 20px;
+
+    position: relative;
+}
+.just_img3{
+    width: 200px;
+    height: 200px;
+    background: url(../img/텐바이텐/JUST1Day_3.jpg) no-repeat center/cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px #f5ecec;
+    position: absolute;
+    left: calc(50% - 100px);
+}
+.just_txt3{
+    text-align: center;
+    line-height: 0.5;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 56px);
+}
+.just_img2{
+    width: 200px;
+    height: 200px;
+    background: url(../img/텐바이텐/JUST1Day_2.jpg) no-repeat center/cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px #f5ecec;
+    position: absolute;
+    left: calc(50% - 100px);
+}
+.just_txt2{
+    text-align: center;
+    line-height: 0.5;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 56px);
+}
+.just_img1{
+    width: 200px;
+    height: 200px;
+    background: url(../img/텐바이텐/JUST1Day_1.jpg) no-repeat center/cover;
+    border-radius: 50%;
+    box-shadow: 0 0 0 15px #f5ecec;
+    position: absolute;
+    left: calc(50% - 100px);
+}
+.just_txt1{
+    text-align: center;
+    line-height: 0.5;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 56px);
+}
+/*  */
+.bottom{
+    width: 1140px;
+    height: 394px;
+    margin: 60px auto;
+    position: relative;
+}
+.bottom_box{
+    width: calc((100% - 40px) / 3);
+    height: 259px;
+    /* background-color: aqua; */
+    float: left;
+    margin-right: 20px;
+
+}
+.mr0{
+    margin-right: 0;
+}
+.bottom_img1{
+    width: 100%;
+    height: 199px;
+    background: url(../img/텐바이텐/JUST1Day_하단1.jpg) no-repeat center/cover;
+
+}
+.bottom_txt1{
+    width: 100%;
+    line-height: 0.5;
+    
+    
+}
+.bottom_img2{
+    width: 100%;
+    height: 199px;
+    background: url(../img/텐바이텐/JUST1Day_하단2.jpg) no-repeat center/cover;
+
+}
+.bottom_txt2{
+    width: 100%;
+    line-height: 0.5;
+    
+    
+}
+.bottom_img3{
+    width: 100%;
+    height: 199px;
+    background: url(../img/텐바이텐/JUST1Day_하단3.jpg) no-repeat center/cover;
+
+}
+.bottom_txt3{
+    width: 100%;
+    line-height: 0.5;
+    
+    
+}
+.smallbanner_l{
+    width: 50%;
+    height: 120px;
+    background: url(../img/텐바이텐/작은배너1.gif);
+
+    position: absolute;
+    bottom: 0;
+}
+.smallbanner_r{
+    width: 50%;
+    height: 120px;
+    background: url(../img/텐바이텐/작은배너2.jpg);
+
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.item_box{
+    width: 1140px;
+    /* background-color: pink; */
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+.md_pick{
+    width: 280px;
+    float: left;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.best_box{
+    width: 100px;
+    text-align: center;
+    background-color: gray;
+    margin: 10px 0;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+.best_box a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    
+}
+.item_list{
+    width: 860px;
+    float: right;
+    
+}
+.list{
+    width: calc((100% - 80px) / 3);
+    height: 370px;
+    margin: 0 40px 40px 0;
+    float: left;
+
+}
+.mr0{
+    margin-right: 0;
+}
+.item1{
+    position: relative;
+}
+.item1_img{
+    width: 100%;
+    height: 260px;
+    background: url(../img/텐바이텐/mds_pick_1.jpg)
+    no-repeat center/cover;
+}
+.behind_item1{
+    width: 300px;
+    height: 370px;
+    background: url(../img/텐바이텐/mds_pick_1.jpg)
+    no-repeat center/cover;
+    position: absolute;
+    top: 0;
+    display: none;
+}
+
+.item1:hover .behind_item1{
+    display: block;
+    
+
+}
+
+
+
+.item1_txt{
+    width: 100%;
+    height: 110px;
+    font-size: 15px;
+}
+
+.item2_img{
+    width: 100%;
+    height: 260px;
+    background: url(../img/텐바이텐/mds_pick_2.jpg)
+    no-repeat center/cover;
+}
+.item2_txt{
+    width: 100%;
+    height: 110px;
+    font-size: 15px;
+}
+.item3_img{
+    width: 100%;
+    height: 260px;
+    background: url(../img/텐바이텐/mds_pick_3.jpg)
+    no-repeat center/cover;
+}
+.item3_txt{
+    width: 100%;
+    height: 110px;
+    font-size: 15px;
+}
+.item4_img{
+    width: 100%;
+    height: 260px;
+    background: url(../img/텐바이텐/mds_pick_4.jpg)
+    no-repeat center/cover;
+}
+.item4_txt{
+    width: 100%;
+    height: 110px;
+    font-size: 15px;
+}
+.item5_img{
+    width: 100%;
+    height: 260px;
+    background: url(../img/텐바이텐/mds_pick_5.jpg)
+    no-repeat center/cover;
+}
+.item5_txt{
+    width: 100%;
+    height: 110px;
+    font-size: 15px;
+}
+.item6_img{
+    width: 100%;
+    height: 260px;
+    background: url(../img/텐바이텐/mds_pick_6.jpg)
+    no-repeat center/cover;
+}
+.item6_txt{
+    width: 100%;
+    height: 110px;
+    font-size: 15px;
+}
+
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.hope_box{
+    width: 1140px;
+    height: 900px;
+    margin: 0 auto;
+    /* background-color: pink; */
+}
+.hope_list{
+    width: calc((100% - 40px )/ 2);
+    height: 410px;
+    margin: 0 40px 40px 0;
+}
+.mr0{
+    margin-right: 0;
+}
+.hope{
+    float: left;
+}
+.hope_txt{
+    width: 100%;
+    height: 110px;
+}
+.hope1_img{
+    width: 100%;
+    height: 300px;
+    background: url(../img/텐바이텐/광고1.jpg)
+    no-repeat center/cover;
+}
+.hope2_img{
+    width: 100%;
+    height: 300px;
+    background: url(../img/텐바이텐/광고2.jpg)
+    no-repeat center/cover;
+}
+.hope3_img{
+    width: 100%;
+    height: 300px;
+    background: url(../img/텐바이텐/광고3.jpg)
+    no-repeat center/cover;
+}
+.hope4_img{
+    width: 100%;
+    height: 300px;
+    background: url(../img/텐바이텐/광고4.jpg)
+    no-repeat center/cover;
+}
+/* ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ */
+.footer{
+    width: 100%;
+    height: 300px;
+    background-color: black;
+}

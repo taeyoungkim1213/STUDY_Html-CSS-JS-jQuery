@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            조건문 = 조건을 명시해 놓고, 해당조건이 참일때만 실행되는 코드
+                       중첩가능            
+                
+                if문 -
+                 if(조건식){
+                        조건식이 참일때만 실행될 코드
+                        단독 사용 가능
+                }
+                else 조건식 없음 {
+                    바로 위에 있는 if문이랑 세트로만 사용가능
+                }
+        */
+        let num = prompt("점수입력");
+        //삼합 연산자 
+        let result = num > 90?"A":(num > 80?"B":(num > 70?"C":"D"));
+        console.log(result);
+
+    //    if(num > 90){
+    //     console.log("A");
+           
+    //    }
+    //    else if(num > 80){
+    //     console.log("B");
+    //    }
+    //    else if(num > 70){
+    //     console.log("C");
+    //    }
+    //    else{
+    //     console.log("D");
+    //    } 
+        
+    
+    </script>
+</body>
+</html>

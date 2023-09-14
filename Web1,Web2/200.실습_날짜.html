@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    년,월,일 요일 시분초 출력
+
+    - 출력 -
+        YYYY-DD-MM X요일 00:00:00
+        2023-09-07 목요일 14:26:29 
+    
+    - 순서-
+        1) 지금 순간의 시간 구해서 저장 => Date 객체
+        2) 숫자요일 -> 문자 요일 변경 => 조건문
+        3) 0 붙이기 => 10보다 크냐 작냐 비교해서...
+        4) 출력
+*/
+
+    let dt = new Date();
+    let year = dt.getFullYear();
+    let month = dt.getMonth()+1;
+    let date = dt.getDate();
+    let day = dt.getDay()
+     
+    if(day==0) {
+        day = "일";
+    }
+    else if(day==1) {
+        day = "월";
+    }
+    else if(day==2) {
+        day = "화";
+    }
+    else if(day==3) {
+        day = "수";
+    }
+    else if(day==4) {
+        day = "목";
+    }
+    else if(day==5) {
+        day = "금";
+    }
+    else if(day==6) {
+        day = "토";
+    }
+
+    let hours = dt.getHours();
+    let min = dt.getMinutes();
+    let sec = dt.getSeconds();
+
+    console.log(`${year}-${zero(month)}-${zero(date)} ${zero(hours)}:${zero(min)}:${zero(sec)}` )
+
+    function zero(num) { 
+        if(num < 10) {
+            num = "0"+num;
+        } 
+        return num;
+    }
+/*
+
+        2023-09-07 목요일 02:26 PM
+*/
+</script>
+</body>
+</html>

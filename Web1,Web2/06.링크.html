@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<!-- 
+    a 태그 : 링크를 연결해주는 태그 (앵커 태그)
+            inline 레벨
+            기본 글자색 파랑, 밑줄 파랑
+            히스토리가 남아있으면 보라색으로 표시
+            * a 태그용 css를 별도로 만들어서 색, 밑줄들을 관리
+            
+            <a href="경로"> 경로 이름 </a>
+            http와 https의 차이? 
+
+    속성 
+        1) 필수 속성
+            href : 클릭했을 때의 이동 경로
+                - 서버상의 경로(img 때랑 동일)
+                - 웹 상의 경로(img 때랑 동일)
+                - 현재 페이지의 내부로 이동 #이동할 곳의 id 
+                - 이동할 경로가 없는 경우 그냥 # (임시링크)만 걸어둠
+
+        2) 옵션 속성
+            target : 페이지의 이동 시 현재 창에서 열지, 새 탭에서 열지 결정
+                _self : 기본 값, 현재 창
+                _blank : 새 탭에서 링크 열림
+
+
+-->
+    <a href="#">현재 페이지 어딘가로 이동</a>
+    <a href="http://www.naver.com" target="_blank">네이버</a>
+    <a href="http://www.naver.com" target="_blank">
+        <div>
+            <img src="../img/1.jpg" alt="">
+        </div>
+    </a>
+
+    <!-- 절대 하면 안되는 구조!! -->
+
+    <!-- a태그 안에 a태그 쓰는 것 안됨! -->
+    <a href="https://www.daum.net" target="_blank">
+        <a href="#">menu1</a>
+    </a>
+
+</body>
+</html>

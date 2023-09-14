@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        
+    /* 
+        1. 클릭감지 -> label, input
+        2. 해당번째 이미지 왼쪽에서 화면으로 들어오기
+             - img 위치 조정
+             - 커스텀버튼 디자인 & 위치 조정
+             - 커스텀버튼 클릭되면 radio들 체크 되서 빨간색 불 들어오게 하기
+             - radio들 체크 되면 해당 번째 img 들어오게 하기
+             - 해당 번째 img 들어오면, 아닌 번째 img 밖으로 빼기
+        3. 시간 적용
+    */
+        .outer {
+            width: 640px;
+            height: 421px; 
+            position: relative;
+            overflow: hidden;  
+
+            border: 20px solid red;
+        }
+
+        img {
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: all 0s 1s;
+        }
+        /* 아이디 rd1 인 요소가 체크 되면, 
+            아래 요소들 중에 클래스 해당번째 img 잡고
+            left: 0으로 들어오게 하기
+        */
+        #rd1:checked ~ img:nth-of-type(1) {
+            left: 0;
+            transition: all 1s 0s;
+            z-index: 9;
+        }
+        #rd2:checked ~ img:nth-of-type(2) {
+            left: 0;
+            transition: all 1s 0s;
+            z-index: 9;
+        }
+
+
+        .box { 
+            background-color: skyblue;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            z-index: 99;
+            transform: translateX(-50%);
+
+            display: flex;
+            gap: 10px;
+        }
+        label {
+            /* display: block; */
+            width: 20px;
+            height: 20px;
+            border: 3px solid;
+            border-radius: 50%;
+
+            /* 가운데정렬-3번방법 */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            /* 가운데정렬-2번방법 */
+            /* position: relative; */
+
+        }
+        .red_circle {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background-color: red;
+
+            display: none;
+
+            /* 가운데정렬-1번방법 */
+            /* margin: 2px; */
+
+            /* 가운데정렬-2번방법 */
+            /* position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%); */
+        }
+        input {
+            position: relative;
+            z-index: 99;
+            display: none;
+        }
+
+
+
+        /* 아이디 rd1 인 요소가 체크 되면, 
+            아래 요소들 중에 클래스 box 잡고
+            그 안의 클래스 red_circle 을 display: block 주기
+        */
+        #rd1:checked ~ .box > label:nth-child(1) > .red_circle,
+        #rd2:checked ~ .box > label:nth-child(2) > .red_circle {
+            display: block;
+        }
+        /* //////////////////////////////////// */
+
+        .img_box {
+            width: 100%;
+            height: 100%;
+            background: pink;
+
+            display: flex;
+        }
+        .item {
+            width: 50%;
+            height: 100%;
+            border: 1px solid;
+
+            position: relative;
+            overflow: hidden;
+        }
+ 
+        .inner_img {
+            width: 100%;
+            height: 100%; 
+
+            position: absolute;
+            top: 0;
+            left: -100%;            
+            transition: all 0s 0.5s;
+        }
+        .inner_img1 {background-image: url(./img/트랜지션/illustration.jpg);}
+        .inner_img2 {background-image: url(./img/트랜지션/coffee.jpg);}
+        
+        .item_L .inner_img1,
+        .item_L .inner_img2 {
+            background-position: left ;
+        }
+
+        .item_R .inner_img1,
+        .item_R .inner_img2 {
+            background-position: right ;
+        }
+
+        #rd1:checked ~ .img_box .inner_img1,
+        #rd2:checked ~ .img_box .inner_img2 {
+            left: 0;
+            transition: all 0.5s 0s;
+            z-index: 99;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <input type="radio" name="rd" id="rd1" checked>
+        <input type="radio" name="rd" id="rd2">
+
+        <!--  -->
+        <div class="img_box">
+            <div class="item item_L">
+                <div class="inner_img inner_img1"></div>
+                <div class="inner_img inner_img2"></div>
+            </div>
+            <div class="item item_R">
+                <div class="inner_img inner_img1"></div>
+                <div class="inner_img inner_img2"></div>
+            </div>
+        </div>
+
+
+        <!--  -->
+
+ 
+
+        <div class="box">
+            <label for="rd1">
+                <div class="red_circle"></div>
+            </label>
+            <label for="rd2">
+                <div class="red_circle"></div>
+            </label>
+        </div>
+    </div>
+</body>
+</html>

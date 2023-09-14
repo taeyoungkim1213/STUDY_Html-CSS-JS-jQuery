@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /*
+        3d - rotateX, Y 랑 주로 같이 쓴다.
+            원근감 => perspective
+                      3d 주고 싶은 요소의 부모
+                      단위 - px(숫자가 클수록 눈에서 멀리 있다)
+
+
+            - perspective 사용법
+                1) 부모한테 주는 방법 
+                        '속성: 값' 방식으로 적용
+                            ex) perspective: 400px;
+
+                2) 자체에 주는 방법
+                        transform의 속성값 처럼 사용
+                            ex) transform: perspective(400px) rotateX(45deg);
+
+    */
+        .outer {
+            width: 200px;
+            height: 200px;
+            border: 1px solid;
+
+            margin: 100px;
+
+            /* perspective 사용법 1번 방법 */
+            perspective: 400px;
+        }
+        .blue {
+            width: 100%;
+            height: 100%; 
+            background: blue;
+
+            padding: 50px;
+            box-sizing: border-box;
+
+            transition: all 0.5s;
+            transform-style: preserve-3d;
+
+            /* backface-visibility: hidden; */
+        }
+        .outer:hover .blue {
+            /* width: 400px; */
+            /* transform: perspective(400px) rotateY(80deg); */
+            transform: rotateZ(80deg);
+        }
+
+        .red {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+            
+            transform: translateZ(30px);
+            transform: rotateZ(50deg);
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="outer">
+        <div class="blue">
+            <div class="red"></div>
+        </div> 
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="txt" onkeyup="txtCount()">
+
+<script>
+/*
+    onkeydown - 화면에 타이핑한 글자가 들어가기 전 동작
+    onkeyup - 들어간 후 동작
+
+*/ 
+    function txtCount() {
+        // 함수가 실행 되는 시점에 txt 글자수 세기
+
+        let txt = document.getElementById('txt').value;
+
+        console.log(txt.length);
+
+    }
+</script>
+</body>
+</html>

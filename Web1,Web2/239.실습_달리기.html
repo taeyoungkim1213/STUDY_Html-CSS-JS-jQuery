@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+</head>
+<body>
+    <input type="button" value="start" id="start">
+    <input type="button" value="stop" id="stop">
+    
+    <img src="./img/frmAnimation/0.png" alt="">
+
+<script>
+    $(document).ready(function() {
+
+        let count = 1;
+        let interval;
+        $(document).on('click', '#start', function(){
+
+            interval = setInterval(function(){
+
+                console.log(count)
+                /*
+                if(count > 14) {
+                    count = 0;
+                }
+                $('img').attr('src',`./img/frmAnimation/${count}.png`)
+                */
+                
+                // $('img').attr('src',`./img/frmAnimation/${count=count>14?0:count}.png`)
+
+                $('img').attr('src',`./img/frmAnimation/${count % 15}.png`)
+                count+=1;
+            }, 1000 / 24)
+
+        });
+
+        $(document).on('click', '#stop', function(){
+            clearInterval(interval)
+        })
+        
+    })
+</script>
+</body>
+</html>

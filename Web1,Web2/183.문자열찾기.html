@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    - 문자(열) 찾기
+        특정 문자열에서 필요한 위치에 있는 문자(열)을 구한다.
+        특정 위치부터 잘라낼수도 있다.
+        특정 문자를 다른 문자로 치환
+        0번째 부터 시작
+
+*/ 
+    let string = "ABCDEFGHIJKLMNOPQRSTUVWXDYZ";
+    console.log(string.length);
+
+    // 1) 특정 문자의 인덱스번호 찾기
+    console.log("D 위치: " + string.indexOf("D")  )
+    console.log("D 위치: " + string.lastIndexOf("D")  )
+
+    // 2) 특정번호로 문자 찾기
+    console.log("3번째: " + string.charAt(3)  )
+
+    // 3) X번째부터 끝까지
+    console.log("3~: " + string.slice(3)  )
+    console.log("3~: " + string.substring(3)  )
+    console.log("3~: " + string.substr(3)  )
+    // X번째부터 X번째 까지
+    console.log("3~5: " + string.slice(3,5)) // 3번째부터 5미만 번째. 배열도 자를수 있음
+    console.log("3~5: " + string.substring(3,5)) // 3번째부터 5미만 번째
+    console.log("3~5: " + string.substr(3,5)) // 3번째부터 5개
+
+    // slice는 배열도 자를수 있음
+    let arr = [1,2,3,4,5];
+    console.log(arr.slice(2,4)) 
+
+    // *4) 특정 문자를 기준으로 문자열 자르기
+    // 문자 자른 후에 배열 방식으로 저장
+    console.log(string.split("D"));
+    console.log(string.split("D")[0]);
+    console.log(string.split("D")[1]);
+    console.log(string.split("D")[2]);
+
+    let tmp = string.split("D");
+          // ['ABC', 'EFGHIJKLMNOPQRSTUVWX', 'YZ']
+    
+    console.log("=============")
+    // *5) 문자열 바꾸기 - replace
+    console.log(string);
+    console.log(string.replace("D","가나다"));
+    console.log(string.replaceAll("D","가나다"));
+    
+
+    // 6) 전체 문자열에서 특정 문자(열) (있는지 없는지만) 찾기
+    // match - ("전체문자열").match("찾으려는 문자열")
+    
+ 
+    let sp = ["android","iphone","ipad"];
+    let nu = navigator.userAgent;
+
+    document.write(nu)
+    document.write("<br>");
+    document.write(nu.toLocaleLowerCase())
+
+    for(let i=0; i<sp.length; i++) {
+        console.log(navigator.userAgent.toLocaleLowerCase().match(sp[i]))
+        if(navigator.userAgent.toLocaleLowerCase().match(sp[i])) {
+            console.log(i + ":"+ sp[i])
+            location.replace("https://m.naver.com")
+        }
+    }
+ 
+    console.log("여기: " + string.match("DE"))
+</script>
+</body>
+</html>
+ 

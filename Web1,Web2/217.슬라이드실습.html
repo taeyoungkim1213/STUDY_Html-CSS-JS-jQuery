@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0;}
+        .container{
+            width: 100%;
+            height: 100px;
+            
+            position: relative;
+        }
+        .box{
+            width: 100px;
+            height: 100%;
+            background-color: blue;
+
+            position: absolute;
+            left: 0;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="오른쪽" id="btn_R">
+    <input type="button" value="멈춤" id="btn_S">
+    <input type="button" value="왼쪽" id="btn_L">
+    <div class="container">
+        <div class="box"></div>
+    </div>
+
+    <script>
+        let btn_R = document.getElementById('btn_R');
+        let btn_S = document.getElementById('btn_S');
+        let btn_L = document.getElementById('btn_L');
+        let interval;
+        
+        btn_R.addEventListener('click', function(){slide_r("right")})
+        btn_L.addEventListener('click', function(){slide_r("left")})
+
+        let box = document.getElementsByClassName('box')[0];
+        let pos_x = 0;
+        function slide_r(direction){
+            
+            interval = setInterval(function(){
+                
+                if(direction == "right"){
+                box.style.left = pos_x + "%" ;
+                    if(pos_x >= 90){
+                        pos_x = 0;
+                    }
+                pos_x++;
+            }
+            
+                else if(direction == "left"){
+                box.style.left = pos_x + "%";
+                    if(pos_x <= 0){
+                        pos_x = 90;
+                    }
+                pos_x--;
+            }
+            
+        },10)
+    }
+    
+    
+    btn_S.addEventListener('click', function(){stop("stop")})
+
+    function stop(stop){
+        if(stop == "stop"){
+            clearInterval(interval);
+        }
+    }
+    document.addEventListener('keyup',function(){
+        if(event.keyCode == 37){
+            slide_r("left");
+        }
+        else if(event.keyCode == 39){
+            slide_r("right");
+        }
+        else if(event.keyCode == 32){
+            stop("stop");
+        }
+    })
+           
+
+
+    </script>
+</body>
+</html>

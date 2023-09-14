@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        /* .box {
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+        #box1 {
+            width: 150px;
+            height: 150px;
+            background: green;
+        }
+        #box2 {
+            width: 100px;
+            height: 100px;
+            background: blue;
+        } */
+
+        h1 ~ #box1 {
+            background: aqua ;
+        }
+    </style>
+</head>
+<body>
+    <h1>h1</h1>
+    <div class="box"></div>
+    <div class="box" id="box1"></div>
+    <div class="box" id="box2"></div>
+<script>
+$(document).ready(function() {
+
+    // let box = document.getElementsByClassName('box');
+    // for(let i=0; i<box.length; i++) {
+    //     box[i].style.background="#000";
+    //     box[i].style.width="100px";
+    //     box[i].style.height="100px";
+    // }
+/*
+    요소잡기 - 자바스크립트와 달리 css 방식으로 한번에 여러개를 잡을수 있다.
+        $('선택자')
+
+*/  
+        $('.box').css({
+            width: '100px',
+            height: '100px',
+            background: 'red',
+        })
+
+        $('#box1').css('background', 'blue');
+
+        $('h1 ~ #box1').css({
+            background: 'hotpink'
+        })
+})
+ 
+</script>
+</body>
+</html>

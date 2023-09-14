@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+    /* 
+        display: 요소의 레벨을 바꿔주거나
+                 화면에서 사라지게 할 수 있는 속성
+                 특이점 - 상속 안됨
+            
+            1) inline
+            2) block
+            3) inline-block: inline의 옆으로 나열되는 특성(필요한 만큼만 영역 잡음)과
+                             block 의 사이즈가 적용되는 특성이 합쳐진것
+                            *카테고리상 inline에 속한다.
+
+                             inline 카테고리의 요소들을 배치하면 코드상의 엔터값 때문에 빈칸이 사이에 하나씩 들어간다.
+                             이때는 그 요소들의 부모에 font-size: 0; 을 넣어주면 빈칸의 크기가 0이 되면서 사라진다.(주의: 모든 글씨들이 0이 되기 때문에 화면에 보여야 하는 글자들은 별도로 사이즈를 줘야한다.)
+            **4) none: 화면에 그려지지 않음.
+                       px도 먹지 않음.
+
+        - 화면에서 사라지게 하는 속성
+            1) display: none
+            2) opacity: 요소를 투명하게 함
+                        px 살아있고 눈에만 안보임
+                        단위 - 0~1 실수
+                               0 - 투명
+                               1 - 기본값, 보임
+                    *visibility와 차이점은 투명도 조절이 가능.
+
+            3) visibility: 요소를 투명하게 함
+                           px 살아있고 눈에만 안보임
+                        visible - 기본값, 보임
+                        hidden - 투명
+        
+    */
+        .outer {
+            font-size: 0;
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            font-size: 16px;
+
+            /* display: inline; */
+        }
+        .red { background: red;}
+        .green { 
+            background: green;
+            /* display: none; */
+            /* opacity: 0; */
+            visibility: hidden;
+        }
+        .blue { background: blue;}
+
+        
+        .box2 {
+            width: 100px;
+            height: 100px;
+
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="box red">red</div>
+        <div class="box green">green</div>
+        <div class="box blue">blue</div>
+    </div>
+    <hr>
+    <span class="box2 red">red</span>
+    <span class="box2 green">green</span>
+    <span class="box2 blue">blue</span>
+</body>
+</html>

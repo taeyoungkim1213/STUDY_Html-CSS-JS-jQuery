@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    - 반복문 종류
+        1) for - 몇바퀴 돌려야 할지 알때 주로 사용
+        2) while - 몇바퀴 돌릴지 모를때 주로 사용
+        3) do while - 몇바퀴 돌릴지 모를때
+                      최소 한번은 돌릴때 사용
+
+
+                do {
+
+                } while()
+*/
+
+    // let i = 0;
+    // while( i > 10) {
+    //     console.log(i)
+    // }
+
+
+    let cal = 0;
+    let input = 0;
+    do {
+        input = +prompt("숫자 입력하시오");
+
+        if(input != 0) {
+            cal += input;  
+        }   
+
+    } while( input > 0)
+
+    console.log(cal);
+</script>
+</body>
+</html>

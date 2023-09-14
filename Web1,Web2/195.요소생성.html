@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .el_ul {
+            color: red;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <!-- <h1 class="tmp">안녕하세요</h1> -->
+        <!-- <ul>
+            <li>menu1</li>
+            <li>menu2</li>
+            <li>menu3</li>
+        </ul> -->
+    </div>
+
+<script>
+/*
+    - 요소 생성
+        createElement: 요소(태그)를 만드는 메서드
+        createTextNode: 글자를 만드는 메서드
+
+    - 요소 속성
+        속성 설정: setAttribute('속성명','속성값')
+                    ex) setAttribute('class','abc')
+
+        속성값 찾기: getAttribute('class'); // abc
+
+    - 요소 삽입
+        prependChild: (첫번째) 자식으로 삽입
+        appendChild: (마지막) 자식으로 삽입
+
+    - 요소 삭제
+        remove(삭제할 요소) - 나 자신 사라짐
+        부모.removeChild(삭제할요소) - 부모기준 자식 잡아야함
+                부모 자식관계를 끊어서 DOM 트리에서 해제할뿐이기 때문에 
+                메모리상에는 요소가 남아있따
+
+        나.parentNode.removeChild(삭제할요소);
+
+*/  
+    
+    let el_h1 = document.createElement("h1");
+    let txt_h1 = document.createTextNode("안녕하세요~");
+    el_h1.setAttribute("class", "txt")
+    el_h1.appendChild(txt_h1);
+    document.getElementsByClassName('box')[0].appendChild(el_h1)
+ 
+    // ---------------------------
+
+    let el_ul = document.createElement("ul");
+    el_ul.setAttribute('class', 'el_ul')
+
+    for(let i=0; i<3; i++) { // 3
+        let el_li = document.createElement("li");
+        let txt_li = document.createTextNode("menu"+(i+1));
+        el_li.appendChild(txt_li);
+        el_ul.appendChild(el_li);
+
+        
+        // 위 방법 대신 대놓고 innerHTML 로도 가능
+        // let tmp_=document.getElementsByClassName('box')[0];
+        // tmp_.innerHTML+=`<div>menu${i+1}</div>`;    
+        
+    /*
+        위 두가지 방법으로 다 가능한데
+            createElement는
+                DOM을 다루는 표준방식
+                HTML의 요소들을 객체로 접근
+                innerHTML보다는 느림
+
+            innerHTML은 HTML을 몽땅 문자열로 넘겨서 사용
+                createElement 보다 빠름
+    */  
+    }
+
+    document.getElementsByClassName('box')[0].appendChild(el_ul);
+
+</script>
+</body>
+</html>

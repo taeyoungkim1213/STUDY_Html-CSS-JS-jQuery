@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            배열( array )
+                - 변수와 비슷하지만 변수는 박스에 한자료형 값 하나만 저장 가능.
+                  배열은 다른 자료형 여러개 저장 가능
+                -자료형 : object
+                -[]로 구성되며 , 로 방을 구분한다.
+                -방 개수는 무한에 가깝게 가능
+                -*방 번호는 0번부터 시작
+                -*개수 셀때는 1개부터 시작
+                *방번호와 개수 헷갈리지 않게 주의할것 !!
+                *방개수 : 배열이름.length;
+
+            -배열 선언 방법
+                1. 선언과 동시에 값을 저장
+                    let arr = ["가나다" , 10 , true];
+                2. 선언만 하고 빈 방으로 만들기
+                    let arr = new Array(방개수)
+
+        */
+       let arr = ["가나다" , 10 , true];
+       console.log(arr[0]); //0번방
+       console.log(arr[1]); //1번방
+       console.log(arr[2]); //2번방
+
+       console.log(arr.length); // 방의 갯수
+
+       for(let i = 0; i < 3; i++){
+        console.log(arr[i]);
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    반복문: 같은 작업을 같은 자리에서 반복
+            loop
+
+    - 반복문 종류
+        1) for - 몇바퀴 돌려야 할지 알때 주로 사용
+        2) while - 몇바퀴 돌릴지 모를때 주로 사용
+        3) do while - 최소 한번은 돌릴때 사용
+
+    - for문 -
+        1) for(초기식; 조건식; 증감식) { }
+            초기식 - for문이 최초로 동작할때 한번만 실행
+                    지역변수 같은거
+        2) for in문
+            객체의 속성들을 나열
+            알아서 0번째부터 끝까지 동작
+            for(변수 in 객체) { }
+
+        3) for of 문
+            반복 가능한 객체(배열)에서 사용
+            (Array, Map, Set, String 등 사용 가능)
+            알아서 0번째부터 끝까지 동작
+            for(변수 of 배열) { }
+
+        4) forEach 문
+            for문 처럼 초기,조건,증감식들이 없어도 콜백함수를 통해 기능을 수행한다.(하나씩 값을 가져오면서 몇번째인지도 알아낸다.)
+            배열에서만 사용
+*/  
+    /* 기본 for */
+    for(let i = 0; i < 3; i++) {
+        console.log(i);
+
+        // if(i >= 2) {
+        //     i=0;
+        // }
+    } 
+
+    /* for in - 객체때 주로 사용 */
+    let obj = { id:10, pw:11, lv:12 };
+    for(property in obj) {
+        console.log("name: " + property + ", value:" +obj[property]);
+    } 
+
+    /* for of- 배열때 주로 사용 */
+    let arr = [100, 200, 300];
+    for(let value of arr) {
+        console.log(value);
+    } 
+
+    /* forEach - 배열때 주로 사용 */
+    let arr2 = ["가","나","다","라"];
+    ["가","나","다","라"].forEach(function(item, index) {
+        console.log(item, index)
+    });
+    console.log("====================");
+    console.log("");
+
+    /* 중첩 */
+    let count = 1;
+    for(let i = 0; i < 4; i++) {
+        for(let j = i; j < 5; j++) {
+            console.log(i, j);
+        }   
+    }
+    
+</script>
+</body>
+</html>

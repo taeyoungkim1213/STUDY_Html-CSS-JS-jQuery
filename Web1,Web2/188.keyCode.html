@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="UID" onkeyup="로그인함수() " onmouseover="">
+    <input type="text" id="UPW" onkeyup="로그인함수() ">
+
+    <input type="button" value="로그인" onclick="로그인함수()">
+<script>
+/*
+    keyCode = 키보드 각각의 키 마다 가지고 있는 고유의 값(정수)
+
+*/
+
+    function 로그인함수() {
+        console.log(event.keyCode);
+
+        if(event.keyCode == 13 || event.keyCode==undefined) {
+            let uid = document.getElementById('UID').value;
+            let upw = document.getElementById('UPW').value;
+
+            console.log("로그인중", uid, upw)
+        }
+    }
+
+
+</script>
+</body>
+</html>

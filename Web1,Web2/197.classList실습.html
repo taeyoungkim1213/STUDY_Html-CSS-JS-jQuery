@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box0{
+            width: 300px;
+            height: 300px;
+        }
+        .bg_red{ background-color: red;}
+        .bg_green{ background-color: green;}
+        .bg_blue{ background-color: blue;}
+    </style>
+</head>
+<body>
+    <div class="box0 box1" id="box">box</div>
+    <input type="button" id="btn" value="확인"> 
+    <script>
+        /*
+            -확인버튼 누르면 div 에 bg_red,bg_green, bg_blue 순서대로 클래스 넣거나 빼기
+
+
+        */
+        let box = document.getElementById('box');
+        let btn = document.getElementById('btn');
+
+        let c_name = ['bg_red','bg_green','bg_blue'];
+        let idx = 0;
+        btn.addEventListener('click',function(){      
+
+            box.classList.remove(c_name[(idx -1) % c_name.length]);
+            box.classList.toggle(c_name[idx++ % c_name.length]);
+
+        })
+    </script>
+</body>
+</html>

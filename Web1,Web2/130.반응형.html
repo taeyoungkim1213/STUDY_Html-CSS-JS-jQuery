@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 
+        - 웹 형태에 따른 목적
+            - 데스크탑용 웹: 그냥 정보 다 풀어주면(보여주면) 됨
+            - 모바일 웹: 작은 화면에서 데탑에서 보여주던 정보들을 압축해서 보여주기
+                        스마트 기기에서 깨지지 않고 나오는것
+            - 반응형 웹: 작은 화면에서 데탑에서 보여주던 정보들을 압축해서 보여주기
+                        모든 크기(픽셀)에서 개발자의 의도대로 정보를 보여주는 것
+                        (레이아웃이 깨지지 않고 모든 기기에서 나오는것)
+                        스마트 기기에서 깨지지 않고 나오는것
+            - 적응형 웹: 필요 구간에서만 반응형이 적용되는것
+
+        - 반응형 레이아웃
+            1) 접속 기기의 가로 사이즈 먼저 생각해야함
+            2) 반응형을 만들기 위한 필수 요소 두가지
+                - <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                - 미디어쿼리
+                    @media screen and (min-width: 최소사이즈) and (max-width: 최대사이즈) and (orientation: 화면 형태) {
+                        ... 
+                    }
+                    min-width: 최소사이즈(min 또는 max 둘중 하나는 꼭 써줘야함)
+                               ~부터 시작 사이즈 (그 이후의 색 넣으면 됨.)
+                    max-width: 최대사이즈(min 또는 max 둘중 하나는 꼭 써줘야함)
+                    orientation: 화면 형태(옵션널한 속성임. 없어도 동작함)
+                                portrait: 뷰포트의 세로가 긴 상태
+                                landscape: 뷰포트의 가로가 긴 상태
+
+    */
+        body {background: gray;}
+        
+        /* @media screen and (min-width: 1300px) and (max-width: 1600px) and (orientation:portrait) {
+            body {background: pink;}   
+        }
+        @media screen and (min-width: 1000px) and (max-width: 1300px) and (orientation:portrait) {
+            body {background: green;}   
+        }
+        @media screen and (min-width: 500px) and (max-width: 1000px) and (orientation:portrait) {
+            body {background: skyblue;}   
+        } */
+
+        
+        @media screen and (max-width: 1600px) {
+            body {background: pink;}   
+        }
+        @media screen and (max-width: 1300px) {
+            body {background: green;}   
+        }
+        @media screen and (max-width: 1000px) {
+            body {background: skyblue;}   
+        }
+
+        
+        /* @media screen and (min-width: 500px) {
+            body {background: skyblue;}   
+        }
+        @media screen and (min-width: 1000px) {
+            body {background: green;}   
+        }
+        @media screen and (min-width: 1300px) {
+            body {background: pink;}   
+        } */
+    </style>
+</head>
+<body>
+    
+</body>
+</html>

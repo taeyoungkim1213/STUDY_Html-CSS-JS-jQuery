@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title> 
+    <style>
+        body { 
+            margin: 0;
+            background: #ddd;
+            font-size: 15px;
+        }
+
+        #wrap {
+            width: 750px;
+            margin: 40px auto 0;
+
+            background: pink;
+        }
+        input[name="rd"] { display: none;}
+
+        .btn_box {
+            width: 100%;
+            height: 40px;
+            background-color: greenyellow;
+
+            display: flex;
+            align-items: center;
+        }
+        .btn_box label { 
+            width: 120px;
+            height: 100%;
+            text-align: center; 
+            
+            /* 글자 정렬 1번방법 */
+            line-height: 40px;
+
+            /* 글자 정렬 2번방법 */
+            /* display: flex;
+            align-items: center;
+            justify-content: center; */
+
+            background: linear-gradient(to bottom, #5ba4a4, #4e8c8a);
+            color: #385c5b;
+            font-weight: 900;
+            text-shadow: 1px 1px 1px rgba(255, 255, 255, 0.3);
+            box-shadow: 2px 0 2px 0 rgba(0,0,0,0.1), -2px 0 2px 0 rgba(0,0,0,0.1);
+
+            border-radius: 10px 10px 0 0;
+        }
+        .btn_box label:hover {
+            cursor: pointer;
+            background: #5ba4a4;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+    <input type="radio" name="rd" id="rd1" checked>
+    <input type="radio" name="rd" id="rd2">
+    <input type="radio" name="rd" id="rd3">
+    <input type="radio" name="rd" id="rd4">
+
+    <div class="btn_box">
+        <label for="rd1">ABOUT</label>
+        <label for="rd2">SERVICES</label>
+        <label for="rd3">WORK</label>
+        <label for="rd4">CONTACT</label>
+    </div>
+    <div class="tab_box">
+        <div class="about">
+            <h2>ABOUT</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit vitae sapiente deserunt alias reiciendis odio inventore distinctio quam maiores, tenetur et ratione, quis totam culpa? Rerum suscipit dolores laboriosam quam.</p>
+        
+            <h3>How we work</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores deserunt amet id nemo fuga quidem, eos voluptate soluta quam suscipit provident obcaecati ad quae nam dolorem ab officia consectetur.</p>
+        </div> 
+        <div class="services">
+            <h2>SERVICES</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit vitae sapiente deserunt alias reiciendis odio inventore distinctio quam maiores, tenetur et ratione, quis totam culpa? Rerum suscipit dolores laboriosam quam.</p>
+        
+            <h3>How we work</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores deserunt amet id nemo fuga quidem, eos voluptate soluta quam suscipit provident obcaecati ad quae nam dolorem ab officia consectetur.</p>
+        </div> 
+        <div class="work">
+            <h2>WORK</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit vitae sapiente deserunt alias reiciendis odio inventore distinctio quam maiores, tenetur et ratione, quis totam culpa? Rerum suscipit dolores laboriosam quam.</p>
+        
+            <h3>How we work</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores deserunt amet id nemo fuga quidem, eos voluptate soluta quam suscipit provident obcaecati ad quae nam dolorem ab officia consectetur.</p>
+        </div> 
+        <div class="contact">
+            <h2>CONTACT</h2>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Reprehenderit vitae sapiente deserunt alias reiciendis odio inventore distinctio quam maiores, tenetur et ratione, quis totam culpa? Rerum suscipit dolores laboriosam quam.</p>
+        
+            <h3>How we work</h3>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe maiores deserunt amet id nemo fuga quidem, eos voluptate soluta quam suscipit provident obcaecati ad quae nam dolorem ab officia consectetur.</p>
+        </div> 
+
+    </div>
+</div>
+</body>
+</html>

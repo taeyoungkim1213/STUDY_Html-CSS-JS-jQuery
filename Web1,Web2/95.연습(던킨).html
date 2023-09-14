@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        body { height: 5000px;}
+        .box {
+            width: 100%;
+            height: 400px;
+            margin-top: 400px;
+
+            background: red url(https://www.dunkindonuts.co.kr/assets/images/main/img_banner_1_1.jpg) no-repeat fixed center / cover;
+
+            position: relative;
+        }
+        .img1 {
+            position: absolute;
+            top: 120px;
+            left: 50%;
+            transform: translateX(-100vw);
+
+            background: red;
+            transition: all 1s;
+        }
+        .img2 {
+            position: absolute;
+            bottom: 100px;
+            right: 50%;
+            transform: translateX(100vw);
+
+            background: blue;
+            transition: all 1s;
+        }
+
+        .box:hover .img1 {
+            transform: translateX(-50%);
+        }
+        .box:hover .img2 {
+            transform: translateX(50%);
+        }
+        /* ------------------------------------------- */
+
+        .box2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .inner {
+            width: 400px;
+            height: 50%;
+            
+            position: relative;
+        }
+        .img1_1 {
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateX(-100vw);
+            transition: all 1s;
+        }
+        .img2_1 {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            transform: translateX(100vw);
+            transition: all 1s;
+        }
+        .box:hover .img {
+            transform: translateX(0);
+        }
+
+
+        .menu {
+            display: flex;
+        }
+        .menu li {
+            background-color: pink;
+            margin: 30px;
+        }
+        .menu_img_box {
+            width: 250px;
+            height: 250px;
+            /* border: 1px solid; */
+            border-radius: 50%;
+            background-color: #fff;
+            overflow: hidden;
+
+            position: relative; 
+            left: 0;
+            top: -0;
+            
+            transition: all 0.5s;
+        }
+        .menu_img_box > img {
+            width: 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%) rotate(0deg)  scale(0.5);
+            transition: all 0.5s;
+        }
+        .menu li:hover .menu_img_box {
+            left: 5px;
+            top: -5px;
+            box-shadow: -5px 5px 0 0px blue;
+        }
+        .menu li:hover  img  {
+            transform: translate(-50%, -50%) rotate(3600deg) scale(1.2);
+        }
+
+        /* ///////////////////////////// */
+        .box3 {
+            display: flex;
+            justify-content: center;
+            /* gap: 20px; */
+        }
+        .box3 .circle_box {
+            width: 400px;
+            height: 400px;
+            background: brown;
+            border-radius: 50%;
+            transform: rotateY(180deg);
+            transition: all 1s, opacity 0.5s;
+
+            opacity: 0;
+
+            font-size: 150px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+        }
+        .box3:hover > .circle_box:nth-child(1) {
+            transform: translate(0, -70px) rotateY(0);
+            opacity: 1;
+        }
+        .box3:hover > .circle_box:nth-child(2) {
+            transform: translate(0, 70px) rotateY(0);
+            opacity: 1;
+            transition-delay: 0.2s;
+        }
+
+        
+        /* ///////////////////////////// */
+        .box4 {
+            display: flex;
+            justify-content: center;
+            /* gap: 20px; */
+        }
+        .box4 .circle_box_box {
+            position: relative;
+        }
+        .box4 .circle_box {
+            width: 400px;
+            height: 400px;
+            background: url(http://bitstudy.co.kr/portfolio/%ec%b5%9c%ec%9c%a0%eb%af%b8/pf/aladin/img/books/new/1_front.jpg) no-repeat center / contain;
+            border-radius: 50%;
+            transform: rotateY(180deg);
+            transition: all 1s, opacity 0.5s;
+
+            /* opacity: 0; */
+
+            font-size: 150px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+
+            backface-visibility: hidden;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        
+        .box4 .circle_box2 {
+            width: 400px;
+            height: 400px;
+            background: url(http://bitstudy.co.kr/portfolio/%ec%b5%9c%ec%9c%a0%eb%af%b8/pf/aladin/img/books/new/1_back.jpg) no-repeat center / contain;
+            border-radius: 50%;
+            transform: rotateY(0);
+            transition: all 1s, opacity 0.5s;
+
+            /* opacity: 0; */
+
+            font-size: 150px;
+            font-weight: 900;
+            color: #fff;
+            text-align: center;
+
+            backface-visibility: hidden;
+
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+        .box4:hover   .circle_box  {
+            transform: translate(0, -70px) rotateY(0);
+            opacity: 1;
+        }
+        .box4:hover   .circle_box2  {
+            transform: translate(0, -70px) rotateY(180deg);
+            opacity: 1;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="box box4" id="box4">
+        <div class="circle_box_box">
+            <div class="circle_box">1</div>
+            <div class="circle_box2">2</div>
+        </div>
+
+
+
+        <!-- <div class="circle_box">글씨2</div> -->
+    </div>
+
+
+
+    <div class="box box2">
+        <div class="inner">
+            <img src="https://www.dunkindonuts.co.kr/assets/images/main/scroll_txt_1.png" alt="" class="img1_1 img">
+            <img src="https://www.dunkindonuts.co.kr/assets/images/main/scroll_txt_2.png" alt="" class="img2_1 img">
+        </div>
+    </div>
+
+
+    <div class="box">
+        <img src="https://www.dunkindonuts.co.kr/assets/images/main/scroll_txt_1.png" alt="" class="img1">
+        <img src="https://www.dunkindonuts.co.kr/assets/images/main/scroll_txt_2.png" alt="" class="img2">
+    </div>
+
+    
+    <section class="menu_box">
+        <ul class="menu">
+            <li>
+                <div class="menu_img_box">
+                    <img src="https://www.dunkindonuts.co.kr/assets/images/main/img_product_1.png" alt="" class="img_1_3">
+                </div>
+                <div class="menu_desc">donuts</div>
+            </li>
+            <li>
+                <div class="menu_img_box">
+                    <img src="https://www.dunkindonuts.co.kr/assets/images/main/img_product_2.png" alt="" class="img_2_3">
+                </div>
+                <div class="menu_desc">coffee</div>
+            </li>
+        </ul>
+    </section> 
+    
+    <div class="box box3" id="box3">
+        <div class="circle_box">글씨</div>
+        <div class="circle_box">글씨</div>
+    </div>
+
+
+</body>
+</html>

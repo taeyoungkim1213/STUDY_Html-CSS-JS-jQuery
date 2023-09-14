@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            - 성인비교
+                년 월 일 넣으면 성인 판별(날짜 하루라도 부족하면 "미성년")
+
+                1. 년 월 일 입력받기 -> 숫자로 변경
+                2. 년 체크 -> "성인" 판별 -> 올해년도 - 19 해서 20보다 크면 "미성년" 작으면 "성인" 같으면 3. 으로
+                3. 월 체크 -> "성인" 판별 -> 이번달 - 입력한 달 비교해서 이번달 보다 입력한 달이 더크면 "미성년" 작으면 "성인" 같으면 4. 으로
+                4. 일 체크 -> "성인" 판별 -> 오늘 - 입력한 일 비교해서 오늘보다 입력한 일이 더크면 "미성년" 작거나 같으면 "성인"
+        */
+
+        let t_year = 2023;
+        let t_month = 8;
+        let t_date = 31;
+
+
+        let year = +prompt("년");
+        let month = +prompt("월") ;
+        let date = +prompt("일");
+    
+       if((t_year - year) > 19 ){
+
+        console.log("성인입니다.")
+       }
+       else if((t_year - year) < 19 ){
+
+        console.log("미성년입니다.")
+
+       }
+       else if((t_year - year) == 19){
+
+            if(t_month > month){
+                console.log("성인입니다.")
+            }
+            else if(t_month < month){
+                console.log("미성년입니다.")
+            }
+            else if(t_month == month){
+                        if(t_date >= date){
+                        console.log("성인입니다.")
+                    }
+                    else if(t_date < date){
+                        console.log("미성년입니다.")
+                    }
+            }
+            else{
+                console.log("xxxx")
+            }
+
+        }
+       else{
+        console.log("xxxx")
+       }
+       
+    </script>
+</body>
+</html>

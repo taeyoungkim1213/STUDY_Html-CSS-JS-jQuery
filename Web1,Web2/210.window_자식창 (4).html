@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>자식창</h1>
+    <input type="text" id="child_txt">
+    <input type="button" value="부모창에 보내기" onclick="send_to_parent()">
+
+    <script>
+        
+        function get_from_parent(txt) {
+            document.getElementById('child_txt').value=txt;
+        }
+
+        function bg_color() {
+            document.body.style.background="red";
+        }
+
+        function send_to_parent() {
+            let txt = document.getElementById('child_txt').value;
+
+            window.opener.get_from_child(txt);
+            window.close();
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0;}
+        .con{
+            width: 500px;
+            height: 500px;
+            background-color: pink;
+            position: relative;
+            border: 1px solid;
+            box-sizing: border-box;
+            }
+            
+         .s{
+                width: calc(500px /2);
+                height: calc(500px /2);
+                position: absolute;
+                box-sizing: border-box;
+                
+
+            }
+
+        .pink1{
+            border-right: 1px solid;
+            border-bottom: 1px solid;
+           
+        }
+        .pink2{
+            bottom: 0;
+            border-right: 1px solid;
+        }
+
+        .pink3{
+            border-bottom: 1px solid;
+            right: 0;
+        }
+
+        .pink4{
+            right: 0;
+            bottom: 0;
+        }
+     
+
+        .box{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            background-color: blue;
+            display: none;
+            
+
+        }
+
+        .blue2 { bottom: 0;}
+        .blue3 { right: 0; }
+        .blue4 {right: 0; bottom: 0;}
+
+        .s:hover > .box {
+            display: block;
+            background: blue;
+        }
+
+        
+    </style>
+</head>
+<body>
+<div class="con">
+
+    <div class="s pink1">
+        <div class="box blue1"></div>
+    </div>
+
+    <div class="s pink2">
+        <div class="box blue2"></div>
+    </div>
+    
+
+    <div class="s pink3">
+        <div class="box blue3"></div>
+    </div>
+
+    <div class="s pink4">
+        <div class="box blue4"></div>
+    </div>
+</div>
+    
+</body>
+</html>

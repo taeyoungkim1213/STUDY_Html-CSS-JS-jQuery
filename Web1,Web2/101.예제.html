@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0;}
+        h1,p{margin: 0;}
+        .outer{
+            width: 640px;
+            height: 425px;
+            overflow: hidden;
+            position: relative;
+            filter: opacity(0.8);
+            
+        }
+        .txt_box{
+            position: absolute;
+            top: calc(50% + 50px);
+            left: 0;
+            color: white;
+            transform: translate(30px, -50%);
+
+            transition: all 0.3s;
+
+        }
+        img{
+            width: calc(100% + 50px);
+            
+            position: absolute;
+            top: 0;
+            left: -50px;
+            transition: all 0.3s;
+
+            
+        }
+        .outer:hover > .txt_box{
+            top: 50%;
+        }
+        .txt_box > h1{
+            font-size: 32px;
+            font-weight: 900;
+            
+        }
+        .txt_box > p{
+            font-size: 24px;
+            margin-top: 10px;
+            opacity: 0;
+        }
+        .outer:hover > .txt_box > p{
+            opacity: 1;
+            transition: all 0.3s 0.1s;
+        }
+        .outer:hover > img{
+            left: 0;
+            transition: all 0.3s;
+            
+        }
+        .outer:hover{ filter: opacity(1); transition: all 0.3s;}
+        
+        
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="outer">
+            <img src="./img/트랜지션/books.jpg">
+            <div class="txt_box">
+                <h1>Nice Lily</h1>
+                <p>Lily Likes to play with crayons and pencils</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

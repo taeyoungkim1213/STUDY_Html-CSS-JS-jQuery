@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*
+            use strict 모드 - 엄격 모드
+                             자바스크립트가 버전 업그레이드 되면서 새로운 기능들이 추가가 되겠지만 이전 기능들도 살아 남았다
+                             기존 기능들이 계속 동작하도록 하려다보니 간단한 문법상 오류가 있어도 에러 없이 자바스크립트에서 처리를 해준다.
+                             얄짤없이 문법적으로 오류가 나면 일단 에러나도록 해주는 지시자
+                             use strict 를 쓰면 현대적인 방법으로 동작하게 할 수 있다.
+
+                             스크립트 최상위에 명시해야함
+        */
+       "use strict";
+
+       //아래 코드는 키워드(let)없이 선언했음.
+       //옜날에는 괜찮았지만 let, var, const 로 나뉘면서 잘못된 문법으로 취급
+
+    //    num = 5;
+    //    console.log(num + 10);
+
+    //매개변수의 이름이 같으면 엄격모드에서는 에러
+        function tmp(num1,num1) { //실수로 매개변수를 같은이름으로 하면 둘다 뒤에있는걸로 작동
+            console.log(num1 , num1); //2 , 2
+        }
+        tmp(1 , 2); //매개변수
+
+        
+    </script>
+</body>
+</html>

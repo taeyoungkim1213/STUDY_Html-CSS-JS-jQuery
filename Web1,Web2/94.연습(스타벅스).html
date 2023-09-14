@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .main_banner:hover { background: red !important;}
+        .main_banner {
+            width: 100%;
+            height: 32.5vw;
+            background: url(./img/starbucks/bg_img.jpg) no-repeat center / cover;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+        }
+        .slogan_box {
+            width: 20%;
+            /* text-align: center; */
+ 
+        }
+        .slogan_box img {
+            width: 100%;
+        }
+        .slogan_box .btn_detail {
+            /* padding: 10px; */
+            border: 2px solid #004734;
+            color: #004734;
+            margin-top: 20px;
+
+            /* display: inline-block; */
+
+            width: 80px;
+            height: 35px;
+            line-height: 35px;
+            border-radius: 7px;
+            font-size: 13px;
+
+            margin: 40px auto 0;
+            text-align: center;
+
+            transition: all 0.5s ;
+        }
+        .slogan_box .btn_detail a {
+            display: block; 
+        }
+        .slogan_box .btn_detail:hover {
+            background: #004734;
+            color: #fff;
+            text-decoration: underline;
+        }
+
+
+        .img_box {
+            width: 60%; 
+        }
+        .img_box img {
+            width: 20%;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_banner">
+        <div class="slogan_box">
+            <img src="./img/starbucks/summer2_top_logo.png" alt="">
+            <div class="btn_detail">
+                <a href="#">자세히보기</a>
+            </div>
+        </div>
+        <div class="img_box">
+            <img src="./img/starbucks/drink2.png" alt="">
+            <img src="./img/starbucks/drink1.png" alt="">
+            <img src="./img/starbucks/drink3.png" alt="">
+        </div> 
+    </div>
+</body>
+</html>

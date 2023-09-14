@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="id_1">-
+    
+    <input type="text" id="id_2">
+
+    <input type="button" maxlength="7" value="확인">
+    <script>
+        /*
+            1.앞칸 6글자 입력 되면 알아서 뒷칸으로 넘어가기
+            2.확인버튼 누르면 앞6글자, 뒤 7자 숫자로 제대로 들어갔는지 확인
+            숫자 키코드 = 48~57,96~105
+            지우기 키코드 = 8
+        */
+        
+
+        let id_1 = document.getElementById('id_1');
+        let id_2 = document.getElementById('id_2');
+
+        id_1.addEventListener('keyup' , function(){
+            if(id_1.value.length == 6){
+                id_2.focus();
+            }
+            else if(id_1.value.length > 6){
+                id_1.value = id_1.value.slice(0 , 6);
+            }
+        })
+        id_2.addEventListener('keyup' , function(){
+            if(id_2.value.length >= 8){
+                id_2.value = id_2.value.slice(0 , -1);
+            }
+        })
+    
+
+
+        function chk(){
+            let first = id_1.value;
+            let second = id_2.value;
+
+            if( (first.length == 6 && second.length == 7)&& 
+                (100 <= first && first <= 991231)&&
+                (100000 <= second && second <= 9999999)){
+                    console.log("ok")
+                }
+            else{
+                console.log("no")
+            }
+        }
+        
+       
+    </script>
+</body>
+</html>

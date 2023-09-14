@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/reset.css">
+    <style>  
+        .outer {
+            width: 640px;
+            height: 425px; 
+            position: relative;
+            overflow: hidden;
+        }
+        img {width: 100%;} 
+
+        .b_pan {
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            transform: translateY(100%);
+            transition: all 0.3s;
+        }
+        /* 클래스가 outer 인 요소에 마우스 올리면,
+           그 자식인 클래스 b_pan 요소가 원래 위치로 돌아오게 하기 */
+        .outer:hover > .b_pan {
+            transform: translateY(0);
+        }
+
+        h1 {
+            font-size: 36px;
+            font-weight: 900;
+
+            position: absolute;
+            left: 50%;
+            top: calc(50% + 30px);
+            /* top: 50%; */
+            transform: translate(-50%, -50%);
+            transition: all 0.3s;
+        }
+        .outer:hover > h1 {
+            color: #fff;
+            top: 50%;
+        }
+ 
+        .txt_box {
+            position: absolute;
+            bottom: 30px;
+            left: 0;
+            right: 0;
+            /* width: 100%; */
+            text-align: center;
+            color: #fff;
+
+            transform: translateY(10px);
+            transition: all 0.3s;
+
+            opacity: 0;
+
+            /* background-color: red; */
+        }
+        p {
+            margin-top: 10px; 
+
+        }
+        .outer:hover > .txt_box {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <img src="./img/트랜지션/heart.jpg" alt=""> 
+
+        <div class="b_pan"></div>
+
+        <h1>Holy Sadie</h1>
+        <div class="txt_box">
+            <p>Sadie never took her eyes off me.</p>
+            <p>She had a dark soul.</p>
+        </div>
+
+    </div>
+</body>
+</html>

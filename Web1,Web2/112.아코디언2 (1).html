@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style> 
+        body { background: #e74c3c; height: 3000px;}
+        #wrap {
+            background: #3d4642;
+            margin-top: 300px;
+        }
+        ul {
+            width: 600px;
+            height: 177px;
+            margin: 0 auto; 
+            
+            display: flex;
+        }
+
+        li {
+            width: 72px;
+            height: 100%;
+            overflow: hidden;
+            transition: all 0.3s;
+            
+            /* border: 2px solid #fff; */
+            box-shadow: 0 0 0 1px #333;
+
+            display: flex;
+        }
+        li:hover {
+            width: 300px; 
+        }
+        .img_box {
+            width: 72px;
+            height: 100%;
+            /* float: left; */
+            flex-shrink: 0;
+            
+            /* overflow: hidden; */
+
+
+            background-color: blue;
+        }
+        .img_box > img {
+            transition: all 0.3s;
+        }
+        .txt_box {
+            width: 228px;
+            height: 100%;
+
+            /* float: left; */
+            /* margin-left: 72px; */
+            
+            flex-shrink: 0;
+
+            background-color: hotpink;
+        }
+        li:hover > .img_box > img {
+            transform: translateX(-50%);
+
+        }
+
+        .txt_box p {
+            /* width: 100%; */
+            padding: 20px;
+            margin: 0;
+        }
+
+        #img_2 {
+            background-image: url(./img/아코디언/flickr_btn.gif) ;
+            background-position: left;
+            transition: all 0.3s;
+        }
+        li:hover > #img_2 {
+            background-position: right;
+        }
+    </style>
+</head>
+<body>
+<div id="wrap">
+
+    <ul>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/behance_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, provident.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box" id="img_2"></div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, provident.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/linkedin_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, provident.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/facebook_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, provident.</p>
+            </div>
+        </li>
+        <li>
+            <div class="img_box">
+                <img src="./img/아코디언/twitter_btn.gif" alt="">
+            </div>
+            <div class="txt_box">
+                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem, provident.</p>
+            </div>
+        </li> 
+    </ul>
+
+</div>
+</body>
+</html>

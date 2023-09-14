@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body { margin: 0;}
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        a { text-decoration: none; color: inherit;}
+
+        .nav_ul {
+            width: 100%;
+            height: 50px;
+            line-height: 50px; 
+            background-color: cadetblue;
+        }
+        .nav_li {
+            width: calc(100% / 4);
+            height: 50px;
+            border: 1px solid;
+            box-sizing: border-box;
+            float: left;
+            text-align: center;
+        }
+        .sub_menu {
+            width: 100%; 
+            background: skyblue;
+            display: none;
+        }
+        .sub_menu li {
+            border: 1px solid red;
+        }
+        /* 클래스가 nav_li인 요소에 마우스 올리면 그 안에 있는 자손들 중에 클래스 sub_menu 를 나타나게 해죠~~ */
+        .nav_li:hover  .sub_menu {
+            display: block;
+        }
+
+        .container {
+            width: 100%;
+            height: 1000px;
+            background-color: olivedrab;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <ul class="nav_ul">
+            <li class="nav_li">
+                <a href="#">menu1</a>
+    
+                <ul class="sub_menu">
+                    <li>sec</li>
+                    <li>sec</li>
+                    <li>sec</li>
+                </ul>
+            
+            </li>
+            
+            <li class="nav_li">
+                <a href="#">menu2</a>
+    
+                <ul class="sub_menu">
+                    <li>sec</li>
+                    <li>sec</li>
+                    <li>sec</li>
+                </ul>
+            </li>
+    
+    
+            <li class="nav_li">
+                <a href="#">menu3</a>
+    
+                <ul class="sub_menu">
+                    <li>sec</li>
+                    <li>sec</li>
+                    <li>sec</li>
+                </ul>
+            
+            </li>
+            <li class="nav_li">
+                <a href="#">menu4</a>
+    
+                <ul class="sub_menu">
+                    <li>sec</li>
+                    <li>sec</li>
+                    <li>sec</li>
+                </ul>
+            
+            </li>
+        </ul>
+    </div>
+    <div class="container"></div>
+</body>
+</html>

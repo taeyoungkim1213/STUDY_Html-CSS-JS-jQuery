@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 
+            float : 요소의 레벨에 상관 없이 옆으로 나열
+                    left, right, none
+
+            * 부모가 높이값 잡는 방법
+                1) 부모에 높이값 직접 적용 - 자식들의 필요 높이값이 바뀌면 부모도 코드 수정 필요            
+                2) overflow : hidden 또는 auto 적용 - 자식들의 높이값을 알아서 잡는다
+                3)부모에 float을 적용시킨다
+                
+            -clear : 상위요소(부모,형제중 윗레벨 요소)에 float이 적용되어 있을때 해당 요소의 높이값을 구해서 적용
+                    left,right,
+        */
+        body{
+            margin: 0;
+
+     
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+           
+
+        }
+
+        .red{
+             background:red;   
+             float: left; 
+             
+                }
+
+        .green{ 
+             background: green;
+             float: left; 
+        }
+
+        .blue{
+            background: blue;
+           
+           
+            
+            
+        }
+    </style>
+</head>
+<body>  <div>
+                <div class="box red"></div>
+                <div class="box green"></div>
+        </div>
+    <div class="box blue"></div>
+
+
+</body>
+</html>

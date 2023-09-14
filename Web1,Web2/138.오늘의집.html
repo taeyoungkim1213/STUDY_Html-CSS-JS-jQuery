@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/138.오늘의집.css">
+</head>
+<body>
+    <div class="wrap">
+    <!-- 햄버거 헤더 -->
+    <div class="header2">
+        <div class="header2_top">
+            <input type="checkbox" id="rd1">
+            <label for="rd1" class="ham_btn">
+                <div class="ham_line"></div>
+                <div class="ham_line"></div>
+                <div class="ham_line"></div>
+            </label>
+                <div class="ham_btn_box">
+                    <input type="checkbox" id="txt1" name="rd" >
+                    <div class="box_txt">
+                        <label for="txt1" class="txt1"><p>+</p></label>
+                        <h2>커뮤니티</h2>
+                        
+                        <ul class="txt1ul">
+                            <li>홈</li>
+                            <li>사진</li>
+                            <li>집들이</li>
+                            <li>노하우</li>
+                        </ul>
+                    </div>
+                    <input type="checkbox" id="txt2" name="rd" >
+                    <div class="box_txt">
+                        <label for="txt2" class="txt1"><p>+</p></label>
+                        <h2>스토어</h2>
+                        
+                        <ul class="txt1ul">
+                            <li>홈</li>
+                            <li>사진</li>
+                            <li>집들이</li>
+                            <li>노하우</li>
+                        </ul>
+                    </div>
+                    <input type="checkbox" id="txt3" name="rd" >
+                    <div class="box_txt">
+                        <label for="txt3" class="txt1"><p>+</p></label>
+                        <h2>인테리어 시공</h2>
+                        
+                        <ul class="txt1ul">
+                            <li>홈</li>
+                            <li>사진</li>
+                            <li>집들이</li>
+                            <li>노하우</li>
+                        </ul>
+                    </div>
+                </div>
+            
+            <svg class="icon2" width="74" height="30" viewBox="0 0 74 30" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><path fill="#000" d="M14.2 25.17H9.28V20.7a1.45 1.45 0 0 0-2.9 0v4.47H1.44a1.45 1.45 0 1 0 0 2.9H14.2a1.45 1.45 0 0 0 0-2.9M4.5 9.15c0-4.6 2.08-5.28 3.33-5.28 1.24 0 3.33.69 3.33 5.28v.36c0 4.6-2.09 5.28-3.33 5.28-1.25 0-3.34-.69-3.34-5.28v-.36zm3.33 8.54c3.84 0 6.23-3.13 6.23-8.18v-.36c0-5.05-2.39-8.18-6.23-8.18-3.85 0-6.24 3.13-6.24 8.18v.36c0 5.05 2.39 8.19 6.24 8.19zm25.54-7.34H17.81a1.45 1.45 0 0 0 0 2.9h15.56a1.45 1.45 0 1 0 0-2.9m-1.55 15.5c-7.08 1.83-9.45.79-10.14.25-.45-.35-.65-.8-.65-1.48v-.87h10.25c.8 0 1.46-.65 1.46-1.45v-5.08c0-.8-.66-1.45-1.46-1.45h-11.7a1.45 1.45 0 1 0 0 2.9h10.25v2.18H19.57c-.8 0-1.45.65-1.45 1.45v2.32a4.6 4.6 0 0 0 1.78 3.78c1.2.93 2.94 1.39 5.21 1.39 2.05 0 4.54-.38 7.44-1.13a1.45 1.45 0 1 0-.73-2.82M20.3 7.83h10.8a1.45 1.45 0 1 0 0-2.9h-9.35V1.45a1.45 1.45 0 1 0-2.9 0v4.93c0 .8.65 1.45 1.45 1.45"></path><rect width="3" height="15" x="70" fill="#000" rx="1.5"></rect><path fill="#000" d="M64.5 13.28a1.45 1.45 0 0 0 2.73-1c-.05-.13-1-2.68-3.38-4.5l3.7-4.1a1.45 1.45 0 0 0-1.09-2.42h-9.05a1.45 1.45 0 1 0 0 2.9h5.8l-6.88 7.64a1.45 1.45 0 1 0 2.16 1.95l3.41-3.8a8 8 0 0 1 2.6 3.33M69.56 26.52h-7.01a.82.82 0 0 1-.82-.82v-1.95h8.65v1.95c0 .45-.37.82-.82.82m2.27-9.37c-.8 0-1.45.65-1.45 1.45v2.25h-8.65V18.6a1.45 1.45 0 1 0-2.9 0v7.1a3.73 3.73 0 0 0 3.72 3.72h7.01a3.73 3.73 0 0 0 3.72-3.72v-7.1c0-.8-.65-1.45-1.45-1.45M42.46 3.87c2.22 0 2.33 4.24 2.33 5.08 0 .85-.11 5.09-2.33 5.09-2.21 0-2.32-4.24-2.32-5.08 0-.86.11-5.09 2.32-5.09m0 13.07c1.76 0 3.23-.93 4.14-2.62.71-1.34 1.1-3.2 1.1-5.36s-.39-4.02-1.1-5.37A4.6 4.6 0 0 0 42.46.97c-1.76 0-3.22.93-4.13 2.62-.72 1.35-1.1 3.2-1.1 5.37s.38 4.01 1.1 5.36a4.59 4.59 0 0 0 4.13 2.62"></path><path fill="#000" d="M51.4.49c-.8 0-1.45.65-1.45 1.45v17.78c-1.93.6-5.75 1.13-10.38 1.13h-2.2a1.45 1.45 0 0 0 0 2.9h2.2c2.64 0 7.21-.23 10.38-1.02v4.84a1.45 1.45 0 0 0 2.9 0V1.94c0-.8-.65-1.45-1.45-1.45"></path></g></svg>
+            <div class="img2">
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path d="M22 22l-5-5"></path><circle cx="11" cy="11" r="8"></circle></svg>
+
+<svg class="icon" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linejoin="round" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path stroke-linecap="round" d="M4 5h18l-2.6 10.5a2 2 0 0 1-2 1.5H8.6a2 2 0 0 1-2-1.5L4 5zm4 15.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 1 1-3 0zm7 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 1 1-3 0z"></path><path d="M1 2h3v3"></path></svg>
+            </div>
+        </div>
+        <div class="header2_bottom">
+            <div class="nav2">
+                <ul class="nav2_menu1">
+                    <li style="color: #35c5f0;">홈1</li>
+                    <li>사진</li>
+                    <li>집들이</li>
+                    <li>노하우</li>
+                    <li>전문가집들이</li>
+                    <li>셀프가이드</li>
+                    <li>질문과 답변</li>
+                    <li>이벤트</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!-- 헤더 -->
+    <header>
+        <input type="radio" id="h1" name="rd" checked>
+        <input type="radio" id="h2" name="rd">
+        <input type="radio" id="h3" name="rd">
+        <div class="header_top">
+            <div class="header_1">
+                <svg class="icon" width="74" height="30" viewBox="0 0 74 30" preserveAspectRatio="xMidYMid meet"><g fill="none" fill-rule="evenodd"><path fill="#000" d="M14.2 25.17H9.28V20.7a1.45 1.45 0 0 0-2.9 0v4.47H1.44a1.45 1.45 0 1 0 0 2.9H14.2a1.45 1.45 0 0 0 0-2.9M4.5 9.15c0-4.6 2.08-5.28 3.33-5.28 1.24 0 3.33.69 3.33 5.28v.36c0 4.6-2.09 5.28-3.33 5.28-1.25 0-3.34-.69-3.34-5.28v-.36zm3.33 8.54c3.84 0 6.23-3.13 6.23-8.18v-.36c0-5.05-2.39-8.18-6.23-8.18-3.85 0-6.24 3.13-6.24 8.18v.36c0 5.05 2.39 8.19 6.24 8.19zm25.54-7.34H17.81a1.45 1.45 0 0 0 0 2.9h15.56a1.45 1.45 0 1 0 0-2.9m-1.55 15.5c-7.08 1.83-9.45.79-10.14.25-.45-.35-.65-.8-.65-1.48v-.87h10.25c.8 0 1.46-.65 1.46-1.45v-5.08c0-.8-.66-1.45-1.46-1.45h-11.7a1.45 1.45 0 1 0 0 2.9h10.25v2.18H19.57c-.8 0-1.45.65-1.45 1.45v2.32a4.6 4.6 0 0 0 1.78 3.78c1.2.93 2.94 1.39 5.21 1.39 2.05 0 4.54-.38 7.44-1.13a1.45 1.45 0 1 0-.73-2.82M20.3 7.83h10.8a1.45 1.45 0 1 0 0-2.9h-9.35V1.45a1.45 1.45 0 1 0-2.9 0v4.93c0 .8.65 1.45 1.45 1.45"></path><rect width="3" height="15" x="70" fill="#000" rx="1.5"></rect><path fill="#000" d="M64.5 13.28a1.45 1.45 0 0 0 2.73-1c-.05-.13-1-2.68-3.38-4.5l3.7-4.1a1.45 1.45 0 0 0-1.09-2.42h-9.05a1.45 1.45 0 1 0 0 2.9h5.8l-6.88 7.64a1.45 1.45 0 1 0 2.16 1.95l3.41-3.8a8 8 0 0 1 2.6 3.33M69.56 26.52h-7.01a.82.82 0 0 1-.82-.82v-1.95h8.65v1.95c0 .45-.37.82-.82.82m2.27-9.37c-.8 0-1.45.65-1.45 1.45v2.25h-8.65V18.6a1.45 1.45 0 1 0-2.9 0v7.1a3.73 3.73 0 0 0 3.72 3.72h7.01a3.73 3.73 0 0 0 3.72-3.72v-7.1c0-.8-.65-1.45-1.45-1.45M42.46 3.87c2.22 0 2.33 4.24 2.33 5.08 0 .85-.11 5.09-2.33 5.09-2.21 0-2.32-4.24-2.32-5.08 0-.86.11-5.09 2.32-5.09m0 13.07c1.76 0 3.23-.93 4.14-2.62.71-1.34 1.1-3.2 1.1-5.36s-.39-4.02-1.1-5.37A4.6 4.6 0 0 0 42.46.97c-1.76 0-3.22.93-4.13 2.62-.72 1.35-1.1 3.2-1.1 5.37s.38 4.01 1.1 5.36a4.59 4.59 0 0 0 4.13 2.62"></path><path fill="#000" d="M51.4.49c-.8 0-1.45.65-1.45 1.45v17.78c-1.93.6-5.75 1.13-10.38 1.13h-2.2a1.45 1.45 0 0 0 0 2.9h2.2c2.64 0 7.21-.23 10.38-1.02v4.84a1.45 1.45 0 0 0 2.9 0V1.94c0-.8-.65-1.45-1.45-1.45"></path></g></svg>
+                
+                <div class="h1_menu">
+                    <label for="h1">커뮤니티</label>
+                    <label for="h2">스토어</label>
+                    <label for="h3">인테리어시공</label>
+                </div>
+                <div class="h1_r">
+                    <div class="h1_search">
+                        <svg class="icon_serch" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path d="M22 22l-5-5"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                        <input type="text" placeholder="오늘의집 통합검색">
+                    
+                    <svg class="icon_camera" width="24" height="24" fill="none" viewBox="-1 -1 24 24" preserveAspectRatio="xMidYMid meet"><path fill="currentColor" fill-rule="evenodd" d="M7.62.83c-.37 0-.7.22-.84.55l-.96 2.2H1.83C.83 3.58 0 4.4 0 5.42v12.83c0 1.01.82 1.83 1.83 1.83h18.34c1 0 1.83-.82 1.83-1.83V5.42c0-1.02-.82-1.84-1.83-1.84h-4l-.95-2.2a.92.92 0 00-.84-.55H7.62zm7.96 11a4.58 4.58 0 11-9.16 0 4.58 4.58 0 019.16 0z" clip-rule="evenodd"></path></svg></div>
+                    <svg class="icon_serch2" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path d="M22 22l-5-5"></path><circle cx="11" cy="11" r="8"></circle></svg>
+                    <svg class="icon_shopping" width="24" height="24" viewBox="0 0 24 24" stroke="currentColor" fill="none" stroke-linejoin="round" stroke-width="2" preserveAspectRatio="xMidYMid meet"><path stroke-linecap="round" d="M4 5h18l-2.6 10.5a2 2 0 0 1-2 1.5H8.6a2 2 0 0 1-2-1.5L4 5zm4 15.5a1.5 1.5 0 1 1 3 0 1.5 1.5 0 1 1-3 0zm7 0a1.5 1.5 0 1 1 3 0 1.5 1.5 0 1 1-3 0z"></path><path d="M1 2h3v3"></path></svg>
+                    로그인ㅣ회원가입
+                    <div class="write">
+                        <input type="checkbox" id="wr">
+                        <label for="wr" class="wr_b">글쓰기 ∨</label>
+                        <div class="caarot"></div>
+                        <div class="wr_box"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="header_bottom">
+            <div class="header_2">
+                <div class="nav">
+                    <ul class="nav_menu1">
+                        <li>홈1</li>
+                        <li>사진</li>
+                        <li>집들이</li>
+                        <li>노하우</li>
+                        <li>전문가집들이</li>
+                        <li>셀프가이드</li>
+                        <li>질문과 답변</li>
+                        <li>이벤트</li>
+                    </ul>
+                    <ul class="nav_menu2">
+                        <li>홈2</li>
+                        <li>사진</li>
+                        <li>집들이</li>
+                        <li>노하우</li>
+                        <li>전문가집들이</li>
+                        <li>셀프가이드</li>
+                        <li>질문과 답변</li>
+                        <li>이벤트</li>
+                    </ul>
+                    <ul class="nav_menu3">
+                        <li>홈3</li>
+                        <li>사진</li>
+                        <li>집들이</li>
+                        <li>노하우</li>
+                        <li>전문가집들이</li>
+                        <li>셀프가이드</li>
+                        <li>질문과 답변</li>
+                        <li>이벤트</li>
+                    </ul>
+                </div>
+                <div class="h2_r">
+                    3D 인테리어
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- 배너 -->
+    <div class="mainbanner">
+        <div class="banner1">
+            <div class="banner1_txt bt1">
+                <p>30년간 한 번도 수리하지 않은 집,깔끔하게 리<p>모델링</p>
+            </div>
+            <div class="banner1_txt bt2">
+                <p>보러가기</p>
+            </div>
+            <img src="./img/오늘의집/main_banner/main_banner_L.jpg" alt="">
+        </div>
+        <div class="banner2">
+            <img src="./img/오늘의집/main_banner/main_banner_R1.png" alt="">
+        </div>
+        <div class="min_banner">
+            <img src="./img/오늘의집/banner1_sm.webp" alt="">
+        </div>
+    </div>
+    <div class="simple_scroll">
+        <div class="simple_menu">
+            <ul>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu1.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu2.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu3.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu4.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu5.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu6.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu7.png" alt="#"></li>
+                <li><img src="./img/오늘의집/simple_menu/simple_menu8.png" alt="#"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 오늘의 스토리 -->
+    <div class="today_story">
+        <div class="story_title"><h2>오늘의 스토리</h2></div>
+        <ul>
+            <li><img src="./img/오늘의집/today_story/today_story1.jpg" alt="">
+            <div class="story_txt"><p>평범한 구조의 아파트지만 좀 더 색 다르게</p></div></li>
+            <li><img src="./img/오늘의집/today_story/today_story2.jpg" alt="">
+            <div class="story_txt"><p>평범한 구조의 아파트지만 좀 더 색 다르게</p></div></li>
+            <li><img src="./img/오늘의집/today_story/today_story3.jpg" alt="">
+            <div class="story_txt"><p>평범한 구조의 아파트지만 좀 더 색 다르게</p></div></li>
+            <li>
+                <div class="story_list">집들이</div>
+                <div class="story_list">전문가 집들이</div>
+                <div class="story_list">노하우</div>
+            </li>
+        </ul>
+    </div>
+    <!-- 카테고리 상품 -->
+    <div class="category_scroll">
+        <div class="category">
+            <div class="category_title"><h2>카테고리별 상품 찾기</h2></div>
+            <ul>
+                <li><img src="./img/오늘의집/category/category1.png"></li>
+                <li><img src="./img/오늘의집/category/category2.png"></li>
+                <li><img src="./img/오늘의집/category/category3.png"></li>
+                <li><img src="./img/오늘의집/category/category4.png"></li>
+                <li><img src="./img/오늘의집/category/category5.png"></li>
+                <li><img src="./img/오늘의집/category/category6.png"></li>
+                <li><img src="./img/오늘의집/category/category7.png"></li>
+                <li><img src="./img/오늘의집/category/category8.png"></li>
+                <li><img src="./img/오늘의집/category/category9.png"></li>
+                <li><img src="./img/오늘의집/category/category10.png"></li>
+            </ul>
+        </div>
+    </div>
+    <!-- 오늘의 딜 -->
+    <div class="today_scroll">
+        <div class="today_deal">
+            <div class="today_deal_title">
+                <h2>오늘의 딜</h2>
+                <div class="view"><a href="#">더보기</a></div>
+            </div>
+            <ul>
+                <li>
+                    <div class="todayimg">
+                        <img src="./img/오늘의집/today_deal/today_deal1.jpg" alt="">
+                    </div>
+                    <div class="today_txt">
+                        <p style="color: gray; font-size: 14px;">잉글랜더</p>
+                        <p>잉글랜더 거실가구 베스트/아쿠아텍스 소파,거실장</p>
+                        <span style="color: red;">60%</span><span style="font-weight: 900;">199,000외</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="todayimg">
+                        <img src="./img/오늘의집/today_deal/today_deal2.jpg" alt="">
+                    </div>
+                    <div class="today_txt">
+                        <p style="color: gray; font-size: 14px;">잉글랜더</p>
+                        <p>잉글랜더 거실가구 베스트/아쿠아텍스 소파,거실장</p>
+                        <span style="color: red;">60%</span><span style="font-weight: 900;">199,000외</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="todayimg">
+                        <img src="./img/오늘의집/today_deal/today_deal3.jpg" alt="">
+                    </div>
+                    <div class="today_txt">
+                        <p style="color: gray; font-size: 14px;">잉글랜더</p>
+                        <p>잉글랜더 거실가구 베스트/아쿠아텍스 소파,거실장</p>
+                        <span style="color: red;">60%</span><span style="font-weight: 900;">199,000외</span>
+                    </div>
+                </li>
+                <li>
+                    <div class="todayimg">
+                        <img src="./img/오늘의집/today_deal/today_deal4.jpg" alt="">
+                    </div>
+                    <div class="today_txt">
+                        <p style="color: gray; font-size: 14px;">잉글랜더</p>
+                        <p>잉글랜더 거실가구 베스트/아쿠아텍스 소파,거실장</p>
+                        <span style="color: red;">60%</span><span style="font-weight: 900;">199,000외</span>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!-- 오늘의 인기 -->
+    <div class="today_star">
+        <div class="today_deal_title">
+            <h2>오늘의 인기사진</h2>
+            <div class="view"><a href="#">더보기</a></div>
+        </div>
+        <ul>
+            <li>
+                <div class="revon">1</div>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic1.webp" >
+            </li>
+        
+    
+            <li>
+                <div class="revon">2</div>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic2.webp" >
+            </li>
+        
+        
+            <li>
+                <div class="revon">3</div>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic3.webp" >
+            </li>
+        
+        
+            <li>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic4.webp" >
+            </li>
+        
+        
+            <li>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic5.webp" >
+            </li>
+        
+        
+            <li>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic6.webp" >
+            </li>
+        
+        
+            <li>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic7.webp" >
+            </li>
+        
+        
+            <li>
+                <div class="mydayss">mydayss</div>
+                <img src="./img/오늘의집/today_pic/today_pic8.webp" >
+            </li>
+        </ul>
+    </div>
+    <!-- 아래배너 -->
+    <div class="bottom_banner">
+        <img src="./img/오늘의집/banner1.webp">
+        <div class="b_banner_box">
+            <div class="b_banner">1</div>
+            <div class="b_banner">2</div>
+        </div>
+    </div>
+    <div class="footer"></div>
+</div>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //0넣으면 출력 , 0넣기전까진 계속 입력
+
+        
+        let chk = true;
+        let total = 0;
+        while(chk == true){
+            let item = +prompt("상품입력");
+            if(item > 0){
+                total += item;
+                // document.write(item + "원<br>");
+                if(total >=50000){
+                    
+                        sale = total * 0.2;
+                        result = total * 0.8;
+                        document.write("총가격은"+total+"할인률은 20%"+ "할인금액은" + sale +"이고 할인 된 가격은" + result);
+                }       
+                else if(total <=50000  && total >=10000){
+                        sale = total * 0.1;
+                        result = total * 0.9; 
+                        document.write("총가격은"+total+"할인률은 10%"+ "할인금액은" + sale +"이고 할인 된 가격은" + result + "<br>");
+                }
+                
+            }
+            else if(item == 0){
+                chk= false;
+                
+            }
+        }
+
+
+    </script>
+</body>
+</html>

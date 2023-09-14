@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        .chk { display: block;}
+    </style>
+</head>
+<body>
+    <input type="checkbox" class="chk_all" >
+    <hr>
+    <input type="checkbox" class="chk" >
+    <input type="checkbox" class="chk" >
+    <input type="checkbox" class="chk" >
+    <input type="checkbox" class="chk" >
+    <input type="checkbox" class="chk" >
+
+<script>
+/*
+    - checkbox가 체크 되어있는지 확인
+        $('선택자').is(':checked') 
+            체크 되어있으면 true
+            아니면 false
+
+    - 체크하기
+        $('선택자').attr('checked', true) => 체크 
+        $('선택자').attr('checked', false) => 체크 해제
+*/
+    $(document).ready(function() {
+        $('.chk_all').click(function(){
+            // true면 화면에 지금 체크가 된 상태
+            if($(this).is(':checked')) { // 화면에 넣고 결과 출력
+                $('.chk').prop('checked', true)
+            }
+            else {
+                $('.chk').prop('checked', false)
+            }
+        });
+
+        // $(document).on('click', '.chk', function(){
+        $('.chk').click(function(){
+            console.log($(this).is(':checked'))
+        });
+
+
+
+    })
+</script>
+</body>
+</html>

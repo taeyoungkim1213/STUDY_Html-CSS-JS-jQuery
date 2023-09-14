@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    Date 객체 - 로컬시간을 나타낸다
+                자료형 숫자형
+
+        getFullYear() => 년도, 4자리
+        getMonth() => 월, 1자리
+                    0부터 1월로 치기 때문에 출력할때는 +1을 해서 출력한다.
+        getDate() => 일, 1자리
+        getDay() => 요일, 1자리
+                    0-일요일, 6-토요일
+                    조건문 이용해서 문자로 변경해서 출력
+        getHours() => 시, 1자리
+                    24시간제
+        getMinutes() => 분, 1자리
+        getSeconds() => 초, 1자리
+        getMilliseconds() => 밀리초, 1자리
+        -----------------------------------------------------------------
+        setMonth: 월이 해당 년의 최대/최소(1~12) 범위를 벗어나면 년도를 바꾼다.
+        setDate: 날짜가 월의 최대/최소 일수보다 커지거나 작아지면 자동으로 월을 바꾼다
+                    필요하면 년 월 일을 다 바꾼다.
+
+        getTime: 1970.1.1 00:00:00초 기준으로 현재까지의 밀리초
+
+
+    - 생성자 함수 -
+        - 일반적으로 대문자로 시작
+            (소문자로 해도 상관은 없지만 대부분의 개발자들이 지키는 규칙)
+            자바스크립트에서 기본적으로 제공하는 생성자 함수 모두 대문자로 시작
+        - 생성자함수를 사용할땐 모두 new 키워드를 사용함
+*/
+    // 현재 로컬시간
+    let dt = new Date();
+    console.log(dt.getFullYear())
+    console.log(dt.getMonth()+1)
+    console.log(dt.getDate())
+    console.log(dt.getDay())
+    console.log(dt.getHours())
+    console.log(dt.getMinutes())
+    console.log(dt.getSeconds())
+    console.log(dt.getMilliseconds())
+    console.log("")
+
+    // 날짜 정보(요일) 찾기
+    let dt2 = new Date(2022,8,7); 
+    console.log(dt2.getDay()+"요일")
+    console.log("")
+
+    // 날짜 더하기
+    let dt3 = new Date();
+    console.log(dt.getFullYear())
+    console.log(dt.getMonth()+1)
+    console.log(dt.getDate()+30)
+    /*
+        년월일을 더하거나 뺄때는 내장함수 사용해야함
+        이유: 37일이 나올수도 있음
+
+        setDate, setMonth 를 사용할것
+    */
+    
+ 
+</script>
+</body>
+</html>

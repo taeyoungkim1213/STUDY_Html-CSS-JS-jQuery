@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    /* 
+        transition - 애니메이션처럼 요소의 변화를 일정시간동안 움직이게 하는것
+                    hover와 transform과 궁합이 좋다.
+                    *display, background-image 와는 같이 사용 못함
+
+            *1) transition-property: 트랜지션을 적용할 속성명
+                                    - all: 기본값,
+                                           해당 요소에 있는 모든 속성
+                                    
+                                    - 특정속성: 해당 속성에만 시간 적용
+                                                여러개 줄때는 , 로 구분
+                                    - none: 트랜지션 없애기
+            
+            *2) transition-duration: 진행시간
+                                    단위 - 초(s)
+                                           여러개 줄때는 property 순서에 맞춰서 , 로 구분
+                                    
+            3) transition-timing-function: 속도
+                                        ease
+                                        ease-in
+                                        ease-out
+                                        ease-in-out
+                                        **linear
+            4) transition-delay: 지연
+                                 단위 - 초(s)
+
+        *한방
+            transition: property  duration  timing-function  delay
+                *property가 여러개인 경우 한방씩 통째로 , 로 구분
+                    ex) transition: property  duration  timing-function  delay,
+                                    property  duration  timing-function  delay,
+                                    property  duration  timing-function  delay
+
+                        transition: width 1s linear 3s, 
+                                    height 2s linear 3s, 
+                                    background 3s linear 3s; 
+    */
+        .outer {
+            width: 500px;
+            height: 500px;
+            border: 1px solid;
+            transition-property: ;
+        }
+        .blue {
+            width: 100px;
+            height: 100px; 
+            background: blue;
+            
+            /* transition-property: width, background-color, padding, border;
+            transition-duration: 5s, 1s, 10s; */
+            
+            /* transition-property: width, height, background;
+            transition-duration: 1s, 2s, 3s;
+            transition-timing-function: linear;
+            transition-delay: 3s; */
+
+            transition: width 1s linear 3s, height 2s linear 3s, background 3s linear 3s; 
+        }
+        .outer:hover .blue {
+            width: 200px;
+            /* height: 200px;
+            background-color: red; */
+            /* padding: 5px;
+            border: 50px solid;
+            margin: 10px;
+             */
+
+            transition: width 10s linear 5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="blue"></div>
+    </div>
+</body>
+</html>

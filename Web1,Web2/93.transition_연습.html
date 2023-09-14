@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .outer {
+            width: 200px;
+            height: 400px;
+            border: 10px solid red;
+            
+            perspective: 400px;
+        }
+        .blue {
+            width: 0;
+            height: 0;
+            background: url(./img/1.jpg);
+            
+            transform: translate(100px, 100px);
+            
+
+        }
+        .outer:hover > .blue {
+            width: 600px;
+            height: 400px;
+            transform: translate(100px, 100px) rotateX(3600deg) rotateY(-10deg) rotateZ(20deg);
+            box-shadow: 0 0 10px 5px #222222;
+            transition: all 0.25s;
+        }
+    </style>
+</head>
+<body>
+    <div class="outer">
+        <div class="blue"></div>
+    </div>
+</body>
+</html>

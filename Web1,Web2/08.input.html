@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        input : inline 레벨
+                사용자로부터 입력을 받을 수 있는 태그
+                닫는 태그 없음(기본 사이즈가 정해져 있음)
+
+                <input type="유형" 속성="속성값"...>
+
+        속성 
+            1) type : 필수
+                    해당 inpurt이 어떤건지 유형 정하기
+            2) value : 실제값
+                        옵션 속성
+                        * 필수처럼 사용하는 type = button
+            3) name : 요소에 이름 줄 때
+                        요소를 그룹핑할 때 사용
+                        * 필수처럼 사용하는 type : radio
+                        * checkbox나 radio에서는 정보를 넘길 때 사용
+     -->
+
+    <!-- 많이 사용 -->
+    <!-- <input type="text" value="" id="" class=""><br> 속성 값 입력 안하면 저렇게 빈칸 처리--> 
+    <input type="text" value="abcd"><br>
+    <input type="password" placeholder="abcd"><br>
+    <input type="button" value="abcd"><br>
+
+    <!-- 선택해제 불가 -->
+    <input type="radio" name="rd">웹1
+    <input type="radio" name="rd">웹2
+    <input type="radio" name="rd">웹3<br>
+
+    <!-- 
+        label : 특정 요소와 연결
+    -->
+    <input type="radio" name="rd" id="web1">
+    <label for="web1">웹1</label>
+    
+    <label for="web2">
+        <input type="radio" name="rd" id="web2">웹2
+    </label>
+    <input type="radio" name="rd">웹3<br>
+
+    <!-- 선택해제 가능 -->
+    <input type="checkbox">프론트엔드
+    <input type="checkbox">백엔드
+    <input type="checkbox">풀스택<br>
+
+    <hr>
+    <!-- 중간빈도 -->
+    <!-- submit, reset은 form 태그 안에서만 사용 가능
+        form 안에 있는 input 정보들을 넘길 때만 사용
+        form 밖에 있을 때는 button과 동일
+    -->
+    <input type="submit"><br>
+    <input type="reset"><br>
+
+    <input type="hidden"><br>
+    <input type="search"><br>
+    <input type="file"><br>
+    <input type="range"><br>
+
+    <hr>
+    <!-- 거의 안씀 -->
+    <input type="number"><br>
+    <input type="tel"><br>
+    <!-- email : form 태그 안에서만 사용 가능! @의 유무 판별 -->
+    <input type="email"><br>
+    <input type="date"><br>
+    <input type="datetime-local"><br>
+
+</body>
+</html>

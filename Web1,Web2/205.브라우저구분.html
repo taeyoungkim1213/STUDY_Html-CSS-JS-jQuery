@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    브라우저가 어떤 종류인지 확인하는 코드
+*/
+    let userAgent = window.navigator.userAgent.toLowerCase();
+    console.log(userAgent)
+
+    let isChrome = userAgent.indexOf('chrome');
+    let isEdge = userAgent.indexOf('edg'); 
+    
+    // 익스용
+    // let isIE = userAgent.indexOf('trident'); 
+    // let isIE2 = userAgent.indexOf('msie'); 
+
+    console.log("isChrome: " + isChrome);
+    console.log("isEdge: " + isEdge);
+
+</script>
+</body>
+</html>

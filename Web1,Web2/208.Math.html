@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<script>
+/*
+    Math 객체 - 수학적 객체
+
+    *1) random: 무작위의 0.0000~0.9999
+                              Math.random()     * (자리수*10)
+            //한자리 랜덤수 => 0.9999999999999999 * 10      => 9.999999999999999
+            //한자리 랜덤수 => 0.0000000000000001 * 10      => 0.00000000000001
+
+            올림: Math.ceil(9.999999999999999) => 10
+            내림: Math.floor(9.999999999999999) => 9 + 1 => 10
+             
+            올림: Math.ceil(0.00000000000001) => 1
+            내림: Math.floor(0.00000000000001) => 0 + 1 => 1
+             
+    2) ceil: 올림
+    3) floor: 내림
+    4) round: 반올림
+    5) max: Math.max(숫자,숫자,숫자,숫자)
+            이중에 제일 큰 숫자 하나
+    6) min: Math.min(숫자,숫자,숫자,숫자)
+            이중에 제일 작은 숫자 하나
+    7) abs: 절대값
+    8) pow: 제곱 Math.pow(2,3) => 2의 3승
+    9) sqrt: 루트
+*/
+    let rand = Math.random();
+    console.log(rand)
+    console.log("ceil: " + Math.ceil(rand * 100))
+    console.log("floor: " + Math.floor(rand * 100))
+
+    let num = 10.948
+    console.log(num)
+    console.log(Math.ceil(num))
+    console.log(Math.floor(num))
+
+    console.log("max: "+ Math.max(10,30,20,1,5));
+    console.log("min: "+ Math.min(10,30,20,1,5));
+
+    console.log("abs: " + Math.abs(1))
+    console.log("pow: " + Math.pow(2,3))
+    console.log("sqrt: " + Math.sqrt(4))
+</script>
+</body>
+</html>

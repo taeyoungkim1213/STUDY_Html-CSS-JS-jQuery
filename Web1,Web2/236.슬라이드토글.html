@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .header {
+            width: 100%;
+            height: 100px;
+            background-color: hotpink;
+        }
+        .box {
+            /* width: 500px; */
+            height: 500px;
+            background-color: pink; 
+
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="슬라이드" id="btn">
+    <div class="header"></div>
+    <div class="box">111</div>
+<script>
+$(document).ready(function() {
+/*
+    $('선택자').slideUp(밀리초); => 위로 접힘
+                                    다 접히면 display:none으로 변경됨
+    $('선택자').slideDown(밀리초); => 아래로 펼쳐짐
+                                    기본을 display:none 으로 해놔야 동작함
+    $('선택자').slideToggle(밀리초); => slideUp / slideDown 합쳐진거
+
+
+    $('선택자').fadeOut(밀리초); 
+    $('선택자').fadeIn(밀리초); 기본을 display:none 으로 해놔야 동작함
+    $('선택자').fadeToggle(밀리초);
+
+    *버튼을 여러번 눌러놓으면 스택에 순서대로 쌓이고, 모든 애니메이션이 끝날때까지 다른 행동을 하지 않는다.(또는 계속 새로운걸 쌓는다)
+    .stop() 으로 기존 순서들꺼를 날릴수 있다
+*/  
+    $('#btn').click(function(){
+        $('.box').fadeToggle(500);
+    });
+})
+</script>
+</body>
+</html>

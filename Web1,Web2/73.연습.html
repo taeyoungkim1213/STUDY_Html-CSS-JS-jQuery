@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0;}
+        .wrap{
+            width: 100%;
+            height: 500px;
+            padding: 0 10px;
+        }
+        ul{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        .nav{
+            width: 100%;
+            height: 50px;
+            line-height: 30px;
+            text-align: center;
+            cursor: pointer;
+            background-color: bisque;
+            
+        }
+        .nav:hover{
+            background-color: gray;
+        }
+        .list{
+            width: 100px;
+            height: 30px;
+            float: left;
+            text-align: center;
+            margin: 10px 10px;
+
+            position: relative;
+        }
+        .list:hover{
+            background-color: papayawhip;
+        }
+        .H_ul{
+            width: 100%;
+            height: 100px;
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            display: none;
+        
+        }
+        .list:hover .H_ul {
+            display: block;
+        } 
+        .H_hover{
+            width: 100%;
+            height: 50px;
+            display: none;
+            background-color: white;
+            box-shadow: 2px 2px 2px 2px gray;
+            
+        }
+        .H_hover:hover{
+            background-color: grey;
+        }
+        .list:hover  .H_hover{
+            display: block;
+        }
+        
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="header"><h2>HTML5 웹 프로그래밍</h2></div>
+        <hr>
+        <div class="nav">
+            <ul>
+                <li class="list">Home
+                    <ul class="H_ul">
+                        <li class="H_hover">Menu1</li>
+                        <li class="H_hover">Menu2</li>
+                    </ul>
+                </li>
+                <li class="list">Menu1
+                    <ul class="H_ul">
+                        <li class="H_hover">Menu1</li>
+                        <li class="H_hover">Menu2</li>
+                    </ul>
+                </li>
+                <li class="list">Menu2
+                    <ul class="H_ul">
+                        <li class="H_hover">Menu1</li>
+                        <li class="H_hover">Menu2</li>
+                    </ul>
+                </li>
+                <li class="list">Menu3
+                    <ul class="H_ul">
+                        <li class="H_hover">Menu1</li>
+                        <li class="H_hover">Menu2</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>

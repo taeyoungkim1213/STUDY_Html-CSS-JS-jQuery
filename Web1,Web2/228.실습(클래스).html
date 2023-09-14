@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./js/jq-1.12.4.js"></script>
+    <style>
+        .btn_box{
+            width: 522px;
+            border: 5px solid;
+        }
+        #img_box{
+            width: 522px;
+            height: 400px;
+            border: 5px solid;
+        }
+        .spring{background: url(./img/탭/spring.jpg);}
+        .summer{background: url(./img/탭/summer.jpg);}
+        .fall{background: url(./img/탭/fall.jpg);}
+        .winter{background: url(./img/탭/winter.jpg);}
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="btn_box">
+            <img src="./img/탭/btn1.jpg" id="sp_btn">
+            <img src="./img/탭/btn2.jpg" id="sm_btn">
+            <img src="./img/탭/btn3.jpg" id="fa_btn">
+            <img src="./img/탭/btn4.jpg" id="wi_btn">
+        </div>
+        <div id="img_box" class="spring"></div>
+
+    </div>
+
+    <script>
+        $(document).ready(function(){
+
+            $('#sp_btn').click(function(){
+                $('#img_box').removeClass().addClass('spring');
+            })
+            $('#sm_btn').click(function(){
+                $('#img_box').removeClass().addClass('summer');
+            })
+            $('#fa_btn').click(function(){
+                $('#img_box').removeClass().addClass('fall');
+            })
+            $('#wi_btn').click(function(){
+                $('#img_box').removeClass().addClass('winter');
+            })
+
+        })
+    </script>
+</body>
+</html>

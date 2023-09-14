@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" id="uPhon" placeholder=" - 없이 입력하시오"> 
+
+    <script>
+        /*
+            - uPhone 에 숫자만 입력받게 하기
+            숫자 키코드 = 48~57,96~105
+            지우기 키코드 = 8
+
+            -순서  
+                1. 입력받은 키값(키코드) 체크해서 숫자영역이면 냅두기
+                                                아니면 방금 입력한 값 지우기
+        */
+
+        let el = document.getElementById('uPhon');
+        el.addEventListener('keyup' , function(){
+            let txt = el.value;
+            el.value = txt.replaceAll("-" , "");
+
+            // let kc = event.keyCode;
+            // if((48 > kc && kc > 57) || (96 > kc && kc >105)){
+                
+            // }
+            // else{
+            //     console.log(el.value);
+            // }
+           
+        })
+
+       
+    </script>
+</body>
+</html>

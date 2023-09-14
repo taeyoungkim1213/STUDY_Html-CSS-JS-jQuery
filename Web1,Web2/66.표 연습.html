@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0;}
+        .wrap{
+            width: 700px;
+            height: 700px;
+            border: 1px solid;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+
+        }
+        .id_box{
+            width: 500px;
+            height: 500px;
+            margin: 50px auto;
+            border: 1px solid;
+            padding: 20px;
+        }
+        table{
+            line-height: 40px;
+        }
+        .dash{
+            width: 100%;
+            padding: 5px 20px;
+            box-sizing: border-box;
+            border: none;
+            border-bottom: dashed;
+            /* height: 20px; */
+            outline: none;
+            background: transparent;
+            
+        }
+        .email{
+            width: calc((100% - 15.67px) / 2);
+            border: none;
+            border-bottom: dashed;
+            
+
+        }
+        .sub_box{
+            width: 90%;
+            height: 100px;
+            margin: 50px auto;
+        }
+        .sub{
+            width: 100%;
+            height: 100%;
+            background-color: gray;
+            color: white;
+            
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <form action="#" class="id_box">
+    <table border="0px" cellspacing="0">
+        <tr>
+            <td>아이디</td>
+            <td><input type="text" id="id" class="dash" required></td>
+        </tr>
+        <tr>
+            <td>패스워드</td>
+            <td><input type="password" id="ps" class="dash" required></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td style="font-size: 9px; color: gray;">영문자 대/소문자 특수문자,숫자포함 8~32자</td>
+        </tr>
+        <tr>
+            <td>패스워드 확인</td>
+            <td><input type="password" id="pssok" class="dash" required></td>
+        </tr>
+        <tr>
+            <td>이메일</td>
+            <td><input type="email" class="dash email">@<input type="dash email" class="dash email"></td>
+        </tr>
+        <tr>
+            <td>주소</td>
+            <td><input type="text" class="dash"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="text" class="dash"></td>
+        </tr>
+        
+    </table>
+    <div class="sub_box"><input type="submit" value="가입" class="sub"></div>
+</form>
+</div>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{margin: 0; background-color: #ddd; font-size: 15px;}
+        input{display: none;}
+        .container{
+            width: 750px;
+            margin: 40px auto;
+            position: relative;
+           
+        }
+        .box{
+            width: 480px;
+            height: 40px;
+            display: flex;
+            line-height: 40px;
+            text-align: center;
+              
+        }
+        .box label{
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, #5ba4a4 , #4e8c8a );
+            border-radius: 10px 10px 0 0;
+            box-shadow: 2px 0 2px 0 rgba(0, 0, 0, 0.1),
+                         -2px 0 2px 0 rgba(0, 0, 0, 0.1);
+           
+        }
+        .box label:hover{
+            background:#5ba4a4;
+            cursor: pointer;
+        }
+        
+        .box span{
+            width: 100%;
+            height: 100%;
+            font-weight: 900;
+            text-shadow: 0 0 0 rgba(255, 255, 255, 30%);
+            color: #385c5b;
+        }
+        h1{margin: 0;color: #385c5b; }
+        h2{margin: 0;color: #385c5b; }
+       
+        .main{
+            width: 100%;
+            height: 400px;
+            background-color: white;
+            padding: 10px 40px;
+
+            position: absolute;
+            top: 40px;
+            left: 0;
+          
+        }
+        .main5{
+            width: 100%;
+            height: 400px;
+            background-color: white;
+            padding: 10px 40px;
+
+            position: absolute;
+            top: 40px;
+            left: 0;
+        }
+        .main1{
+            opacity: 0;
+        }
+        .main2{
+            opacity: 0;
+        }
+        .main3{
+            opacity: 0;
+        }
+        .main4{
+            opacity: 0;
+        }
+
+       .p_txt{
+            width: 700px;
+            height: 80px;
+            border-left: 7px solid #5ba4a4;
+            padding-left: 30px;
+       }
+        
+        
+        #rd1:checked ~ .box > .l1 {
+            background: white;
+        }
+        #rd2:checked ~ .box > .l2 {
+            background: white;
+        }
+        #rd3:checked ~ .box > .l3 {
+            background: white;
+        }
+        #rd4:checked ~ .box > .l4 {
+            background: white;
+        }
+        
+        #rd1:checked ~ .main1{
+            opacity: 1;
+            transition: 0.2s 0.2s;
+            z-index: 99;
+        }
+        #rd2:checked ~ .main2{
+            opacity: 1;
+            transition: 0.2s 0.2s;
+            z-index: 99;
+        }
+        #rd3:checked ~ .main3{
+            opacity: 1;
+            transition: 0.2s 0.2s;
+            z-index: 99;
+        }
+        #rd4:checked ~ .main4{
+            opacity: 1;
+            transition: 0.2s 0.2s;
+            z-index: 99;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+        <div class="container">
+            <input type="radio" id="rd1" checked name="rd">
+            <input type="radio" id="rd2" name="rd">
+            <input type="radio" id="rd3" name="rd">
+            <input type="radio" id="rd4" name="rd">
+
+            <div class="box">
+                <label for="rd1" class="l1"><span>ABOUT</span></label>
+                <label for="rd2" class="l2"><span>SERVICES</span></label>
+                <label for="rd3" class="l3"><span>WORK</span></label>
+                <label for="rd4" class="l4"><span>CONTACT</span></label>
+            </div>
+            <div class="main1 main">
+                <div class="txt_box">
+                    <h1>ABOUT</h1>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+                 <div class="txt_box">
+                    <h2>How we work</h2>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+            </div>
+            <div class="main2 main">
+                <div class="txt_box">
+                    <h1>SERVICES</h1>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+                 <div class="txt_box">
+                    <h2>How we work</h2>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+            </div>
+            <div class="main3 main">
+                <div class="txt_box">
+                    <h1>WORK</h1>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+                 <div class="txt_box">
+                    <h2>How we work</h2>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+            </div>
+            <div class="main4 main">
+                <div class="txt_box">
+                    <h1>Contact</h1>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+                 <div class="txt_box">
+                    <h2>How we work</h2>
+                    <div class="line bb"></div>
+                    <div class="p_txt bb"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi, architecto dignissimos harum voluptas, repellat est dolorum deleniti sequi expedita possimus ad corporis accusamus fuga. Adipisci numquam suscipit aspernatur nostrum officia.</p></div>
+                 </div>
+            </div>
+            <div class="main5"></div>
+        </div>
+    </div>
+</body>
+</html>

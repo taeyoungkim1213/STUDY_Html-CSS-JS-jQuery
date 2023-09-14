@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        .box {
+            /* width: 100%; */
+            height: 40px;
+            background: #cccccc;
+            border: 1px solid;
+            font-size: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box" id="box1">0</div>
+    <div class="box" id="box2">1</div>
+    <div class="box" id="box3">2</div>
+    <div class="box" id="box4">3</div>
+    <div class="box" id="box5">4</div>
+    <div class="box" id="box6">5</div>
+    <div class="box" id="box7">6</div>
+    <div class="box" id="box8">7</div>
+    <div class="box" id="box9">8</div>
+    <div class="box" id="box10">9</div>
+<script>
+    $(document).ready(function() {
+
+        /* this - 해당 요소 자체 
+        
+            해당 요소가 몇번째 자식인지 판별: $(this).index() 
+
+
+            $(document).on('이벤트', '선택자', function(){
+                ...
+            })
+        */
+
+        // 기존에 있던 .box들만 보는애
+        // $('.box').click(function() {
+        //     console.log($(this)) 
+        //     console.log($(this).index()) 
+        //     $(this).css({
+        //         background: 'red'
+        //     })
+        // });
+
+
+        // 기존에 있던말던 클릭되는 순간에 .box들만 보는애
+        // event.target -> 자바스크립트의 this와 같음
+        $(document).on('click','.box',(event) => {
+            console.log(event.target)
+            $('.box').eq($(event.target).index()).css({
+                background: 'blue'
+            })
+        });
+
+
+    })
+        
+</script>
+</body>
+</html>

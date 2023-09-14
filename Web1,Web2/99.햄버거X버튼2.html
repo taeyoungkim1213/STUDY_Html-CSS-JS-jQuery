@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        #btn_ham { display: none;}
+        .btn_hamberg {
+            display: block;
+            width: 50px;
+            height: 50px;
+            background-color: #979797;
+
+            box-sizing: border-box;
+            padding: 10px;
+        }
+
+        .line {
+            width: 100%;
+            height: 5px;
+            background: #000;
+
+            transition: top 0.5s 0.5s, transform 0.5s ;
+
+            position: relative;
+            top: 0;
+        }
+        .mid {
+            margin: 7.5px 0;
+        }
+        #btn_ham:checked ~ .btn_hamberg > .top {
+            top: 12.5px;
+
+            z-index: 99;
+            transform:  rotate(45deg);
+            
+            transition: top 0.5s, transform 0.5s 0.5s;
+        }
+        #btn_ham:checked ~ .btn_hamberg > .mid {
+            transform: scale(0);
+            transition: transform 0.5s 0.5s;
+        }
+
+        #btn_ham:checked ~ .btn_hamberg > .bot {
+            top: -12.5px;
+
+            z-index: 999;
+            transform:  rotate(-45deg);
+            
+            transition: top 0.5s, transform 0.5s 0.5s;
+        }
+
+        
+        .pan {
+            width: 300px;
+            height: calc(100vh - 50px);
+            background: skyblue;
+            box-sizing: border-box;
+            /* padding: 0 30px; */
+
+            transition: all 0.5s;
+
+            position: absolute;
+            left: 0;
+            /* transform: translateX(-100%); */
+        }
+        #btn_ham:checked ~ .pan {
+            transform: translateX(0);
+        }
+
+        .item_container {
+            border: 1px solid;
+            box-sizing: border-box;
+        }
+        label {
+            background-color: red;
+            display: block;
+            /* line-height: 50px; */
+            padding: 10px 0;
+
+            display: flex;
+            justify-content: space-between;
+        }
+        .list_expand {
+            /* width: 30px;
+            height: 30px; */
+
+            background-color: blue;
+            color: #fff;
+            transform: rotate(-90deg) translateY(-7px);
+        }
+        .item_list_box {
+            background-color: orange;
+            overflow: hidden;
+            /* box-sizing: border-box; */
+
+
+            height: 0;
+            transition: height 1s;
+        } 
+        .item_list { 
+            padding: 20px;
+        }
+        input[name="chk"]:checked + .item_list_box {
+            height: 110px;
+        }
+        input {display: none;}
+    </style>
+</head>
+<body>
+    <input type="checkbox" id="btn_ham">
+    <label for="btn_ham" class="btn_hamberg">
+        <div class="line top"></div>
+        <div class="line mid"></div>
+        <div class="line bot"></div>
+    </label>
+
+    <div class="pan">
+        <div class="item_container">
+            <label for="list_1">
+                <span class="list_title">성별</span>
+                <span class="list_expand">〈</span>
+            </label>
+            
+            <input type="checkbox" id="list_1" name="chk">
+            <div class="item_list_box">
+                <ul class="item_list">
+                    <li class="item">menu1</li>
+                    <li class="item">menu2</li>
+                    <li class="item">menu3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item_container">
+            <label for="list_2">
+                <span class="list_title">가격대</span>
+                <span class="list_expand">〈</span>
+            </label>
+
+            <input type="checkbox" id="list_2" name="chk">
+            <div class="item_list_box">
+                <ul class="item_list">
+                    <li class="item">menu1</li>
+                    <li class="item">menu2</li>
+                    <li class="item">menu3</li>
+                </ul>
+            </div>
+        </div>
+        <div class="item_container">
+            <label for="list_3">
+                <span class="list_title">신발높이</span>
+                <span class="list_expand">〈</span>
+            </label>
+
+            <input type="checkbox" id="list_3" name="chk">
+            <div class="item_list_box">
+                <ul class="item_list">
+                    <li class="item">menu1</li>
+                    <li class="item">menu2</li>
+                    <li class="item">menu3</li>
+                </ul>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let name = prompt("이름입력");
+        let kor = +prompt("국어점수");
+        let math = +prompt("수학점수");
+        let eng = +prompt("영어점수");
+        let total = kor + math + eng;
+        let avg = (total/3).toFixed(0);
+        let grade = "F";
+
+        if( 89 < avg){
+           grade = "A";
+            
+        }
+        else if( 79 < avg){
+           grade = "B";
+            
+        }
+        else if( 69 < avg){
+           grade = "C";
+            
+        }
+        else if( 59 <avg){
+           grade = "D";
+            
+        }
+        
+        else{
+            document.write("오류입니다.");
+        }
+
+        document.write(name+"님의 총점은" + total + "평균은" +avg+"학점은" + grade);
+
+        switch(avg / 10){
+            case 10:
+                console.log("A");
+                break;
+            case 9:
+                console.log("A");
+                break;
+            case 8: 
+                console.log("B");
+                break;
+                
+            case 7: 
+                console.log("C");
+                break;
+                
+            case 6: 
+                console.log("D");
+                break;
+            case 5:
+                console.log("E");
+                break;
+            default:
+                console.log("F");
+                break;
+                
+                
+
+        }
+        
+    </script>
+</body>
+</html>

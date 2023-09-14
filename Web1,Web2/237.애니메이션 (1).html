@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        .box {
+            /* width: 100px;
+            height: 100px;
+            background: red;
+
+            position: absolute;
+            left: 0;
+            top: 0; */
+
+            /* transition: all 30s; */
+
+            /* animation: moving 1s; */
+        }
+        @keyframes moving {
+            0% { left: 0}
+            100% { left: 500px}
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+<script>
+$(document).ready(function() {
+/*
+    - 문법 - 
+        $('선택자').animate({
+            
+        }, 밀리초,[속도])
+
+        *밀리초 안주면 알아서 시간 적용
+        *transition, transform, background 과 같이 쓸 수 없음
+        (*기본 css에 명시한 transform, transition은 동작)
+
+*/
+        // $('.box').animate({
+        //     left: 500,
+        //     width: 200,
+        //     opacity: 0.5,
+
+        //     // 아래 요소들은 animate 에서 사용 못함
+        //     // transform: 'rotate(45deg)',
+        //     // transition: 'all 100s',
+        //     // background: 'blue',
+        // }, 1000,'linear')
+
+        $('.box').css({
+            width: '100px',
+            height: '100px',
+            background: 'red',
+
+            position: 'absolute',
+            left: 0,
+            top: 0,
+        }).animate({
+            left: 200,
+            top: 0
+        }, 500).animate({
+            left: 200,
+            top: 200
+        }, 500).animate({
+            left: 0,
+            top: 200
+        }, 500).animate({
+            left: 0,
+            top: 0
+        }, 500)
+})
+</script>
+</body>
+</html>
