@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        body { height: 5000px;}
+        .box1 {
+            width: 300px;
+            height: 300px;
+            border: 5px solid #000;
+            box-sizing: border-box;
+            background: url(./img/패럴렉스/parallax1.jpg) no-repeat fixed center / cover;
+
+            position: absolute;
+            left: 0;
+            top: 0; 
+            z-index: 999;
+        }
+        .box2 {
+            width: 100%;
+            height: 100vh;
+
+            border: 5px solid #000;
+            box-sizing: border-box;
+            background: url(./img/패럴렉스/parallax2.jpg) no-repeat fixed center / cover;
+
+            position: absolute;
+            left: 0;
+            top: 0; 
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div class="box1"></div>
+        <div class="box2"></div>
+    </div>
+<script>
+    $(document).ready(function() {
+         
+        $('.box1').mousedown(function(){
+
+            $(document).on('mousemove',function(){
+                $('.box1').css({
+                    left: event.pageX - ($('.box1').outerWidth() / 2 ),
+                    top: event.pageY - ($('.box1').outerHeight() / 2 ),
+                    // left: event.clientX,
+                    // top: event.clientY
+                })
+            });
+        })
+
+        $('.box1').mouseup(function(){
+        $(document).off('mousemove')
+        })
+    })
+</script>
+</body>
+</html>

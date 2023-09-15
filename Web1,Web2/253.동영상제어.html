@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <style>
+        video {
+            width: 500px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="재생" id="play">
+    <input type="button" value="일시정지" id="pause">
+    <input type="button" value="음소거" id="muted">
+    <br>
+    <input type="range" value="0.5" min="0" max="1" step="0.1" id="volume">
+    <!-- 스크립트상 volume은 0~1 사이값만 가능 -->
+
+    <br><br>
+    <input type="button" value="크게" id="lg">
+    <input type="button" value="작게" id="sm">
+    <input type="button" value="원본사이즈" id="origin_size">
+
+    <br><br>
+
+    <video src="./media/내 손으로 내 숨을 막는일 - 전상근 (인디고플레이스 live).mp4" id="v_player" controls></video>
+ 
+<script>
+    $(document).ready(function() { 
+        let chg_size = 50;
+        let origin_size = $('#v_player').innerWidth();
+
+        $(document).on('click','#lg',function(){
+            // 방법1
+            let prev_size = $('#v_player').innerWidth();
+            $('#v_player').innerWidth(  prev_size+50  )
+
+            // 방법2
+            // $('#v_player').css({
+            //     width: `+=${chg_size}`
+            // })
+        });
+        $(document).on('click','#sm',function(){
+            // 방법1
+            let prev_size = $('#v_player').innerWidth();
+            $('#v_player').innerWidth(  prev_size-50  )
+
+            // 방법2
+            // $('#v_player').css({
+            //     width: `-=${chg_size}`
+            // })
+        });
+
+        $(document).on('click','#origin_size',function(){
+            // 방법1
+            // prev_size = $('#v_player').innerWidth();
+            $('#v_player').innerWidth(  origin_size  )
+
+            // 방법2
+            // $('#v_player').css({
+            //     width: `-=${chg_size}`
+            // })
+        });
+
+
+
+
+
+        $(document).on('click','#play',function(){
+            // video를 잡을때는 id던 class 던 상관없이 방번호 사용
+            $('#v_player')[0].play();
+            // $('#v_player').get(0).play();
+        });
+        $(document).on('click','#pause',function(){
+            $('#v_player')[0].pause();
+        });
+
+        let curr_v = 0.5
+        $(document).on('click','#muted',function(){
+            console.log($('#v_player')[0].muted)
+            if(!$('#v_player')[0].muted) {
+                // 현재상태의 볼륨을 저장해놨다가 음소거 풀릴때 이 값 다시 volume에 다시 넣는 용도
+                curr_v = $('#volume').val()
+                $('#volume').val(0)
+
+                $('#v_player')[0].muted = true;
+                $('#muted').attr('value','음소거해제')
+            }
+            else {
+                $('#volume').val(curr_v) // if문에서 저장해놨던 기존 볼륨으로 돌려놓기
+
+                $('#v_player')[0].muted = false;
+                $('#muted').attr('value','음소거')
+            } 
+        });
+
+        
+        $(document).on('mousedown','#volume',function(){
+            $(document).on('mousemove','#volume',function(){
+                $('#v_player')[0].volume = $('#volume').val()
+            });
+
+            // 음소거 상태일때 음소거 풀리게 하기
+            curr_v = $('#volume').val()
+            $('#volume').val(curr_v) // if문에서 저장해놨던 기존 볼륨으로 돌려놓기
+
+            $('#v_player')[0].muted = false;
+            $('#muted').attr('value','음소거')
+        });
+
+    })
+</script>
+</body>
+</html>
