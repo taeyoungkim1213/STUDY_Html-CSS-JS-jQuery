@@ -1,0 +1,152 @@
+.contents_area {
+    width: 1200px;
+    height: 100%;
+    position: relative;
+    margin: 0 auto;
+}
+
+/* 탑배너 */
+.top_banner {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    background-color: #d6cdc3;
+    overflow: hidden;
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999999999;
+}
+.tb_item {
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    left: 0;
+    top: 100%;
+}
+
+
+/* 헤더 */ 
+.header {
+    position: relative;
+    z-index: 999999999;
+}
+.h_top {
+    height: 200px;
+    display: flex;
+    align-items: center;
+    text-indent: -9999px;
+}
+.logo {
+    width: 210px;
+    height: 80px;
+    margin: 0 auto;
+    background:  url(../../img/theComma/logo.jpg) no-repeat center / contain;
+}
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+.h_bot {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    border-bottom: 1px solid #d6cdc3;
+}
+.h_bot_active {
+    position: fixed;
+    left: 0;
+    top: 40px;
+
+    z-index: 9999999999;
+    background-color: #fff;
+}
+.menu {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+}
+.menu_item {
+    height: 100%;
+    font-size: 14px; 
+}
+.menu_item a { 
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 0 25px;
+    box-sizing: border-box;
+}
+
+
+.pan {
+    width: 100%;
+    height: 0;
+    /* height: 400px; */
+    background: skyblue;         
+    transition: all 0.5s;   
+    overflow: hidden;
+}
+.pan_active {
+    height: 400px;
+}
+.pan .pan_item {
+    width: 100%;
+    height: 100%;
+    display: none;
+}
+#pan1 {
+    width: 500px;
+    background: red;
+}
+#pan2 {
+    width: 300px;
+    background: green;
+}
+#pan3 {
+    width: 800px;
+    background: blue;
+}
+#pan4 {
+    width: 1200px;
+    position: relative;
+}
+#pan4_L {
+    width: 400px;
+    height: 100%;
+    background-color: aqua;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#pan4_R {
+    width: 400px;
+    height: 100%;
+    background-color: aqua;
+
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.pan .pan_active {
+    display: block;
+}
+
+
+.footer {
+    width: 100%;
+    height: 400px;
+    background-color: #d6cdc3;
+
+    margin-top: 100px;
+}
