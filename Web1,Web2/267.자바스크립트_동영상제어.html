@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="button" value="재생" id="play">
+    <input type="button" value="일시정지" id="pause">
+    <input type="button" value="음소거" id="muted">
+    <br>
+    <input type="range" value="0.5" min="0" max="1" step="0.1" id="volume">
+    <!-- 스크립트상 volume은 0~1 사이값만 가능 -->
+
+    <br><br>
+    <input type="button" value="크게" id="lg">
+    <input type="button" value="작게" id="sm">
+    <input type="button" value="원본사이즈" id="origin_size">
+
+    <br><br>
+
+    <video src="./media/내 손으로 내 숨을 막는일 - 전상근 (인디고플레이스 live).mp4" id="v_player" controls></video>
+<script>
+
+
+    document.getElementById('play').addEventListener('click', function(){
+        video.play();
+    })
+    document.getElementById('pause').addEventListener('click', function(){
+        video.pause();
+    })
+
+    // 최초 페이지 들어올때 선택되어있는 기본 볼륨
+    let volume = document.getElementById('volume').value;
+    document.getElementById('muted').addEventListener('click', function(){
+        
+        if(!video.muted) { // 소리 나오고 있었을때는 fasle
+            // 음소거 눌렀을때의 현재 볼륨
+            volume = document.getElementById('volume').value;
+
+            video.muted=true; // 음소거로 변경
+            document.getElementById('volume').value = 0; // 볼륨바 0 위치에 놓기
+
+            document.getElementById('muted').setAttribute('value','음소거해제')
+        }
+        else {
+            video.muted=false; // 음소거 풀기
+            document.getElementById('volume').value = volume; // 볼륨바 0 위치에 놓기
+            
+            document.getElementById('muted').setAttribute('value','음소거')
+        }
+         
+    })
+    document.getElementById('volume').addEventListener('mousedown', function(){
+        video.muted=false; // 음소거 풀기
+        document.getElementById('volume').value = volume; // 볼륨바 0 위치에 놓기
+        
+        document.getElementById('muted').setAttribute('value','음소거')
+    })
+
+
+    document.getElementById('volume').addEventListener('mousemove', function(){
+        video.muted=false; // 음소거 풀기
+        document.getElementById('volume').value = volume; // 볼륨바 0 위치에 놓기
+        
+        document.getElementById('muted').setAttribute('value','음소거')
+    })
+    
+    
+    const video = document.getElementById('v_player');
+    let origin_size = video.clientWidth
+    console.log(video.clientWidth)
+    let chg_size = 50;
+
+    window.onload = function(){
+        origin_size = video.clientWidth
+        console.log(video.clientWidth)
+        chg_size = 50;
+    }
+
+    document.getElementById('lg').addEventListener('click', function(){
+    console.log(video.clientWidth)
+        video.style.width= `${video.clientWidth + chg_size}px`;
+    })
+    document.getElementById('sm').addEventListener('click', function(){
+        video.style.width= `${video.clientWidth - chg_size}px`;
+    })
+    document.getElementById('origin_size').addEventListener('click', function(){
+        video.style.width= `${origin_size}px`;
+    })
+
+</script>
+</body>
+</html>

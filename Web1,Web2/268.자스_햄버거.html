@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        #hambeger {
+            width: 50px;
+            height: 50px;
+            background-color: red;
+        }
+        #pan {
+            width: 300px;
+            height: calc(100vh - 50px);
+            background-color: skyblue;
+
+            transform: translateX(-100%);
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div id="hambeger"></div>
+        <div id="pan"></div>
+    </div>
+<script>
+/*
+    id 가 hambeger 인 요소 클릭하면, id 가 pan 인 요소 좌우로 움직이기
+
+    1) hambeger 요소 잡고, click 이벤트 주기
+
+    2) pan 요소 잡고, 위치 이동 하기
+*/
+    let ham_chk = true;
+    document.getElementById('hambeger').addEventListener('click', function(){
+        if(ham_chk) {
+            document.getElementById('pan').style.transform="translateX(0%)"
+        }
+        else {
+            document.getElementById('pan').style.transform="translateX(-100%)"
+        } 
+        ham_chk = !ham_chk;
+    })
+
+</script>
+</body>
+</html>

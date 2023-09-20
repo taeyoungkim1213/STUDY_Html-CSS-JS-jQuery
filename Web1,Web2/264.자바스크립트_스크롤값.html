@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <link rel="stylesheet" href="./css/common.css">
+    <style>
+        body { height: 5000px;}
+        .sec { 
+            width: 100%;
+            height: 1000px;
+            border: 1px solid;
+            box-sizing: border-box;
+            position: relative;
+            background: skyblue;
+        }
+        .sec h1 {
+            font-size: 150px;
+            text-align: center;
+            margin: 0;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            transition: all 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="sec">
+        <p>헬로0</p>
+    </div>
+    <div class="sec">
+        <h1 id="txt2">헬로</h1>
+    </div>
+    <div class="sec">3</div>
+
+    
+<script>
+/*
+    click
+    dblclick
+    mouseover
+    mouseout
+    mouseenter
+    mouseleave
+
+    mouseWheel
+
+    keydown
+    keyup
+    
+    scroll
+    resize
+
+    $(선택자).이벤트(function(){ })
+    $(document).on('이벤트', '선택자', function(){ })
+    $(document).off('이벤트', '선택자')
+
+    요소잡기.addEventListener('이벤트', function(){ ... })
+*/
+
+
+    // window.addEventListener('scroll', ttt)
+    window.addEventListener('scroll', function(){
+        ttt()
+    })
+
+    function ttt() {
+        console.log("scrollY: " + window.scrollY); //현재 스크롤된값
+        console.log("pageYOffset: " + window.pageYOffset) //현재 스크롤된값
+        console.log("innerHeight: " + window.innerHeight); //현재보여지는 viewport 높이
+        console.log("clientHeight: " + document.body.clientHeight); //현재문서의 전체높이
+        /*
+            clientHeight - 패딩값 포함한 크기 (outerHeight() 같은거)
+        */
+
+        let target = document.getElementsByClassName('sec');
+
+        // 1번방 요소의 현재(상대) 좌표. s_top 이 sec1의 o_top 까지 얼마나 남았냐? 라는 뜻
+        console.log("sec1 o_top: " + target[1].getBoundingClientRect().top); 
+
+        console.log(window.scrollY + target[1].getBoundingClientRect().top);// 1번방 요소의 (절대) 좌표
+
+        // console.log(window.scrollY , target[1].getBoundingClientRect().top);
+        if(target[1].getBoundingClientRect().top <= 0) { // target1번보다 s_top이 아래에 있다
+            document.getElementById('txt2').style.left="20%"
+        }
+        else if(target[1].getBoundingClientRect().top > 0) { // target1번보다 s_top이 위에 있다
+            document.getElementById('txt2').style.left="50%"
+        }
+    }
+    ttt()
+ 
+</script>
+</body>
+</html>
