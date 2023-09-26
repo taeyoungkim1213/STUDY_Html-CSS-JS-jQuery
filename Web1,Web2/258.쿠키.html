@@ -15,8 +15,8 @@
 </head>
 <body>
     <input type="button" value="확인" onclick="getCookie('test_cookie')">
-    <input type="button" value="생성" onclick="setCookie('test_cookie', 'true', 1000000)">
-    <input type="button" value="삭제" onclick="setCookie('test_cookie', 'true', 0)">
+    <input type="button" value="생성" onclick="setCookie('test_cookie', 'true', 1)">
+    <input type="button" value="삭제" onclick="setCookie('test_cookie', 'true', 10)">
     
     <div class="layer_popup"></div>
 <script>
@@ -41,14 +41,14 @@
 */
     /* 쿠키 읽기  - abc="value"; expires="09/15 11:25"; path="/"
                    [abc="value",  expires="09/15 11:25" , path="/"];
-                   abc="value" => [name , "abc"]
+                   abc="value" => [name , "abc"]    
     */
 
     // 쿠키 읽고
     let result_cookie = getCookie("test_cookie"); // 내가 찾을 쿠키의 이름(abc)
     console.log("result_cookie: "+ result_cookie)
     if(result_cookie != null) {
-        console.log("쿠키 있음")
+        console.log("쿠키 있음")    
         // $('.layer_popup').css({
         //     display: 'none'
         // })
@@ -56,6 +56,7 @@
         // $('.layer_popup').remove();
         $('.layer_popup').detach();
     } 
+   
 
     // 쿠키 읽기
     function getCookie(c_name) {
@@ -82,8 +83,8 @@
         console.log("setCookie");
 
         let dt = new Date();
-        dt.setTime(dt.getTime() + (1000 * 1 * exp))
-        // dt.setTime(dt.getTime() + (1000*60*60*24 * exp))
+        // dt.setTime(dt.getTime() + (1000 * 1 * exp))
+        dt.setTime(dt.getTime() + (1000*60*60*24 * exp))
 
         console.log(`${name}=${value};expires=${dt.toUTCString()};path=/`)
 

@@ -112,6 +112,7 @@ $(document).ready(function() {
             //     }, i * 70)
             // }
             item_slide_up($('#w_ranking .item_init'));
+            best_o_top = $('#best').offset().top;
         }
         if(s_bot >= best_o_top) { 
             // for(let i=0; i<$('#best .item_init').length; i++) {
@@ -120,6 +121,7 @@ $(document).ready(function() {
             //     }, i * 70)
             // }
             item_slide_up($('#best .item_init'));
+            new_o_top = $('#new').offset().top;
         }
         if(s_bot >= new_o_top) { 
             // for(let i=0; i<$('#new .item_init').length; i++) {
@@ -139,4 +141,9 @@ $(document).ready(function() {
             }, i * 70)
         }
     } 
+
+
+    // load_list.js 에 있는 함수 사용
+    load_items(0, 8) // best
+    load_items(1, 8) // new
 })

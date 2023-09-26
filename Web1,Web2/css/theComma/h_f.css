@@ -28,6 +28,72 @@
     top: 100%;
 }
 
+/* 레이어팝업 */
+.layer_popup {
+    width: 310px; 
+    position: fixed;
+    left: 100px;
+    top: 200px;
+    z-index: 99999999999;
+    background-color: #fff;
+    box-shadow: 0 0 0 1px #ddd; 
+}
+.popup_body {
+    padding: 5px;
+    /* overflow: hidden; */
+}
+.popup_img_box {
+    width: 100%;
+    height: 330px;
+    position: relative;
+}
+.popup_img {
+    position: absolute;
+    left: 0;
+    top: 0; 
+
+    display: none;
+} 
+.popup_img img {
+    width: 100%;
+}
+.popup_btn_box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin: 5px 0;
+    background: #fff;
+}
+.popup_btn_box a {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    justify-content: center; 
+}
+.popup_btn {
+    width: calc((100% - (5px * 2)) / 3);
+    height: 100px;
+    border: 1px solid #ddd;
+    box-sizing: border-box;
+
+    font-size: 11px;
+
+}
+.popup_footer {
+    background: #333;
+    color: #fff;
+    line-height: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+}
+.close_for_today,
+.close_popup {
+    cursor: pointer;
+}
 
 /* 헤더 */ 
 .header {

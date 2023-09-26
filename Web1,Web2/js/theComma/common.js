@@ -17,6 +17,96 @@ setInterval(function(){
     tb_curr_idx++;
 }, 2000)
 
+
+
+/**********   레이어팝업   *************/
+// 버튼6개에 호버하면 해당꺼 큰 이미지 나오기
+$('.popup_img').eq(0).fadeIn(0);
+$('.popup_btn').mouseenter(function(){
+    $('.popup_img').fadeOut(200);
+    $('.popup_img').eq($(this).index()).stop(true).fadeIn(200);
+})
+
+$('.close_popup').click(function(){
+    // $('.layer_popup').remove();
+    $('.layer_popup').css({
+        display: 'none'
+    })
+})
+
+$('.close_for_today').click(function(){
+    setCookie('layer_cookie','true', 1)
+
+    $('.layer_popup').css({
+        display: 'none'
+    })
+})
+
+
+// 쿠키 읽고
+let result_cookie = getCookie("layer_cookie"); // 내가 찾을 쿠키의 이름(abc)
+console.log("result_cookie: "+ result_cookie)
+if(result_cookie != null) {
+    console.log("쿠키 있음")
+    $('.layer_popup').css({
+        display: 'none'
+    })
+    // $('.layer_popup').remove();
+} 
+
+// 쿠키 읽기
+function getCookie(c_name) {
+    let tmp_cookie = document.cookie.split(";"); 
+    console.log(tmp_cookie)
+    
+    for(let i=0; i<tmp_cookie.length; i++) { 
+        let tmp = tmp_cookie[i].split("=");      
+
+        if(tmp[0].trim() == c_name) {
+            console.log("같아유")
+            return unescape(tmp[1]); 
+        }
+    }
+    return null;
+}
+// 쿠키 생성
+function setCookie( name, value, exp) {
+    let dt = new Date();
+    dt.setTime(dt.getTime() + (1000 * 10 * exp))
+    // dt.setTime(dt.getTime() + (1000*60*60*24 * exp))
+
+    console.log(`${name}=${value};expires=${dt.toUTCString()};path=/`)
+
+    document.cookie = `${name}=${value};expires=${dt.toUTCString()};path=/`
+}
+
+// 레이어팝업 끌고 다니기
+let mouseX = 0;
+let mouseY = 0;
+$('.layer_popup').mousedown(function(event){
+    // event.preventDefault();
+
+    // 화면 왼쪽 위 기준 마우스 좌표 구하기
+    mouseX = event.clientX - $('.layer_popup').position().left;
+    mouseY = event.clientY - $('.layer_popup').position().top;
+
+    $(document).on('mousemove', function(event){
+        let m_x = event.clientX;
+        let m_y = event.clientY;
+ 
+
+        $('.layer_popup').css({
+            left: m_x - mouseX,
+            top: m_y - mouseY
+        })
+    });    
+});
+
+$(document).mouseup(function(event){
+    $(document).off('mousemove')
+});
+
+
 /**********   헤더 100% 메뉴   *************/
 // .menu_item 에 마우스 올리면 .pan 한테 addClass('pan_active') 하기
 $('.menu_item, .pan').hover(function(){

@@ -20,6 +20,57 @@
     <div class="tb_item"><span style="color: red">포트폴리오</span>는요?</div>
     <div class="tb_item">화.이.팅<span style="font-size: 0.8em;">팅</span><span style="font-size: 0.6em;">팅</span><span style="font-size: 0.4em;">팅</span><span style="font-size: 0.2em;">팅</span><span style="font-size: 0.1em;">팅</span><span style="font-size: 0.05em;">팅</span></div>
 </div>
+
+<!-- ondragstart : 이미지 드래그 안되게 막기(189.복사방지에 있음) -->
+<div class="layer_popup" ondragstart="return false">
+    <div class="popup_body">
+        <div class="popup_img_box">
+            <a href="#" class="popup_img">
+                <img src="./img/theComma/popup/big_img_01.jpg" alt="">
+            </a>
+            <a href="#" class="popup_img">
+                <img src="./img/theComma/popup/big_img_02.jpg" alt="">
+            </a>
+            <a href="#" class="popup_img">
+                <img src="./img/theComma/popup/big_img_03.jpg" alt="">
+            </a>
+            <a href="#" class="popup_img">
+                <img src="./img/theComma/popup/big_img_04.jpg" alt="">
+            </a>
+            <a href="#" class="popup_img">
+                <img src="./img/theComma/popup/big_img_05.jpg" alt="">
+            </a>
+            <a href="#" class="popup_img">
+                <img src="./img/theComma/popup/big_img_06.jpg" alt="">
+            </a>
+        </div>
+        <div class="popup_btn_box">
+            <div class="popup_btn">
+                <a href="#">세일이벤트</a>
+            </div>
+            <div class="popup_btn">
+                <a href="#">카카오스토리</a>
+            </div>
+            <div class="popup_btn">
+                <a href="#">신상품바로가기</a>
+            </div>
+            <div class="popup_btn">
+                <a href="#">INSTARGRAM<br>인스타그램팔로우</a>
+            </div>
+            <div class="popup_btn">
+                <a href="#">REVIEW<br>구매후기이벤트</a>
+            </div>
+            <div class="popup_btn">
+                <a href="#">JOIN<br>회원가입이벤트</a>
+            </div>
+        </div>
+    </div>
+    <div class="popup_footer">
+        <div class="close_for_today">오늘하루 열지않음</div>
+        <div class="close_popup">닫기</div>
+    </div>
+</div>
+
 <div class="wrap">
     <div class="header">
         <div class="h_top">
@@ -161,11 +212,7 @@
                     </li>
                 </ul>
             </div>
-        </div> 
-        
-
-
-
+        </div>
 
         <div class="sec contents_area" id="best">
             <div class="sec_head item_init">BEST ITEM</div>
@@ -282,7 +329,7 @@
             <div class="sec_head  item_init">NEW 5%</div>
             <div class="sec_body">
                 <ul class="item_container">
-                    <li class="item new_item_li item_init">
+                    <!-- <li class="item new_item_li item_init">
                         <a href="#">
                             <div class="item_img">
                                 <img src="./img/theComma/items/new/1.jpg" alt=""> 
@@ -393,14 +440,14 @@
                                 <div class="item_desc">상품에 대한 설명이 표시됩니다</div>
                             </div>
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
             </div>
         </div>
 
 
+        <div class="footer contents_area"></div>
     </div>
-    <div class="footer contents_area"></div>
 
     <script src="./js/theComma/259.theComma(load_list).js"></script>
     <script src="./js/theComma/common.js"></script>
